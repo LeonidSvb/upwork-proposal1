@@ -304,112 +304,719 @@ body {
   line-height: 1.5;
 }
 
+
 /* =====================================================
-   Artifact Components (Realistic UI Elements)
+   PREMIUM REALISTIC ARTIFACTS CSS
+   Purpose: Maximum realism for landing page step visualization
 ===================================================== */
 
-/* EMAIL (Gmail Style) */
+/* Base artifact container */
+.artifact {
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.85rem;
+  margin-top: 16px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== GMAIL EMAIL (Ultra Realistic) ===== */
 .artifact-email {
   background: white;
-  border: 1px solid var(--color-border-light);
-  border-radius: 6px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
   overflow: hidden;
-  font-size: 11px;
-  max-width: 280px;
+  font-family: 'Roboto', -apple-system, sans-serif;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(60,64,67,0.15);
 }
 
 .email-header {
-  background: var(--color-surface-light);
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--color-border-light);
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dadce0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .email-avatar {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: linear-gradient(135deg, #1a73e8, #4285f4);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  font-size: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(26,115,232,0.3);
 }
 
 .email-sender {
   flex: 1;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .sender-name {
   font-weight: 500;
-  color: var(--color-text-primary);
+  color: #202124;
+  margin-bottom: 2px;
 }
 
 .sender-email {
-  color: var(--color-text-secondary);
+  color: #5f6368;
+  font-size: 12px;
 }
 
 .email-time {
-  font-size: 9px;
-  color: var(--color-text-secondary);
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 400;
 }
 
 .email-subject {
-  padding: 8px 12px 4px;
-  font-size: 12px;
+  padding: 16px 20px 8px;
+  font-size: 16px;
   font-weight: 500;
-  color: var(--color-text-primary);
+  color: #202124;
+  line-height: 1.3;
 }
 
 .email-body {
-  padding: 4px 12px 12px;
-  font-size: 10px;
-  line-height: 1.4;
-  color: var(--color-text-secondary);
+  padding: 8px 20px 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #3c4043;
 }
 
-/* SMS (iPhone Style) */
+/* ===== iPHONE SMS (Ultra Realistic) ===== */
 .artifact-sms {
   background: #000;
-  border-radius: 16px;
-  padding: 12px;
-  max-width: 220px;
+  border-radius: 20px;
+  padding: 16px;
+  max-width: 320px;
   margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.artifact-sms::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  background: #333;
+  border-radius: 2.5px;
 }
 
 .sms-header {
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  padding-top: 8px;
 }
 
 .sms-bubble {
-  background: #007aff;
+  background: linear-gradient(135deg, #007aff, #0051d0);
   color: white;
-  padding: 8px 12px;
-  border-radius: 16px;
-  border-bottom-right-radius: 4px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border-bottom-right-radius: 6px;
   margin-left: auto;
-  margin-right: 6px;
-  max-width: 180px;
-  font-size: 11px;
-  line-height: 1.3;
-  margin-bottom: 2px;
+  margin-right: 8px;
+  max-width: 260px;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.3);
 }
 
 .sms-time {
   text-align: right;
   color: #8e8e93;
-  font-size: 9px;
-  margin-right: 8px;
+  font-size: 12px;
+  margin-right: 12px;
+  margin-top: 2px;
 }
 
+/* ===== WHATSAPP CHAT (Ultra Realistic) ===== */
+.artifact-whatsapp {
+  background: linear-gradient(to bottom, #dddbd1, #d2dbdc);
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 350px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.whatsapp-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.whatsapp-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.whatsapp-name {
+  font-weight: 600;
+  color: #111;
+  font-size: 16px;
+}
+
+.whatsapp-bubble {
+  background: #dcf8c6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+  max-width: 280px;
+}
+
+.whatsapp-bubble.received {
+  background: white;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 12px;
+  margin-right: 40px;
+}
+
+.whatsapp-bubble.sent {
+  background: #dcf8c6;
+  margin-left: 40px;
+  margin-left: auto;
+}
+
+.whatsapp-time {
+  font-size: 11px;
+  color: #667781;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* ===== PUSH NOTIFICATION (macOS Style) ===== */
+.artifact-notification {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.notification-app-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007aff, #0051d0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+}
+
+.notification-app-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  flex: 1;
+}
+
+.notification-time {
+  font-size: 13px;
+  color: #86868b;
+}
+
+.notification-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.notification-body {
+  font-size: 13px;
+  color: #424245;
+  line-height: 1.4;
+}
+
+/* ===== CRM DASHBOARD (Professional SaaS) ===== */
+.artifact-dashboard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 420px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.dashboard-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.dashboard-period {
+  font-size: 14px;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-change {
+  font-size: 11px;
+  color: #10b981;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ===== MODERN FORM (Premium Web Form) ===== */
+.artifact-form {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.form-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1f2937;
+  background: white;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-button {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.form-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== N8N WORKFLOW (Professional Automation) ===== */
+.artifact-workflow {
+  background: linear-gradient(135deg, #fafbfc, #f4f6f8);
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  max-width: 450px;
+  overflow-x: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.workflow-node {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 80px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  position: relative;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
+}
+
+.workflow-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.workflow-node::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.workflow-node:last-child::after {
+  content: none;
+}
+
+.node-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.node-label {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ===== SALES PIPELINE (Kanban Board) ===== */
+.artifact-pipeline {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  max-width: 450px;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.pipeline-column {
+  background: white;
+  flex: 1;
+  min-width: 120px;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.pipeline-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.pipeline-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pipeline-card:hover {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.pipeline-card:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== CODE BLOCK (Syntax Highlighted) ===== */
+.artifact-code {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  max-width: 400px;
+  overflow-x: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.artifact-code::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: #21262d;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #30363d;
+}
+
+.artifact-code::after {
+  content: '● ● ●';
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 12px;
+  color: #7d8590;
+}
+
+.code-content {
+  margin-top: 16px;
+}
+
+.code-keyword {
+  color: #ff7b72;
+}
+
+.code-string {
+  color: #a5d6ff;
+}
+
+.code-comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* ===== API DOCUMENTATION (Postman Style) ===== */
+.artifact-api {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'SF Mono', monospace;
+  font-size: 13px;
+  max-width: 420px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.api-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.api-method {
+  background: #10b981;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.api-url {
+  font-family: 'SF Mono', monospace;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.api-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+  font-family: 'SF Mono', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.api-response {
+  margin-top: 16px;
+}
+
+.api-status {
+  display: inline-block;
+  background: #10b981;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ===== PLATFORM BADGE (Enhanced) ===== */
+.platform-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .artifact {
+    max-width: 100%;
+  }
+  
+  .artifact-email,
+  .artifact-dashboard,
+  .artifact-form,
+  .artifact-workflow,
+  .artifact-pipeline,
+  .artifact-api {
+    max-width: 100%;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pipeline-column {
+    min-width: 140px;
+  }
+}
 /* Continue with other artifact styles... */
 
 /* =====================================================
