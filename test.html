@@ -4,8 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AI-Powered Executive Reporting Automation</title>
-   <link rel="stylesheet" href="https://LeonidSvb.github.io/upwork-proposal1
-/styles.css">
+   <!-- ИСПРАВЛЕНО: убрал перенос строки -->
+   <link rel="stylesheet" href="https://LeonidSvb.github.io/upwork-proposal1/styles.css">
    <style>
        :root {
            --primary-color: #7c3aed;
@@ -195,24 +195,7 @@
        </div>
    </div>
 
-   <script>
-       let currentSlide = 0;
-       const slides = document.querySelectorAll('.slide');
-       
-       document.addEventListener('keydown', (e) => {
-           if (e.key === 'ArrowDown' || e.key === ' ') {
-               currentSlide = Math.min(currentSlide + 1, slides.length - 1);
-               slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
-           } else if (e.key === 'ArrowUp') {
-               currentSlide = Math.max(currentSlide - 1, 0);
-               slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
-           }
-       });
-       
-       document.addEventListener('click', () => {
-           currentSlide = Math.min(currentSlide + 1, slides.length - 1);
-           slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
-       });
-   </script>
+   <!-- ЗАМЕНЕНО: Старый JS удален, добавлен новый premium.js -->
+   <script src="https://LeonidSvb.github.io/upwork-proposal1/premium.js"></script>
 </body>
 </html>
