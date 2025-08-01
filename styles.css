@@ -1,32 +1,31 @@
-
 /* =====================================================
    Global CSS Variables (Colors, Typography, etc.)
    Purpose: Centralized color palette and font settings
 ===================================================== */
 :root {
-  --color-primary: #1e40af;         /* Main primary color */
-  --color-primary-light: #2563eb;   /* Lighter primary */
-  --color-primary-lighter: #60a5fa; /* Even lighter primary */
-  --color-primary-lightest: #93c5fd;/* Lightest primary */
+  --color-primary: #1e40af;
+  --color-primary-light: #2563eb;
+  --color-primary-lighter: #60a5fa;
+  --color-primary-lightest: #93c5fd;
   
-  --color-accent: #22c55e;          /* Accent/Highlight color */
-  --color-success: #10b981;         /* Success messages */
-  --color-warning: #f59e0b;         /* Warning messages */
-  --color-warning-light: #fef3c7;   /* Light warning background */
-  --color-warning-dark: #92400e;    /* Dark warning */
+  --color-accent: #22c55e;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-warning-dark: #92400e;
 
-  --color-bg-start: #f8fafc;        /* Gradient background start */
-  --color-bg-end: #e2e8f0;          /* Gradient background end */
+  --color-bg-start: #f8fafc;
+  --color-bg-end: #e2e8f0;
 
-  --color-text-primary: #1e293b;    /* Main text color */
-  --color-text-secondary: #64748b;  /* Secondary text */
-  --color-text-light: #94a3b8;      /* Light text */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-text-light: #94a3b8;
 
-  --color-border: #e2e8f0;          /* Border color */
-  --color-border-light: #d1d5db;    /* Light border */
+  --color-border: #e2e8f0;
+  --color-border-light: #d1d5db;
 
-  --color-surface: #ffffff;         /* Surface background */
-  --color-surface-light: #f8fafc;   /* Light surface background */
+  --color-surface: #ffffff;
+  --color-surface-light: #f8fafc;
 }
 
 /* Reset and base styles */
@@ -37,7 +36,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
   color: var(--color-text-primary);
   font-weight: 300;
@@ -46,10 +45,8 @@ body {
 
 /* =====================================================
    Layout Sections
-   Purpose: Page-level structural blocks (slides)
 ===================================================== */
 
-/* Generic slide container */
 .slide {
   min-height: 100vh;
   display: flex;
@@ -60,13 +57,11 @@ body {
   position: relative;
 }
 
-/* Slide Variant: Problem Presentation */
 .slide-problem {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
 }
 
-/* Slide Variant: Roadmap Presentation */
 .slide-roadmap {
   background: var(--color-surface);
   padding: 80px 40px;
@@ -74,7 +69,6 @@ body {
 
 /* =====================================================
    Client Info Components
-   Purpose: Blocks to display client-related info
 ===================================================== */
 
 .client-info {
@@ -84,7 +78,7 @@ body {
 }
 
 .client-badge {
-  background: rgba(34, 197, 94, 0.1); /* soft accent background */
+  background: rgba(34, 197, 94, 0.1);
   border: 1px solid rgba(34, 197, 94, 0.3);
   padding: 8px 16px;
   border-radius: 20px;
@@ -108,7 +102,6 @@ body {
 
 /* =====================================================
    Quote Block
-   Purpose: Stylized text block for quotes or highlights
 ===================================================== */
 
 .quote-block {
@@ -127,7 +120,6 @@ body {
 
 /* =====================================================
    Problem Description Components
-   Purpose: Sections describing issues or problem statements
 ===================================================== */
 
 .problem-reframe {
@@ -158,7 +150,6 @@ body {
 
 /* =====================================================
    Cost Card Grid and Items
-   Purpose: Display pricing or cost-related cards in grid layout
 ===================================================== */
 
 .cost-grid {
@@ -220,7 +211,6 @@ body {
 
 /* =====================================================
    Roadmap Components
-   Purpose: Timeline and step indicators for project roadmaps
 ===================================================== */
 
 .roadmap-title {
@@ -260,29 +250,12 @@ body {
   transform: translateX(-30px);
 }
 
-.step:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.step:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.step:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.step:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.step:nth-child(5) {
-  animation-delay: 1s;
-}
-
-.step:nth-child(6) {
-  animation-delay: 1.2s;
-}
+.step:nth-child(1) { animation-delay: 0.2s; }
+.step:nth-child(2) { animation-delay: 0.4s; }
+.step:nth-child(3) { animation-delay: 0.6s; }
+.step:nth-child(4) { animation-delay: 0.8s; }
+.step:nth-child(5) { animation-delay: 1s; }
+.step:nth-child(6) { animation-delay: 1.2s; }
 
 .step-marker {
   position: absolute;
@@ -332,534 +305,112 @@ body {
 }
 
 /* =====================================================
-   Artifact Base Style
-   Purpose: Base styles for all artifact components
+   Artifact Components (Realistic UI Elements)
 ===================================================== */
 
-  <style>
-    body {
-      background: #f8f9fa;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      padding: 20px;
-      line-height: 1.4;
-    }
+/* EMAIL (Gmail Style) */
+.artifact-email {
+  background: white;
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 11px;
+  max-width: 280px;
+}
+
+.email-header {
+  background: var(--color-surface-light);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.email-sender {
+  flex: 1;
+  font-size: 10px;
+}
+
+.sender-name {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.sender-email {
+  color: var(--color-text-secondary);
+}
+
+.email-time {
+  font-size: 9px;
+  color: var(--color-text-secondary);
+}
+
+.email-subject {
+  padding: 8px 12px 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.email-body {
+  padding: 4px 12px 12px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+/* SMS (iPhone Style) */
+.artifact-sms {
+  background: #000;
+  border-radius: 16px;
+  padding: 12px;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.sms-header {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sms-bubble {
+  background: #007aff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+  margin-right: 6px;
+  max-width: 180px;
+  font-size: 11px;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.sms-time {
+  text-align: right;
+  color: #8e8e93;
+  font-size: 9px;
+  margin-right: 8px;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .demo-section {
-      background: white;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .demo-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #1f2937;
-    }
-
-    /* ===== EMAIL (Gmail Style) ===== */
-    .artifact-email {
-      background: white;
-      border: 1px solid #dadce0;
-      border-radius: 6px;
-      overflow: hidden;
-      font-size: 11px;
-      max-width: 280px;
-    }
-
-    .email-header {
-      background: #f8f9fa;
-      padding: 8px 12px;
-      border-bottom: 1px solid #dadce0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .email-avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #1a73e8;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      font-size: 10px;
-    }
-
-    .email-sender {
-      flex: 1;
-      font-size: 10px;
-    }
-
-    .sender-name {
-      font-weight: 500;
-      color: #202124;
-    }
-
-    .sender-email {
-      color: #5f6368;
-    }
-
-    .email-time {
-      font-size: 9px;
-      color: #5f6368;
-    }
-
-    .email-subject {
-      padding: 8px 12px 4px;
-      font-size: 12px;
-      font-weight: 500;
-      color: #202124;
-    }
-
-    .email-body {
-      padding: 4px 12px 12px;
-      font-size: 10px;
-      line-height: 1.4;
-      color: #3c4043;
-    }
-
-    /* ===== SMS (iPhone Style) ===== */
-    .artifact-sms {
-      background: #000;
-      border-radius: 16px;
-      padding: 12px;
-      max-width: 220px;
-      margin: 0 auto;
-    }
-
-    .sms-header {
-      color: white;
-      font-size: 10px;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .sms-bubble {
-      background: #007aff;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 16px;
-      border-bottom-right-radius: 4px;
-      margin-left: auto;
-      margin-right: 6px;
-      max-width: 180px;
-      font-size: 11px;
-      line-height: 1.3;
-      margin-bottom: 2px;
-    }
-
-    .sms-time {
-      text-align: right;
-      color: #8e8e93;
-      font-size: 9px;
-      margin-right: 8px;
-    }
-
-    /* ===== WHATSAPP ===== */
-    .artifact-whatsapp {
-      background: #ece5dd;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 240px;
-      margin: 0 auto;
-    }
-
-    .whatsapp-bubble {
-      background: #dcf8c6;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 11px;
-      margin-bottom: 4px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .whatsapp-time {
-      font-size: 9px;
-      color: #667781;
-      text-align: right;
-    }
-
-    /* ===== NOTIFICATION (macOS Style) ===== */
-    .artifact-notification {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 8px;
-      padding: 10px;
-      max-width: 260px;
-      font-size: 11px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .notification-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .notification-app-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-      background: #007aff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 10px;
-    }
-
-    .notification-app-name {
-      font-size: 10px;
-      font-weight: 600;
-      color: #1d1d1f;
-      flex: 1;
-    }
-
-    .notification-time {
-      font-size: 9px;
-      color: #86868b;
-    }
-
-    .notification-title {
-      font-size: 11px;
-      font-weight: 600;
-      color: #1d1d1f;
-      margin-bottom: 2px;
-    }
-
-    .notification-body {
-      font-size: 10px;
-      color: #424245;
-      line-height: 1.3;
-    }
-
-    /* ===== DASHBOARD (SaaS Style) ===== */
-    .artifact-dashboard {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 280px;
-    }
-
-    .dashboard-header {
-      font-size: 12px;
-      font-weight: 600;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .metric-card {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .metric-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 2px;
-    }
-
-    .metric-label {
-      font-size: 9px;
-      color: #6b7280;
-    }
-
-    /* ===== FORM (Modern Style) ===== */
-    .artifact-form {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 280px;
-    }
-
-    .form-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-    .form-field {
-      margin-bottom: 8px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      color: #374151;
-      margin-bottom: 3px;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 6px 8px;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-      font-size: 10px;
-      box-sizing: border-box;
-    }
-
-    .form-button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    /* ===== WORKFLOW (n8n Style) ===== */
-    .artifact-workflow {
-      background: #fefefe;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      padding: 12px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      max-width: 280px;
-      overflow-x: auto;
-    }
-
-    .workflow-node {
-      background: #ffffff;
-      border: 1px solid #c5d4ea;
-      border-radius: 4px;
-      padding: 4px 8px;
-      min-width: 60px;
-      text-align: center;
-      font-size: 9px;
-      font-weight: 500;
-      color: #2a2a2a;
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .workflow-node::after {
-      content: "→";
-      position: absolute;
-      top: 50%;
-      right: -12px;
-      transform: translateY(-50%);
-      color: #bbb;
-      font-size: 10px;
-    }
-
-    .workflow-node:last-child::after {
-      content: none;
-    }
-
-    .node-icon {
-      font-size: 12px;
-      margin-bottom: 2px;
-    }
-
-    /* ===== PIPELINE ===== */
-    .artifact-pipeline {
-      background: #fffbe6;
-      border-radius: 8px;
-      padding: 12px;
-      display: flex;
-      gap: 8px;
-      max-width: 280px;
-    }
-
-    .pipeline-column {
-      background: #ffffff;
-      flex: 1;
-      border-radius: 6px;
-      padding: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .pipeline-title {
-      font-size: 10px;
-      font-weight: bold;
-      margin-bottom: 6px;
-      color: #374151;
-    }
-
-    .pipeline-card {
-      background: #f4f6f8;
-      border-radius: 4px;
-      padding: 4px 6px;
-      font-size: 9px;
-      margin-bottom: 4px;
-      color: #1f2937;
-    }
-
-    /* ===== CODE BLOCK ===== */
-    .artifact-code {
-      background: #1e1e1e;
-      color: #d4d4d4;
-      font-family: 'Courier New', monospace;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 10px;
-      max-width: 280px;
-      overflow-x: auto;
-    }
-
-    /* ===== API ===== */
-    .artifact-api {
-      background: #f8f9fa;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 12px;
-      font-family: monospace;
-      font-size: 10px;
-      max-width: 280px;
-    }
-
-    .api-method {
-      font-weight: bold;
-      color: #0b69ff;
-    }
-
-    .api-block {
-      background: #ffffff;
-      padding: 8px;
-      border-radius: 4px;
-      margin-top: 6px;
-      border: 1px solid #d1d5db;
-    }
-
-    /* ===== INTEGRATION ===== */
-    .artifact-integration {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      max-width: 280px;
-    }
-
-    .integration-tile {
-      background: #f1f3f5;
-      padding: 8px;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 9px;
-    }
-
-    .integration-tile span {
-      display: block;
-      margin-top: 4px;
-      color: #374151;
-    }
-
-    /* ===== SLACK CHAT ===== */
-    .artifact-slack {
-      background: #f8f9fa;
-      border: 1px solid #e1e5e9;
-      border-radius: 8px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 10px;
-      max-width: 280px;
-    }
-
-    .slack-msg {
-      display: flex;
-      gap: 6px;
-    }
-
-    .slack-avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 3px;
-      background: #4A154B;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 10px;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .slack-content {
-      background: #ffffff;
-      border-radius: 4px;
-      padding: 4px 8px;
-      flex: 1;
-    }
-
-    .slack-username {
-      font-weight: 600;
-      color: #1264a3;
-      font-size: 9px;
-      margin-bottom: 2px;
-    }
-
-    .slack-text {
-      color: #1d1c1d;
-      font-size: 9px;
-    }
-
-    /* ===== CHECKLIST ===== */
-    .artifact-checklist {
-      background: #fff0f0;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 280px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .check-box {
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-      border: 2px solid #db4c3f;
-      background: #fff;
-      flex-shrink: 0;
-    }
-
-    .check-label {
-      font-size: 10px;
-      color: #374151;
-    }
-  </style>
+/* Continue with other artifact styles... */
 
 /* =====================================================
    Keyframe Animations
