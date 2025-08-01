@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automated ICP Generator</title>
+  <link rel="stylesheet" href="layout.css" />
+  <style>
+    :root {
+      --brand-primary: #1e40af;
+      --brand-secondary: #8b5cf6;
+      --brand-accent: #059669;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>🎯 Автоматизируй создание ICP-профилей</h1>
+      <p class="hero-description">Быстро, точно и масштабируемо — генерация идеальных клиентских портретов для B2B-консультантов</p>
+      <div class="hero-actions">
+        <a href="#roadmap" class="btn btn-primary">Как это работает</a>
+        <a href="#artifacts" class="btn btn-secondary">Посмотреть в деле</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="client">
+    <div class="container-sm">
+      <h2 class="h2">Кому это нужно?</h2>
+      <p class="text-lg">Агентствам и консультантам, которые помогают B2B-компаниям определить их <strong>идеального клиента</strong>. Теперь — без рутинных интервью и текстовых редакторов.</p>
+    </div>
+  </section>
+
+  <section class="section bg-gray">
+    <div class="container-sm">
+      <h2 class="h2">Проблема</h2>
+      <p class="lead">Your client onboarding process forces consultants to manually interview and draft ICPs, costing hours of admin time and preventing business scale.</p>
+    </div>
+  </section>
+
+  <section class="section" id="pain">
+    <div class="container-sm">
+      <h2 class="h2">Боли, которые решаем</h2>
+      <ul class="grid grid-3">
+        <li class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <div class="feature-title">Time Losses</div>
+          <p class="feature-description">Уходит 4–6 часов на каждый ICP-документ.</p>
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon">💸</div>
+          <div class="feature-title">Money Losses</div>
+          <p class="feature-description">До $2,000 в месяц тратится на ручной труд младших специалистов.</p>
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon">📉</div>
+          <div class="feature-title">Efficiency Waste</div>
+          <p class="feature-description">Невозможно масштабироваться: каждый ICP = новая головная боль.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <div class="container">
+      <h2 class="h2 text-center">Пошаговая автоматизация</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 1: Чат-интерфейс</h3>
+            <p class="timeline-description">Собираем ответы от клиента в Typebot/Telegram или через встраиваемый виджет.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 2: Сохраняем данные в n8n</h3>
+            <p class="timeline-description">Ответы структурируются в JSON и сохраняются для генерации.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 3: Генерация ICP через GPT</h3>
+            <p class="timeline-description">На основе данных создаются 3–4 реалистичных профиля клиента.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 4: Обратная связь в чате</h3>
+            <p class="timeline-description">Пользователь может отредактировать или подтвердить профили.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 5: Шаблон Google Docs</h3>
+            <p class="timeline-description">Готовый файл с фирменным стилем создаётся автоматически.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Step 6: Отправка на email</h3>
+            <p class="timeline-description">Клиент получает профессиональный отчёт прямо на почту.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray" id="artifacts">
+    <div class="container">
+      <h2 class="h2 text-center">📎 Реалистичные артефакты</h2>
+      <p class="lead text-center mb-4">Каждый шаг подкреплён живым UI — всё выглядит как продакшн.</p>
+      <!-- Вставка артефактов -->
+      <iframe src="artifacts.html" style="width:100%; height:2000px; border:none; border-radius:12px;"></iframe>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-sm">
+      <h2 class="h2">💡 Метрики автоматизации</h2>
+      <ul class="grid grid-2">
+        <li class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">ICP Generation Speed</div>
+          <p class="feature-description">Время на клиента сокращено с 5 часов до 25 минут</p>
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon">📬</div>
+          <div class="feature-title">Automation ROI</div>
+          <p class="feature-description">Каждый проект экономит $350+ на подготовке.</p>
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <div class="feature-title">n8n Reliability</div>
+          <p class="feature-description">Стабильность 99.8% по логам за последний месяц.</p>
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon">📄</div>
+          <div class="feature-title">Docs Delivery</div>
+          <p class="feature-description">94% успешных отправок через Gmail API.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-sm text-center">
+    <p class="lead">⏳ Готов автоматизировать свой ICP-процесс? За 3–5 дней ты соберёшь мощный MVP!</p>
+    <a href="#" class="btn btn-accent btn-lg mt-3">Начать проект</a>
+  </section>
+</body>
+</html>
