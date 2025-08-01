@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- SLIDE 1: PROBLEM & OPPORTUNITY COST -->
-    <div class="slide slide-1">
+    <div class="slide slide-problem">
         <div class="client-info">
             <div class="client-badge">🦷 Dental Automation Specialist</div>
             <div class="client-title">White-Label GHL Automation for Dental Practices</div>
@@ -62,7 +62,7 @@
     </div>
 
     <!-- SLIDE 2: SOLUTION ROADMAP -->
-    <div class="slide slide-2">
+    <div class="slide slide-roadmap">
         <div class="roadmap-title">How will I solve it:</div>
         
         <div style="text-align: center; font-size: 2rem; font-weight: 600; margin-bottom: 40px; color: var(--primary-color);">
@@ -78,21 +78,12 @@
                     <div class="step-title">Intake → Workspace Setup</div>
                     <div class="step-desc">Client Onboarding Form → Google Sheet → GHL Sub-Account Template</div>
                     <div class="artifact">
-                        <div class="artifact-form">
-                            <div class="form-title">Client Intake Form</div>
-                            <div class="form-field">
-                                <label class="form-label">Business Name</label>
-                                <input type="text" class="form-input" value="SmileRight Dental" readonly>
-                            </div>
-                            <div class="form-field">
-                                <label class="form-label">Office Hours</label>
-                                <input type="text" class="form-input" value="Mon–Fri, 8am–6pm" readonly>
-                            </div>
-                            <div class="form-field">
-                                <label class="form-label">Services</label>
-                                <input type="text" class="form-input" value="Cleanings, Fillings, Emergency" readonly>
-                            </div>
-                            <button class="form-button">Generate GHL Workspace</button>
+                        <div class="airtable-schema">
+                            <div class="table-name">📋 Client Intake Mapping</div>
+                            <div class="table-fields">• Business Name: "SmileRight Dental"</div>
+                            <div class="table-fields">• Office Hours: Mon–Fri, 8am–6pm</div>
+                            <div class="table-fields">• Services: Cleanings, Fillings, Emergency</div>
+                            <div class="table-fields">• FAQs: "What insurance do you accept?" etc.</div>
                         </div>
                         <div class="platform-badge">Google Forms + Sheets API</div>
                     </div>
@@ -105,14 +96,12 @@
                     <div class="step-title">Chatbot Setup</div>
                     <div class="step-desc">FAQs → Chatbase AI Bot → GHL Website Widget</div>
                     <div class="artifact">
-                        <div class="artifact-whatsapp">
-                            <div class="whatsapp-bubble">
-                                <strong>Patient:</strong> "Do you accept emergencies?"
-                            </div>
-                            <div class="whatsapp-bubble" style="background: #dcf8c6; margin-left: auto; margin-right: 0;">
-                                <strong>SmileRight Bot:</strong> "Yes, we handle dental emergencies! Call us at (555) 234-5678 or book directly here: [booking link]"
-                            </div>
-                            <div class="whatsapp-time">Now</div>
+                        <div class="form-preview">
+                            <div style="font-weight: 600; color: #059669; margin-bottom: 6px; font-size: 0.7rem;">🤖 Chatbot Responses</div>
+                            <div class="form-field">Q: "Do you accept emergencies?"</div>
+                            <div class="form-field">A: "Yes, SmileRight Dental handles emergencies. Call (555) 234-5678"</div>
+                            <div class="form-field">Q: "How do I book?"</div>
+                            <div class="form-field">A: "Book online here: [calendar link]"</div>
                         </div>
                         <div class="platform-badge">Chatbase + GHL Widget</div>
                     </div>
