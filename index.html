@@ -1,679 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>n8n Sales Funnel Automation Expert - Leonid</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        @media print {
-            * {
-                print-color-adjust: exact !important;
-                -webkit-print-color-adjust: exact !important;
-            }
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8fafc;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" fill-opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Problem Section */
-        .problem {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #2d3748;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-left: 5px solid #e53e3e;
-        }
-
-        .problem-card h3 {
-            color: #e53e3e;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .loss-percentage {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #e53e3e;
-            margin-bottom: 5px;
-        }
-
-        /* Solution Section */
-        .solution {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        }
-
-        .solution-steps {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .step {
-            background: white;
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid #3182ce;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            position: relative;
-        }
-
-        .step-number {
-            background: #3182ce;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .step:not(:last-child)::after {
-            content: '↓';
-            position: absolute;
-            bottom: -25px;
-            left: 42px;
-            color: #3182ce;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* Visual Examples */
-        .visual-example {
-            margin-top: 15px;
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border: 2px dashed #e2e8f0;
-        }
-
-        .n8n-workflow {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 10px 0;
-        }
-
-        .workflow-node {
-            background: #fff;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 15px;
-            min-width: 120px;
-            text-align: center;
-            position: relative;
-            font-size: 0.85rem;
-        }
-
-        .workflow-node.trigger {
-            border-color: #48bb78;
-            background: #f0fff4;
-        }
-
-        .workflow-node.action {
-            border-color: #3182ce;
-            background: #ebf4ff;
-        }
-
-        .workflow-node.condition {
-            border-color: #ed8936;
-            background: #fffaf0;
-        }
-
-        .node-icon {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .node-title {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 4px;
-        }
-
-        .node-desc {
-            color: #4a5568;
-            font-size: 0.75rem;
-        }
-
-        .workflow-arrow {
-            color: #3182ce;
-            font-size: 1.2rem;
-        }
-
-        .lead-scoring {
-            background: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .scoring-header {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .scoring-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid #f7fafc;
-        }
-
-        .scoring-item:last-child {
-            border-bottom: none;
-        }
-
-        .score-value {
-            font-weight: 600;
-            color: #48bb78;
-        }
-
-        .final-score {
-            background: #f0fff4;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-top: 10px;
-            text-align: center;
-            font-weight: 600;
-            color: #2d3748;
-        }
-
-        .automation-dashboard {
-            background: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .dashboard-header {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .metric-item {
-            background: #f7fafc;
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #3182ce;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: #4a5568;
-            margin-top: 2px;
-        }
-
-        /* Deliverables Section */
-        .deliverables {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-        }
-
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .deliverable-item {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .check-icon {
-            color: #48bb78;
-            font-size: 1.5rem;
-            margin-top: 2px;
-        }
-
-        /* About Section */
-        .about {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .about-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ffd700;
-            margin-bottom: 5px;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            animation: pulse 2s infinite;
-        }
-
-        .cta h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .problem, .solution, .deliverables, .about, .cta {
-                padding: 30px 20px;
-            }
-
-            .n8n-workflow {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .workflow-arrow {
-                transform: rotate(90deg);
-            }
-
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>You Found Me 👀</title>
+   <link rel="stylesheet" href="https://LeonidSvb.github.io/upwork-proposal1/styles.css">
+   <style>
+       :root {
+           --primary-color: #0a0a0a;
+           --primary-light: #1a1a1a;
+           --primary-lighter: #00ff88;
+           --primary-lightest: #e0e0e0;
+           --accent-color: #ff6b6b;
+       }
+       body {
+           background: #0a0a0a;
+           color: #e0e0e0;
+       }
+   </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>🔧 n8n Sales Funnel Automation Expert</h1>
-                <p>Advanced workflow automation for lead generation and conversion optimization</p>
-            </div>
-        </section>
+   <div class="slide">
+       <h1 style="color: #00ff88; font-size: 2.5rem;">Well, hello there 👋</h1>
+       
+       <p>If you're here, you're probably either:</p>
+       <ul>
+           <li>🕵️ Doing some detective work on who built your latest project</li>
+           <li>🤔 Wondering if I'm actually as good as I claim to be</li>
+           <li>😴 Bored and clicking random links (no judgment)</li>
+           <li>🎯 Looking for someone who can actually deliver what they promise</li>
+       </ul>
+       
+       <h2 style="color: #ff6b6b;">Plot twist: You found the right person</h2>
+       
+       <p>I'm <strong>that guy</strong> who builds automation systems that actually work and delivers projects that make clients say <em>"Holy shit, this is exactly what I needed."</em></p>
+       
+       <blockquote style="border-left: 4px solid #00ff88; padding-left: 20px; color: #bbb;">
+           <p>"I don't just build solutions. I build solutions that make you money while you sleep."</p>
+       </blockquote>
+       
+       <div style="display: flex; gap: 40px; margin: 30px 0; flex-wrap: wrap;">
+           <div style="text-align: center;">
+               <div style="font-size: 2rem; color: #00ff88; font-weight: bold;">200+</div>
+               <div>Hours Saved Weekly</div>
+               <small>Across all client projects</small>
+           </div>
+           <div style="text-align: center;">
+               <div style="font-size: 2rem; color: #00ff88; font-weight: bold;">$2M+</div>
+               <div>Revenue Generated</div>
+               <small>Through automation systems</small>
+           </div>
+           <div style="text-align: center;">
+               <div style="font-size: 2rem; color: #00ff88; font-weight: bold;">0</div>
+               <div>Projects Failed</div>
+               <small>Because I actually know what I'm doing</small>
+           </div>
+       </div>
+       
+       <h2 style="color: #ff6b6b;">What I Actually Do</h2>
+       <p>While others talk, I build:</p>
+       <ul>
+           <li><strong>AI Automation Pipelines</strong> that turn your data chaos into executive insights</li>
+           <li><strong>Business Systems</strong> that handle everything while you focus on growth</li>
+           <li><strong>Custom Dashboards</strong> that show you exactly what's making (or losing) money</li>
+           <li><strong>Integration Solutions</strong> between systems that were never meant to talk to each other</li>
+       </ul>
+       
+       <h2 style="color: #ff6b6b;">The Real Question Is...</h2>
+       <p>Are you tired of paying for "solutions" that create more problems? Ready for something that actually works?</p>
+       
+       <p>Each project in this repository represents <strong>real results</strong> for real businesses. No fluff, no overnight success stories, just systems that deliver consistent value.</p>
+       
+       <blockquote style="border-left: 4px solid #00ff88; padding-left: 20px; color: #bbb;">
+           <p>Pro tip: If you're still reading this, you probably need help with automation. Good news - you're in the right place.</p>
+       </blockquote>
+       
+       <hr style="border: 1px solid #333; margin: 40px 0;">
+       
+       <p><strong>Bottom line:</strong> I build systems that make you money. Everything else is just details.</p>
+       
+       <p><small style="color: #666;">P.S. - If you made it this far, you're probably the type of client I actually want to work with. 🎯</small></p>
+   </div>
 
-        <!-- Problem Section -->
-        <section class="problem">
-            <h2 class="section-title">❌ Manual Sales Processes Are Revenue Killers</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>📉 Lead Leakage</h3>
-                    <div class="loss-percentage">40-50%</div>
-                    <p>Potential customers lost due to slow manual follow-up and disconnected tools</p>
-                </div>
-                <div class="problem-card">
-                    <h3>⏰ Sales Team Inefficiency</h3>
-                    <div class="loss-percentage">60%</div>
-                    <p>Time wasted on data entry and manual lead routing instead of selling</p>
-                </div>
-                <div class="problem-card">
-                    <h3>💸 Conversion Loss</h3>
-                    <div class="loss-percentage">3x Lower</div>
-                    <p>Conversion rates suffer without automated nurturing and lead scoring</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution Section -->
-        <section class="solution">
-            <h2 class="section-title">✅ My n8n Automation Framework</h2>
-            <div class="solution-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div>
-                        <h3>Lead Capture & Routing Automation</h3>
-                        <p>Multi-source lead collection with intelligent routing based on criteria and lead scoring</p>
-                        <div class="visual-example">
-                            <div class="n8n-workflow">
-                                <div class="workflow-node trigger">
-                                    <div class="node-icon">🌐</div>
-                                    <div class="node-title">Webhook</div>
-                                    <div class="node-desc">Form Submit</div>
-                                </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-node condition">
-                                    <div class="node-icon">🎯</div>
-                                    <div class="node-title">Lead Score</div>
-                                    <div class="node-desc">Auto Calculate</div>
-                                </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-node action">
-                                    <div class="node-icon">👤</div>
-                                    <div class="node-title">CRM Create</div>
-                                    <div class="node-desc">Add Contact</div>
-                                </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-node action">
-                                    <div class="node-icon">📧</div>
-                                    <div class="node-title">Email Send</div>
-                                    <div class="node-desc">Welcome Series</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div>
-                        <h3>Intelligent Lead Scoring & Qualification</h3>
-                        <p>Automated lead scoring based on behavior, demographics, and engagement metrics</p>
-                        <div class="visual-example">
-                            <div class="lead-scoring">
-                                <div class="scoring-header">🎯 Lead Score Calculation</div>
-                                <div class="scoring-item">
-                                    <span>Company Size (500+ employees)</span>
-                                    <span class="score-value">+25</span>
-                                </div>
-                                <div class="scoring-item">
-                                    <span>Email Opened (3x this week)</span>
-                                    <span class="score-value">+15</span>
-                                </div>
-                                <div class="scoring-item">
-                                    <span>Pricing Page Visited</span>
-                                    <span class="score-value">+20</span>
-                                </div>
-                                <div class="scoring-item">
-                                    <span>Downloaded Whitepaper</span>
-                                    <span class="score-value">+10</span>
-                                </div>
-                                <div class="final-score">Total Score: 70/100 (Hot Lead 🔥)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div>
-                        <h3>Multi-Channel Nurturing Sequences</h3>
-                        <p>Automated email, SMS, and social media campaigns triggered by lead behavior and stage</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div>
-                        <h3>Sales Team Notifications & Handoff</h3>
-                        <p>Real-time alerts to sales reps with lead context and recommended next actions</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div>
-                        <h3>Performance Analytics & Optimization</h3>
-                        <p>Automated reporting on funnel metrics with continuous workflow optimization</p>
-                        <div class="visual-example">
-                            <div class="automation-dashboard">
-                                <div class="dashboard-header">📊 Sales Funnel Analytics</div>
-                                <div class="metrics-grid">
-                                    <div class="metric-item">
-                                        <div class="metric-value">347</div>
-                                        <div class="metric-label">Leads This Month</div>
-                                    </div>
-                                    <div class="metric-item">
-                                        <div class="metric-value">23%</div>
-                                        <div class="metric-label">Conversion Rate</div>
-                                    </div>
-                                    <div class="metric-item">
-                                        <div class="metric-value">2.3x</div>
-                                        <div class="metric-label">Response Speed</div>
-                                    </div>
-                                    <div class="metric-item">
-                                        <div class="metric-value">$847K</div>
-                                        <div class="metric-label">Pipeline Value</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deliverables Section -->
-        <section class="deliverables">
-            <h2 class="section-title">📋 What You'll Receive</h2>
-            <div class="deliverables-grid">
-                <div class="deliverable-item">
-                    <span class="check-icon">✅</span>
-                    <div>
-                        <h3>Complete n8n Workflow Suite</h3>
-                        <p>Fully automated sales funnel with lead capture, scoring, nurturing, and conversion tracking</p>
-                    </div>
-                </div>
-                <div class="deliverable-item">
-                    <span class="check-icon">✅</span>
-                    <div>
-                        <h3>Multi-Tool Integration Hub</h3>
-                        <p>Seamless connections between CRM, email platforms, forms, analytics, and communication tools</p>
-                    </div>
-                </div>
-                <div class="deliverable-item">
-                    <span class="check-icon">✅</span>
-                    <div>
-                        <h3>Advanced Lead Scoring Engine</h3>
-                        <p>Intelligent qualification system that prioritizes high-value prospects automatically</p>
-                    </div>
-                </div>
-                <div class="deliverable-item">
-                    <span class="check-icon">✅</span>
-                    <div>
-                        <h3>Performance Dashboard & Training</h3>
-                        <p>Real-time analytics dashboard plus comprehensive team training and documentation</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about">
-            <div class="about-content">
-                <h2 class="section-title">👨‍💻 About Leonid</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 30px;">7+ years building high-converting sales automation systems and workflow optimization</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">$75K/month</div>
-                        <p>Generated for financial company through automated lead management workflows</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">$25K+ Revenue</div>
-                        <p>DTC brand sales funnel optimization with conversion automation</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2x Growth</div>
-                        <p>Real estate agency expansion via streamlined lead-to-client automation</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1,500+ Leads</div>
-                        <p>AI-chatbot integration generating qualified prospects automatically</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta">
-            <div class="cta-content">
-                <h2>🚀 Let's Start Building</h2>
-                <p>Ready to automate your sales funnel and scale faster?</p>
-                <p style="font-weight: 600; margin-top: 15px;">I'm available to start immediately</p>
-            </div>
-        </section>
-    </div>
+   <script src="https://LeonidSvb.github.io/upwork-proposal1/premium.js"></script>
 </body>
 </html>
