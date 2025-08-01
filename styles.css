@@ -1,407 +1,897 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* CSS Variables for customizable colors */
+/* =====================================================
+   Global CSS Variables (Colors, Typography, etc.)
+   Purpose: Centralized color palette and font settings
+===================================================== */
 :root {
-    --primary-color: #1e40af;
-    --primary-light: #2563eb;
-    --primary-lighter: #60a5fa;
-    --primary-lightest: #93c5fd;
-    --accent-color: #22c55e;
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
-    --warning-light: #fef3c7;
-    --warning-dark: #92400e;
-    --background-start: #f8fafc;
-    --background-end: #e2e8f0;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-light: #94a3b8;
-    --border-color: #e2e8f0;
-    --border-light: #d1d5db;
-    --surface: #ffffff;
-    --surface-light: #f8fafc;
+  --color-primary: #1e40af;         /* Main primary color */
+  --color-primary-light: #2563eb;   /* Lighter primary */
+  --color-primary-lighter: #60a5fa; /* Even lighter primary */
+  --color-primary-lightest: #93c5fd;/* Lightest primary */
+  
+  --color-accent: #22c55e;          /* Accent/Highlight color */
+  --color-success: #10b981;         /* Success messages */
+  --color-warning: #f59e0b;         /* Warning messages */
+  --color-warning-light: #fef3c7;   /* Light warning background */
+  --color-warning-dark: #92400e;    /* Dark warning */
+
+  --color-bg-start: #f8fafc;        /* Gradient background start */
+  --color-bg-end: #e2e8f0;          /* Gradient background end */
+
+  --color-text-primary: #1e293b;    /* Main text color */
+  --color-text-secondary: #64748b;  /* Secondary text */
+  --color-text-light: #94a3b8;      /* Light text */
+
+  --color-border: #e2e8f0;          /* Border color */
+  --color-border-light: #d1d5db;    /* Light border */
+
+  --color-surface: #ffffff;         /* Surface background */
+  --color-surface-light: #f8fafc;   /* Light surface background */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
-    color: var(--text-primary);
-    font-weight: 300;
-    overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  color: var(--color-text-primary);
+  font-weight: 300;
+  overflow-x: hidden;
 }
 
+/* =====================================================
+   Layout Sections
+   Purpose: Page-level structural blocks (slides)
+===================================================== */
+
+/* Generic slide container */
 .slide {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 40px;
-    position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  position: relative;
 }
 
-/* SLIDE 1 - PROBLEM */
-.slide-1 {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    color: white;
+/* Slide Variant: Problem Presentation */
+.slide-problem {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
 }
+
+/* Slide Variant: Roadmap Presentation */
+.slide-roadmap {
+  background: var(--color-surface);
+  padding: 80px 40px;
+}
+
+/* =====================================================
+   Client Info Components
+   Purpose: Blocks to display client-related info
+===================================================== */
 
 .client-info {
-    margin-bottom: 40px;
-    text-align: center;
-    animation: slideUp 0.6s ease;
+  margin-bottom: 40px;
+  text-align: center;
+  animation: slideUp 0.6s ease;
 }
 
 .client-badge {
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    margin-bottom: 8px;
-    display: inline-block;
+  background: rgba(34, 197, 94, 0.1); /* soft accent background */
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  display: inline-block;
 }
 
 .client-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .client-details {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    font-weight: 300;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 300;
 }
+
+/* =====================================================
+   Quote Block
+   Purpose: Stylized text block for quotes or highlights
+===================================================== */
 
 .quote-block {
-    background: rgba(255,255,255,0.08);
-    padding: 24px 32px;
-    border-radius: 12px;
-    border-left: 4px solid var(--primary-lighter);
-    margin-bottom: 24px;
-    font-family: 'SF Mono', monospace;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    backdrop-filter: blur(20px);
-    max-width: 850px;
-    animation: slideUp 0.8s ease;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px 32px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-primary-lighter);
+  margin-bottom: 24px;
+  font-family: 'SF Mono', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  backdrop-filter: blur(20px);
+  max-width: 850px;
+  animation: slideUp 0.8s ease;
 }
 
+/* =====================================================
+   Problem Description Components
+   Purpose: Sections describing issues or problem statements
+===================================================== */
+
 .problem-reframe {
-    background: rgba(255,255,255,0.05);
-    padding: 32px;
-    border-radius: 16px;
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-    max-width: 900px;
-    margin-bottom: 40px;
-    animation: slideUp 1s ease;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 16px;
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 40px;
+  animation: slideUp 1s ease;
 }
 
 .problem-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: var(--primary-lightest);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-primary-lightest);
 }
 
 .problem-text {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 32px;
-    opacity: 0.9;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  opacity: 0.9;
 }
 
+/* =====================================================
+   Cost Card Grid and Items
+   Purpose: Display pricing or cost-related cards in grid layout
+===================================================== */
+
 .cost-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 800px;
-    animation: slideUp 1.2s ease;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  animation: slideUp 1.2s ease;
 }
 
 .cost-card {
-    background: rgba(255,255,255,0.1);
-    padding: 24px;
-    border-radius: 12px;
-    text-align: center;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .cost-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-lighter), transparent);
-    animation: shimmer 2s infinite;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-lighter), transparent);
+  animation: shimmer 2s infinite;
 }
 
-.cost-card:hover { transform: translateY(-4px); }
+.cost-card:hover {
+  transform: translateY(-4px);
+}
 
 .cost-value {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, var(--primary-lightest), var(--primary-lighter));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--color-primary-lightest), var(--color-primary-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cost-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 4px;
-    opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  opacity: 0.9;
 }
 
 .cost-desc {
-    font-size: 0.75rem;
-    opacity: 0.7;
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
-/* SLIDE 2 - ROADMAP */
-.slide-2 {
-    background: var(--surface);
-    padding: 80px 40px;
-}
+/* =====================================================
+   Roadmap Components
+   Purpose: Timeline and step indicators for project roadmaps
+===================================================== */
 
 .roadmap-title {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .roadmap-container {
-    max-width: 650px;
-    margin: 0 auto;
-    position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .roadmap-line {
-    position: absolute;
-    left: 30px;
-    top: 60px;
-    bottom: 60px;
-    width: 3px;
-    background: linear-gradient(180deg, var(--primary-color), var(--primary-light), var(--primary-lighter));
-    border-radius: 2px;
-    z-index: 1;
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  bottom: 60px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-light), var(--color-primary-lighter));
+  border-radius: 2px;
+  z-index: 1;
 }
 
 .step {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 80px;
-    animation: roadmapStep 0.8s ease forwards;
-    opacity: 0;
-    transform: translateX(-30px);
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 80px;
+  animation: roadmapStep 0.8s ease forwards;
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
-.step:nth-child(1) { animation-delay: 0.2s; }
-.step:nth-child(2) { animation-delay: 0.4s; }
-.step:nth-child(3) { animation-delay: 0.6s; }
-.step:nth-child(4) { animation-delay: 0.8s; }
-.step:nth-child(5) { animation-delay: 1s; }
-.step:nth-child(6) { animation-delay: 1.2s; }
+.step:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.step:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.step:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.step:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.step:nth-child(6) {
+  animation-delay: 1.2s;
+}
 
 .step-marker {
-    position: absolute;
-    left: -50px;
-    top: 8px;
-    width: 24px;
-    height: 24px;
-    background: var(--primary-light);
-    border: 4px solid var(--surface);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #dbeafe;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: white;
+  position: absolute;
+  left: -50px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary-light);
+  border: 4px solid var(--color-surface);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #dbeafe;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
 }
 
 .step-content {
-    background: var(--surface);
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
-    border: 1px solid #dbeafe;
-    transition: all 0.3s ease;
+  background: var(--color-surface);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+  border: 1px solid #dbeafe;
+  transition: all 0.3s ease;
 }
 
 .step-content:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
 }
 
 .step-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-primary);
 }
 
 .step-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-    line-height: 1.5;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
 
-.artifact {
-    background: var(--surface-light);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 0.75rem;
-}
+/* =====================================================
+   Artifact Base Style
+   Purpose: Base styles for all artifact components
+===================================================== */
 
-.airtable-schema {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 10px;
-    font-family: 'SF Mono', monospace;
-}
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 20px;
+      line-height: 1.4;
+    }
 
-.table-name {
-    font-weight: 600;
-    color: var(--primary-light);
-    margin-bottom: 4px;
-    font-size: 0.7rem;
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-.table-fields {
-    font-size: 0.6rem;
-    color: var(--text-secondary);
-    margin-left: 8px;
-}
+    .demo-section {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
 
-.form-preview {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 8px;
-    text-align: center;
-}
+    .demo-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
 
-.form-field {
-    background: var(--surface-light);
-    border: 1px solid var(--border-light);
-    border-radius: 4px;
-    padding: 4px 6px;
-    margin: 3px 0;
-    font-size: 0.65rem;
-}
+    /* ===== EMAIL (Gmail Style) ===== */
+    .artifact-email {
+      background: white;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 11px;
+      max-width: 280px;
+    }
 
-.automation-flow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.65rem;
-}
+    .email-header {
+      background: #f8f9fa;
+      padding: 8px 12px;
+      border-bottom: 1px solid #dadce0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.flow-box {
-    background: var(--primary-light);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: 500;
-}
+    .email-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1a73e8;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 10px;
+    }
 
-.flow-arrow {
-    color: var(--text-light);
-    font-size: 0.8rem;
-}
+    .email-sender {
+      flex: 1;
+      font-size: 10px;
+    }
 
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    font-size: 0.65rem;
-}
+    .sender-name {
+      font-weight: 500;
+      color: #202124;
+    }
 
-.dashboard-item {
-    background: #eff6ff;
-    padding: 6px;
-    border-radius: 4px;
-    text-align: center;
-    color: var(--primary-color);
-    font-weight: 500;
-}
+    .sender-email {
+      color: #5f6368;
+    }
 
-.gamification-stats {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 8px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    font-size: 0.65rem;
-}
+    .email-time {
+      font-size: 9px;
+      color: #5f6368;
+    }
 
-.stat-box {
-    background: var(--surface-light);
-    padding: 6px;
-    border-radius: 4px;
-    text-align: center;
-}
+    .email-subject {
+      padding: 8px 12px 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #202124;
+    }
 
-.stat-value {
-    font-weight: 600;
-    color: var(--primary-light);
-    font-size: 0.7rem;
-}
+    .email-body {
+      padding: 4px 12px 12px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #3c4043;
+    }
 
-.platform-badge {
-    background: var(--primary-light);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.6rem;
-    font-weight: 500;
-    margin-top: 4px;
-    display: inline-block;
-}
+    /* ===== SMS (iPhone Style) ===== */
+    .artifact-sms {
+      background: #000;
+      border-radius: 16px;
+      padding: 12px;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .sms-header {
+      color: white;
+      font-size: 10px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .sms-bubble {
+      background: #007aff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 16px;
+      border-bottom-right-radius: 4px;
+      margin-left: auto;
+      margin-right: 6px;
+      max-width: 180px;
+      font-size: 11px;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .sms-time {
+      text-align: right;
+      color: #8e8e93;
+      font-size: 9px;
+      margin-right: 8px;
+    }
+
+    /* ===== WHATSAPP ===== */
+    .artifact-whatsapp {
+      background: #ece5dd;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    .whatsapp-bubble {
+      background: #dcf8c6;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-time {
+      font-size: 9px;
+      color: #667781;
+      text-align: right;
+    }
+
+    /* ===== NOTIFICATION (macOS Style) ===== */
+    .artifact-notification {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+      max-width: 260px;
+      font-size: 11px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .notification-app-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: #007aff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+    }
+
+    .notification-app-name {
+      font-size: 10px;
+      font-weight: 600;
+      color: #1d1d1f;
+      flex: 1;
+    }
+
+    .notification-time {
+      font-size: 9px;
+      color: #86868b;
+    }
+
+    .notification-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 2px;
+    }
+
+    .notification-body {
+      font-size: 10px;
+      color: #424245;
+      line-height: 1.3;
+    }
+
+    /* ===== DASHBOARD (SaaS Style) ===== */
+    .artifact-dashboard {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .dashboard-header {
+      font-size: 12px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .metric-label {
+      font-size: 9px;
+      color: #6b7280;
+    }
+
+    /* ===== FORM (Modern Style) ===== */
+    .artifact-form {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .form-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .form-field {
+      margin-bottom: 8px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 3px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 10px;
+      box-sizing: border-box;
+    }
+
+    .form-button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* ===== WORKFLOW (n8n Style) ===== */
+    .artifact-workflow {
+      background: #fefefe;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      max-width: 280px;
+      overflow-x: auto;
+    }
+
+    .workflow-node {
+      background: #ffffff;
+      border: 1px solid #c5d4ea;
+      border-radius: 4px;
+      padding: 4px 8px;
+      min-width: 60px;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 500;
+      color: #2a2a2a;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .workflow-node::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      transform: translateY(-50%);
+      color: #bbb;
+      font-size: 10px;
+    }
+
+    .workflow-node:last-child::after {
+      content: none;
+    }
+
+    .node-icon {
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    /* ===== PIPELINE ===== */
+    .artifact-pipeline {
+      background: #fffbe6;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      max-width: 280px;
+    }
+
+    .pipeline-column {
+      background: #ffffff;
+      flex: 1;
+      border-radius: 6px;
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .pipeline-title {
+      font-size: 10px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    .pipeline-card {
+      background: #f4f6f8;
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 9px;
+      margin-bottom: 4px;
+      color: #1f2937;
+    }
+
+    /* ===== CODE BLOCK ===== */
+    .artifact-code {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'Courier New', monospace;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 10px;
+      max-width: 280px;
+      overflow-x: auto;
+    }
+
+    /* ===== API ===== */
+    .artifact-api {
+      background: #f8f9fa;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 10px;
+      max-width: 280px;
+    }
+
+    .api-method {
+      font-weight: bold;
+      color: #0b69ff;
+    }
+
+    .api-block {
+      background: #ffffff;
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    /* ===== INTEGRATION ===== */
+    .artifact-integration {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 280px;
+    }
+
+    .integration-tile {
+      background: #f1f3f5;
+      padding: 8px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 9px;
+    }
+
+    .integration-tile span {
+      display: block;
+      margin-top: 4px;
+      color: #374151;
+    }
+
+    /* ===== SLACK CHAT ===== */
+    .artifact-slack {
+      background: #f8f9fa;
+      border: 1px solid #e1e5e9;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 10px;
+      max-width: 280px;
+    }
+
+    .slack-msg {
+      display: flex;
+      gap: 6px;
+    }
+
+    .slack-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 3px;
+      background: #4A154B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .slack-content {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 4px 8px;
+      flex: 1;
+    }
+
+    .slack-username {
+      font-weight: 600;
+      color: #1264a3;
+      font-size: 9px;
+      margin-bottom: 2px;
+    }
+
+    .slack-text {
+      color: #1d1c1d;
+      font-size: 9px;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .artifact-checklist {
+      background: #fff0f0;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .check-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      border: 2px solid #db4c3f;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .check-label {
+      font-size: 10px;
+      color: #374151;
+    }
+  </style>
+
+/* =====================================================
+   Keyframe Animations
+===================================================== */
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes roadmapStep {
-    to { opacity: 1; transform: translateX(0); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes shimmer {
-    0% { left: -100%; }
-    50%, 100% { left: 100%; }
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
 }
 
+/* =====================================================
+   Responsive Styles
+===================================================== */
+
 @media (max-width: 768px) {
-    .cost-grid { grid-template-columns: 1fr; gap: 16px; }
-    .roadmap-title { font-size: 2.2rem; }
-    .quote-block { font-size: 0.95rem; padding: 20px; }
+  .cost-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .roadmap-title {
+    font-size: 2.2rem;
+  }
+  .quote-block {
+    font-size: 0.95rem;
+    padding: 20px;
+  }
 }
