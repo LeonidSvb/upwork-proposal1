@@ -52,8 +52,8 @@ class ScrollAnimations {
     // Main scroll observer
     setupScrollObserver() {
         const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -83,36 +83,40 @@ class ScrollAnimations {
                         cards.forEach((card, index) => {
                             setTimeout(() => {
                                 card.style.opacity = '1';
-                                card.style.transform = 'translateY(0) scale(1)';
+                                card.style.transform = 'translateY(0)';
                                 // Start counter animation
                                 this.animateCounter(card);
-                            }, index * 300 + 600); // Stagger with delay
+                            }, index * 200 + 300);
                         });
-                    }
-                    
-                    // Roadmap steps
-                    if (element.classList.contains('step')) {
-                        const allSteps = document.querySelectorAll('.step');
-                        const currentIndex = Array.from(allSteps).indexOf(element);
-                        
-                        // Animate this step and all previous ones
-                        for (let i = 0; i <= currentIndex; i++) {
-                            const step = allSteps[i];
-                            if (step.style.opacity === '0') {
-                                setTimeout(() => {
-                                    step.style.opacity = '1';
-                                    step.style.transform = 'translateX(0)';
-                                }, i * 200);
-                            }
-                        }
                     }
                 }
             });
         }, observerOptions);
 
-        // Observe all animatable elements
-        document.querySelectorAll('.quote-block, .problem-reframe, .cost-grid, .step').forEach(el => {
+        // Separate observer for roadmap steps
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const step = entry.target;
+                    setTimeout(() => {
+                        step.style.opacity = '1';
+                        step.style.transform = 'translateX(0)';
+                    }, 200);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Observe all animatable elements except steps
+        document.querySelectorAll('.quote-block, .problem-reframe, .cost-grid').forEach(el => {
             observer.observe(el);
+        });
+
+        // Observe steps separately
+        document.querySelectorAll('.step').forEach(step => {
+            stepObserver.observe(step);
         });
     }
 
@@ -158,14 +162,12 @@ class ScrollAnimations {
         // Add hover effects for steps (keep the nice interactions)
         document.querySelectorAll('.step-content').forEach(step => {
             step.addEventListener('mouseenter', () => {
-                if (step.closest('.step').style.opacity === '1') {
-                    step.style.transform = 'translateY(-4px) scale(1.02)';
-                    step.style.boxShadow = '0 12px 40px rgba(37, 99, 235, 0.15)';
-                }
+                step.style.transform = 'translateY(-4px)';
+                step.style.boxShadow = '0 12px 40px rgba(37, 99, 235, 0.15)';
             });
 
             step.addEventListener('mouseleave', () => {
-                step.style.transform = 'translateY(0) scale(1)';
+                step.style.transform = 'translateY(0)';
                 step.style.boxShadow = '0 4px 24px rgba(37, 99, 235, 0.08)';
             });
         });
@@ -173,15 +175,11 @@ class ScrollAnimations {
         // Add subtle hover for cost cards
         document.querySelectorAll('.cost-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                if (card.style.opacity === '1') {
-                    card.style.transform = 'translateY(-8px) scale(1.05)';
-                    card.style.boxShadow = '0 20px 40px rgba(124, 58, 237, 0.2)';
-                }
+                card.style.transform = 'translateY(-4px)';
             });
 
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
-                card.style.boxShadow = 'none';
+                card.style.transform = 'translateY(0)';
             });
         });
     }
