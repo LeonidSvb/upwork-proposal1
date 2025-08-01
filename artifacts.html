@@ -3,344 +3,485 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optimized Realistic Artifacts</title>
+  <title>Premium Realistic Artifacts - Demo</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --color-surface: #ffffff;
+      --color-surface-light: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text-primary: #1f2937;
+      --color-text-secondary: #6b7280;
+    }
+
     body {
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      padding: 20px;
+      padding: 40px 20px;
+      margin: 0;
       line-height: 1.4;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
     }
 
-    .demo-section {
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 60px;
+    }
+
+    .artifacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .artifact-section {
       background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* Base artifact container */
+    .artifact {
+      background: var(--color-surface-light);
+      border: 1px solid var(--color-border);
       border-radius: 8px;
       padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
+      margin-top: 16px;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .demo-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #1f2937;
-    }
-
-    /* ===== EMAIL (Gmail Style) ===== */
+    /* ===== GMAIL EMAIL (Ultra Realistic) ===== */
     .artifact-email {
       background: white;
       border: 1px solid #dadce0;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
-      font-size: 11px;
-      max-width: 280px;
+      font-family: 'Roboto', -apple-system, sans-serif;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(60,64,67,0.15);
     }
 
     .email-header {
       background: #f8f9fa;
-      padding: 8px 12px;
+      padding: 12px 16px;
       border-bottom: 1px solid #dadce0;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
     .email-avatar {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      background: #1a73e8;
+      background: linear-gradient(135deg, #1a73e8, #4285f4);
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 500;
-      font-size: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(26,115,232,0.3);
     }
 
     .email-sender {
       flex: 1;
-      font-size: 10px;
+      font-size: 13px;
     }
 
     .sender-name {
       font-weight: 500;
       color: #202124;
+      margin-bottom: 2px;
     }
 
     .sender-email {
       color: #5f6368;
+      font-size: 12px;
     }
 
     .email-time {
-      font-size: 9px;
+      font-size: 12px;
       color: #5f6368;
+      font-weight: 400;
     }
 
     .email-subject {
-      padding: 8px 12px 4px;
-      font-size: 12px;
+      padding: 16px 20px 8px;
+      font-size: 16px;
       font-weight: 500;
       color: #202124;
+      line-height: 1.3;
     }
 
     .email-body {
-      padding: 4px 12px 12px;
-      font-size: 10px;
-      line-height: 1.4;
+      padding: 8px 20px 20px;
+      font-size: 14px;
+      line-height: 1.6;
       color: #3c4043;
     }
 
-    /* ===== SMS (iPhone Style) ===== */
+    /* ===== iPHONE SMS (Ultra Realistic) ===== */
     .artifact-sms {
       background: #000;
-      border-radius: 16px;
-      padding: 12px;
-      max-width: 220px;
+      border-radius: 20px;
+      padding: 16px;
+      max-width: 320px;
       margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .artifact-sms::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 134px;
+      height: 5px;
+      background: #333;
+      border-radius: 2.5px;
     }
 
     .sms-header {
       color: white;
-      font-size: 10px;
+      font-size: 12px;
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      padding-top: 8px;
     }
 
     .sms-bubble {
-      background: #007aff;
+      background: linear-gradient(135deg, #007aff, #0051d0);
       color: white;
-      padding: 8px 12px;
-      border-radius: 16px;
-      border-bottom-right-radius: 4px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      border-bottom-right-radius: 6px;
       margin-left: auto;
-      margin-right: 6px;
-      max-width: 180px;
-      font-size: 11px;
-      line-height: 1.3;
-      margin-bottom: 2px;
+      margin-right: 8px;
+      max-width: 260px;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      box-shadow: 0 2px 8px rgba(0,122,255,0.3);
     }
 
     .sms-time {
       text-align: right;
       color: #8e8e93;
-      font-size: 9px;
-      margin-right: 8px;
+      font-size: 12px;
+      margin-right: 12px;
+      margin-top: 2px;
     }
 
-    /* ===== WHATSAPP ===== */
+    /* ===== WHATSAPP CHAT (Ultra Realistic) ===== */
     .artifact-whatsapp {
-      background: #ece5dd;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 240px;
+      background: linear-gradient(to bottom, #dddbd1, #d2dbdc);
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 350px;
       margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
 
-    .whatsapp-bubble {
-      background: #dcf8c6;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 11px;
-      margin-bottom: 4px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .whatsapp-time {
-      font-size: 9px;
-      color: #667781;
-      text-align: right;
-    }
-
-    /* ===== NOTIFICATION (macOS Style) ===== */
-    .artifact-notification {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 8px;
-      padding: 10px;
-      max-width: 260px;
-      font-size: 11px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .notification-header {
+    .whatsapp-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
-    .notification-app-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-      background: #007aff;
+    .whatsapp-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 10px;
-    }
-
-    .notification-app-name {
-      font-size: 10px;
       font-weight: 600;
-      color: #1d1d1f;
-      flex: 1;
+      font-size: 14px;
     }
 
-    .notification-time {
-      font-size: 9px;
-      color: #86868b;
-    }
-
-    .notification-title {
-      font-size: 11px;
+    .whatsapp-name {
       font-weight: 600;
-      color: #1d1d1f;
-      margin-bottom: 2px;
+      color: #111;
+      font-size: 16px;
     }
 
-    .notification-body {
-      font-size: 10px;
-      color: #424245;
-      line-height: 1.3;
-    }
-
-    /* ===== DASHBOARD (SaaS Style) ===== */
-    .artifact-dashboard {
+    .whatsapp-bubble {
       background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border-bottom-right-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
       max-width: 280px;
     }
 
+    .whatsapp-bubble.sent {
+      background: #dcf8c6;
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 4px;
+      margin-left: 40px;
+    }
+
+    .whatsapp-time {
+      font-size: 11px;
+      color: #667781;
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    /* ===== CRM DASHBOARD (Professional SaaS) ===== */
+    .artifact-dashboard {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 420px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
     .dashboard-header {
-      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .dashboard-title {
+      font-size: 18px;
       font-weight: 600;
       color: #111827;
-      margin-bottom: 12px;
+    }
+
+    .dashboard-period {
+      font-size: 14px;
+      color: #6b7280;
+      background: #f9fafb;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
     }
 
     .metrics-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
     .metric-card {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 8px;
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
       text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     }
 
     .metric-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 2px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 4px;
     }
 
     .metric-label {
-      font-size: 9px;
+      font-size: 12px;
       color: #6b7280;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    /* ===== FORM (Modern Style) ===== */
+    /* ===== MODERN FORM (Premium Web Form) ===== */
     .artifact-form {
       background: white;
       border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 280px;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 380px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .form-header {
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     .form-title {
-      font-size: 14px;
+      font-size: 20px;
       font-weight: 600;
-      margin-bottom: 8px;
-      color: #111827;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .form-subtitle {
+      font-size: 14px;
+      color: #6b7280;
     }
 
     .form-field {
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
     .form-label {
       display: block;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 500;
       color: #374151;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .form-input {
       width: 100%;
-      padding: 6px 8px;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-      font-size: 10px;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #1f2937;
+      background: white;
+      transition: all 0.2s ease;
       box-sizing: border-box;
     }
 
-    .form-button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 500;
-      cursor: pointer;
+    .form-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
-    /* ===== WORKFLOW (n8n Style) ===== */
+    .form-button {
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .form-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    /* ===== N8N WORKFLOW (Professional Automation) ===== */
     .artifact-workflow {
-      background: #fefefe;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      padding: 12px;
+      background: linear-gradient(135deg, #fafbfc, #f4f6f8);
+      border: 1px solid #e1e5e9;
+      border-radius: 12px;
+      padding: 20px;
       display: flex;
-      gap: 8px;
+      gap: 16px;
       align-items: center;
-      max-width: 280px;
+      max-width: 450px;
       overflow-x: auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
 
     .workflow-node {
-      background: #ffffff;
-      border: 1px solid #c5d4ea;
-      border-radius: 4px;
-      padding: 4px 8px;
-      min-width: 60px;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      min-width: 80px;
       text-align: center;
-      font-size: 9px;
-      font-weight: 500;
-      color: #2a2a2a;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1f2937;
       position: relative;
       white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+
+    .workflow-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .workflow-node::after {
       content: "→";
       position: absolute;
       top: 50%;
-      right: -12px;
+      right: -24px;
       transform: translateY(-50%);
-      color: #bbb;
-      font-size: 10px;
+      color: #64748b;
+      font-size: 16px;
+      font-weight: bold;
     }
 
     .workflow-node:last-child::after {
@@ -348,426 +489,2325 @@
     }
 
     .node-icon {
-      font-size: 12px;
-      margin-bottom: 2px;
-    }
-
-    /* ===== PIPELINE ===== */
-    .artifact-pipeline {
-      background: #fffbe6;
-      border-radius: 8px;
-      padding: 12px;
-      display: flex;
-      gap: 8px;
-      max-width: 280px;
-    }
-
-    .pipeline-column {
-      background: #ffffff;
-      flex: 1;
-      border-radius: 6px;
-      padding: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .pipeline-title {
-      font-size: 10px;
-      font-weight: bold;
-      margin-bottom: 6px;
-      color: #374151;
-    }
-
-    .pipeline-card {
-      background: #f4f6f8;
-      border-radius: 4px;
-      padding: 4px 6px;
-      font-size: 9px;
+      font-size: 20px;
       margin-bottom: 4px;
-      color: #1f2937;
-    }
-
-    /* ===== CODE BLOCK ===== */
-    .artifact-code {
-      background: #1e1e1e;
-      color: #d4d4d4;
-      font-family: 'Courier New', monospace;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 10px;
-      max-width: 280px;
-      overflow-x: auto;
-    }
-
-    /* ===== API ===== */
-    .artifact-api {
-      background: #f8f9fa;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 12px;
-      font-family: monospace;
-      font-size: 10px;
-      max-width: 280px;
-    }
-
-    .api-method {
-      font-weight: bold;
-      color: #0b69ff;
-    }
-
-    .api-block {
-      background: #ffffff;
-      padding: 8px;
-      border-radius: 4px;
-      margin-top: 6px;
-      border: 1px solid #d1d5db;
-    }
-
-    /* ===== INTEGRATION ===== */
-    .artifact-integration {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 12px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      max-width: 280px;
-    }
-
-    .integration-tile {
-      background: #f1f3f5;
-      padding: 8px;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 9px;
-    }
-
-    .integration-tile span {
       display: block;
-      margin-top: 4px;
-      color: #374151;
     }
 
-    /* ===== SLACK CHAT ===== */
-    .artifact-slack {
-      background: #f8f9fa;
-      border: 1px solid #e1e5e9;
-      border-radius: 8px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .node-label {
       font-size: 10px;
-      max-width: 280px;
+      color: #64748b;
+      margin-top: 2px;
     }
 
-    .slack-msg {
-      display: flex;
-      gap: 6px;
-    }
-
-    .slack-avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 3px;
-      background: #4A154B;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* ===== PLATFORM BADGE (Enhanced) ===== */
+    .platform-badge {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
       color: white;
-      font-size: 10px;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .slack-content {
-      background: #ffffff;
-      border-radius: 4px;
-      padding: 4px 8px;
-      flex: 1;
-    }
-
-    .slack-username {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
       font-weight: 600;
-      color: #1264a3;
-      font-size: 9px;
-      margin-bottom: 2px;
+      margin-top: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .slack-text {
-      color: #1d1c1d;
-      font-size: 9px;
-    }
-
-    /* ===== CHECKLIST ===== */
-    .artifact-checklist {
-      background: #fff0f0;
-      border-radius: 8px;
-      padding: 12px;
-      max-width: 280px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .check-box {
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-      border: 2px solid #db4c3f;
-      background: #fff;
-      flex-shrink: 0;
-    }
-
-    .check-label {
-      font-size: 10px;
-      color: #374151;
+    @media (max-width: 768px) {
+      .artifacts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .artifact-section {
+        padding: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <h1>🚀 Premium Realistic Artifacts</h1>
+    <p class="subtitle">Ultra-realistic UI components for landing page step visualization</p>
     
-    <!-- EMAIL -->
-    <div class="demo-section">
-      <div class="demo-title">📧 Gmail Email</div>
-      <div class="artifact-email">
-        <div class="email-header">
-          <div class="email-avatar">M</div>
-          <div class="email-sender">
-            <div class="sender-name">Mike Thompson</div>
-            <div class="sender-email">mike@agency.com</div>
+    <div class="artifacts-grid">
+      
+      <!-- EMAIL ARTIFACT -->
+      <div class="artifact-section">
+        <h3 class="section-title">📧 Gmail Email Notification</h3>
+        <div class="artifact-email">
+          <div class="email-header">
+            <div class="email-avatar">D</div>
+            <div class="email-sender">
+              <div class="sender-name">SmileRight Dental</div>
+              <div class="sender-email">appointments@smileright.com</div>
+            </div>
+            <div class="email-time">2:45 PM</div>
           </div>
-          <div class="email-time">2:45 PM</div>
-        </div>
-        <div class="email-subject">
-          Perfect Property Match Found
-        </div>
-        <div class="email-body">
-          Hi Sarah,<br><br>
-          Great news! Found a 3BR/2BA home in Downtown for $445K - exactly what you're looking for!<br><br>
-          Want to schedule a showing?
-        </div>
-      </div>
-    </div>
-
-    <!-- SMS -->
-    <div class="demo-section">
-      <div class="demo-title">💬 iPhone SMS</div>
-      <div class="artifact-sms">
-        <div class="sms-header">Messages</div>
-        <div class="sms-bubble">
-          Your showing at 123 Oak Street is confirmed for tomorrow at 2:30 PM. See you there! 🏠
-        </div>
-        <div class="sms-time">Read 2:47 PM</div>
-      </div>
-    </div>
-
-    <!-- WHATSAPP -->
-    <div class="demo-section">
-      <div class="demo-title">💚 WhatsApp Chat</div>
-      <div class="artifact-whatsapp">
-        <div class="whatsapp-bubble">
-          Hey! Just checking — are we still on for the property viewing at 3PM?
-        </div>
-        <div class="whatsapp-time">10:41 AM</div>
-      </div>
-    </div>
-
-    <!-- NOTIFICATION -->
-    <div class="demo-section">
-      <div class="demo-title">🔔 Push Notification</div>
-      <div class="artifact-notification">
-        <div class="notification-header">
-          <div class="notification-app-icon">🏠</div>
-          <div class="notification-app-name">Property Manager</div>
-          <div class="notification-time">now</div>
-        </div>
-        <div class="notification-title">New Lead Generated</div>
-        <div class="notification-body">
-          Sarah Johnson viewed 123 Oak Street and requested more information.
-        </div>
-      </div>
-    </div>
-
-    <!-- DASHBOARD -->
-    <div class="demo-section">
-      <div class="demo-title">📊 CRM Dashboard</div>
-      <div class="artifact-dashboard">
-        <div class="dashboard-header">Client Overview - Sarah Johnson</div>
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">5</div>
-            <div class="metric-label">Properties Shown</div>
+          <div class="email-subject">
+            🦷 Appointment Reminder - Tomorrow at 2:30 PM
           </div>
-          <div class="metric-card">
-            <div class="metric-value">High</div>
-            <div class="metric-label">Interest Level</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">2</div>
-            <div class="metric-label">Days Since Contact</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">95%</div>
-            <div class="metric-label">Match Score</div>
+          <div class="email-body">
+            Hi Sarah,<br><br>
+            This is a friendly reminder about your dental cleaning appointment tomorrow at 2:30 PM with Dr. Johnson.<br><br>
+            <strong>Location:</strong> SmileRight Dental, 123 Main St<br>
+            <strong>What to bring:</strong> Insurance card and ID<br><br>
+            Need to reschedule? Just reply to this email!
           </div>
         </div>
+        <div class="platform-badge">Automated Email System</div>
       </div>
-    </div>
 
-    <!-- FORM -->
-    <div class="demo-section">
-      <div class="demo-title">📋 Lead Capture Form</div>
-      <div class="artifact-form">
-        <div class="form-title">Property Interest</div>
-        <div class="form-field">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-input" value="Sarah Johnson" readonly>
+      <!-- SMS ARTIFACT -->
+      <div class="artifact-section">
+        <h3 class="section-title">💬 iPhone SMS Automation</h3>
+        <div class="artifact-sms">
+          <div class="sms-header">Messages • SmileRight Dental</div>
+          <div class="sms-bubble">
+            Hi! You just tried calling SmileRight Dental. We're currently with patients but would love to help! 🦷<br><br>
+            Reply with:<br>
+            • "BOOK" to schedule<br>
+            • "HOURS" for office hours<br>
+            • "EMERGENCY" for urgent care
+          </div>
+          <div class="sms-time">Delivered • Read 2:47 PM</div>
         </div>
-        <div class="form-field">
-          <label class="form-label">Budget Range</label>
-          <input type="text" class="form-input" value="$400K - $500K" readonly>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Preferred Areas</label>
-          <input type="text" class="form-input" value="Downtown, Suburbs" readonly>
-        </div>
-        <button class="form-button">Submit Interest</button>
+        <div class="platform-badge">SMS Auto-Reply System</div>
       </div>
-    </div>
 
-    <!-- WORKFLOW -->
-    <div class="demo-section">
-      <div class="demo-title">🔄 n8n Workflow</div>
-      <div class="artifact-workflow">
-        <div class="workflow-node">
-          <div class="node-icon">🟢</div>
-          Webhook
+      <!-- WHATSAPP ARTIFACT -->
+      <div class="artifact-section">
+        <h3 class="section-title">💚 WhatsApp Business Chat</h3>
+        <div class="artifact-whatsapp">
+          <div class="whatsapp-header">
+            <div class="whatsapp-avatar">S</div>
+            <div class="whatsapp-name">SmileRight Dental Bot</div>
+          </div>
+          <div class="whatsapp-bubble">
+            Hello! Welcome to SmileRight Dental! 👋
+          </div>
+          <div class="whatsapp-bubble">
+            I can help you with:
+            • Appointment booking
+            • Office hours & location
+            • Insurance questions
+            • Emergency care info
+          </div>
+          <div class="whatsapp-bubble sent">
+            What insurance do you accept?
+          </div>
+          <div class="whatsapp-bubble">
+            We accept most major insurance plans including Delta Dental, Aetna, Cigna, and MetLife. Would you like me to verify your specific plan? 😊
+          </div>
+          <div class="whatsapp-time">12:34 PM • Read</div>
         </div>
-        <div class="workflow-node">
-          <div class="node-icon">🧠</div>
-          OpenAI
-        </div>
-        <div class="workflow-node">
-          <div class="node-icon">📤</div>
-          Notion
-        </div>
+        <div class="platform-badge">WhatsApp Business API</div>
       </div>
-    </div>
 
-    <!-- PIPELINE -->
-    <div class="demo-section">
-      <div class="demo-title">📈 Sales Pipeline</div>
-      <div class="artifact-pipeline">
-        <div class="pipeline-column">
-          <div class="pipeline-title">Leads</div>
-          <div class="pipeline-card">John S.</div>
-          <div class="pipeline-card">Tanya K.</div>
+      <!-- CRM DASHBOARD -->
+      <div class="artifact-section">
+        <h3 class="section-title">📊 Professional CRM Dashboard</h3>
+        <div class="artifact-dashboard">
+          <div class="dashboard-header">
+            <div class="dashboard-title">Patient Overview</div>
+            <div class="dashboard-period">This Month</div>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-value">127</div>
+              <div class="metric-label">New Patients</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">94%</div>
+              <div class="metric-label">Show-up Rate</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">$18,500</div>
+              <div class="metric-label">Revenue</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">4.9★</div>
+              <div class="metric-label">Avg Rating</div>
+            </div>
+          </div>
         </div>
-        <div class="pipeline-column">
-          <div class="pipeline-title">Progress</div>
-          <div class="pipeline-card">Alex D.</div>
-        </div>
-        <div class="pipeline-column">
-          <div class="pipeline-title">Closed</div>
-          <div class="pipeline-card">Hugo M.</div>
-        </div>
+        <div class="platform-badge">GoHighLevel CRM</div>
       </div>
-    </div>
 
-    <!-- CODE -->
-    <div class="demo-section">
-      <div class="demo-title">💻 Code Snippet</div>
-      <div class="artifact-code">
-const lead = {<br>
-&nbsp;&nbsp;name: "John Doe",<br>
-&nbsp;&nbsp;email: "john@example.com",<br>
-&nbsp;&nbsp;status: "New Lead"<br>
-};<br><br>
-sendToCRM(lead);
+      <!-- MODERN FORM -->
+      <div class="artifact-section">
+        <h3 class="section-title">📋 Patient Intake Form</h3>
+        <div class="artifact-form">
+          <div class="form-header">
+            <div class="form-title">New Patient Registration</div>
+            <div class="form-subtitle">Please fill out your information</div>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" value="Sarah Johnson" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" value="(555) 123-4567" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Insurance Provider</label>
+            <input type="text" class="form-input" value="Delta Dental PPO" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Preferred Appointment Time</label>
+            <input type="text" class="form-input" value="Weekday afternoons" readonly>
+          </div>
+          <button class="form-button">Submit Registration</button>
+        </div>
+        <div class="platform-badge">Automated Form Processing</div>
       </div>
-    </div>
 
-    <!-- API -->
-    <div class="demo-section">
-      <div class="demo-title">🔌 API Endpoint</div>
-      <div class="artifact-api">
-        <div><span class="api-method">POST</span> /api/leads</div>
-        <div class="api-block">
-{<br>
-&nbsp;&nbsp;"name": "Sarah Johnson",<br>
-&nbsp;&nbsp;"email": "sarah@email.com",<br>
-&nbsp;&nbsp;"source": "website"<br>
+      <!-- N8N WORKFLOW -->
+      <div class="artifact-section">
+        <h3 class="section-title">🔄 Automation Workflow</h3>
+        <div class="artifact-workflow">
+          <div class="workflow-node">
+            <div class="node-icon">📞</div>
+            Missed Call
+            <div class="node-label">Trigger</div>
+          </div>
+          <div class="workflow-node">
+            <div class="node-icon">🤖</div>
+            AI Response
+            <div class="node-label">Process</div>
+          </div>
+          <div class="workflow-node">
+            <div class="node-icon">📱</div>
+            Send SMS
+            <div class="node-label">Action</div>
+          </div>
+          <div class="workflow-node">
+            <div class="node-icon">📊</div>
+            Update CRM
+            <div class="node-label">Log</div>
+          </div>
+        </div>
+        <div class="platform-badge">n8n Automation Platform</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Недостающих Артефакта - Демо</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --color-surface: #ffffff;
+      --color-surface-light: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text-primary: #1f2937;
+      --color-text-secondary: #6b7280;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 60px;
+    }
+
+    .artifacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .artifact-section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* ===== PUSH NOTIFICATION (macOS Style) ===== */
+    .artifact-notification {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 380px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .notification-app-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #007aff, #0051d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+    }
+
+    .notification-app-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1d1d1f;
+      flex: 1;
+    }
+
+    .notification-time {
+      font-size: 13px;
+      color: #86868b;
+    }
+
+    .notification-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .notification-body {
+      font-size: 13px;
+      color: #424245;
+      line-height: 1.4;
+    }
+
+    /* ===== SALES PIPELINE (Kanban Board) ===== */
+    .artifact-pipeline {
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      max-width: 450px;
+      overflow-x: auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .pipeline-column {
+      background: white;
+      flex: 1;
+      min-width: 120px;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .pipeline-title {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .pipeline-card {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: #1f2937;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .pipeline-card:hover {
+      transform: translateX(2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .pipeline-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== CODE BLOCK (Syntax Highlighted) ===== */
+    .artifact-code {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      max-width: 400px;
+      overflow-x: auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .artifact-code::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 32px;
+      background: #21262d;
+      border-radius: 12px 12px 0 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .artifact-code::after {
+      content: '● ● ●';
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 12px;
+      color: #7d8590;
+    }
+
+    .code-content {
+      margin-top: 16px;
+    }
+
+    .code-keyword {
+      color: #ff7b72;
+    }
+
+    .code-string {
+      color: #a5d6ff;
+    }
+
+    .code-comment {
+      color: #8b949e;
+      font-style: italic;
+    }
+
+    /* ===== API DOCUMENTATION (Postman Style) ===== */
+    .artifact-api {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'SF Mono', monospace;
+      font-size: 13px;
+      max-width: 420px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .api-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .api-method {
+      background: #10b981;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .api-url {
+      font-family: 'SF Mono', monospace;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .api-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+      font-family: 'SF Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .api-response {
+      margin-top: 16px;
+    }
+
+    .api-status {
+      display: inline-block;
+      background: #10b981;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* ===== PLATFORM BADGE (Enhanced) ===== */
+    .platform-badge {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .artifacts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .artifact-section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 4 Недостающих Артефакта</h1>
+    <p class="subtitle">Push уведомления, конвейер продаж, код и API документация</p>
+    
+    <div class="artifacts-grid">
+      
+      <!-- PUSH NOTIFICATION -->
+      <div class="artifact-section">
+        <h3 class="section-title">🔔 macOS Push Notification</h3>
+        <div class="artifact-notification">
+          <div class="notification-header">
+            <div class="notification-app-icon">🦷</div>
+            <div class="notification-app-name">SmileRight Dental</div>
+            <div class="notification-time">now</div>
+          </div>
+          <div class="notification-title">
+            Appointment Confirmed! 🎉
+          </div>
+          <div class="notification-body">
+            Your cleaning appointment with Dr. Johnson is confirmed for tomorrow at 2:30 PM. We'll send you a reminder 1 hour before your visit.
+          </div>
+        </div>
+        <div class="platform-badge">Push Notification Service</div>
+      </div>
+
+      <!-- SALES PIPELINE -->
+      <div class="artifact-section">
+        <h3 class="section-title">📊 Sales Pipeline Board</h3>
+        <div class="artifact-pipeline">
+          <div class="pipeline-column">
+            <div class="pipeline-title">New Leads</div>
+            <div class="pipeline-card">Sarah Johnson<br>$2,400</div>
+            <div class="pipeline-card">Mike Chen<br>$1,800</div>
+            <div class="pipeline-card">Amy Rodriguez<br>$3,200</div>
+          </div>
+          <div class="pipeline-column">
+            <div class="pipeline-title">Qualified</div>
+            <div class="pipeline-card">John Smith<br>$4,500</div>
+            <div class="pipeline-card">Lisa Wang<br>$2,100</div>
+          </div>
+          <div class="pipeline-column">
+            <div class="pipeline-title">Proposal</div>
+            <div class="pipeline-card">David Brown<br>$5,200</div>
+          </div>
+          <div class="pipeline-column">
+            <div class="pipeline-title">Closed Won</div>
+            <div class="pipeline-card">Emma Davis<br>$3,800</div>
+          </div>
+        </div>
+        <div class="platform-badge">CRM Pipeline Management</div>
+      </div>
+
+      <!-- CODE BLOCK -->
+      <div class="artifact-section">
+        <h3 class="section-title">💻 GitHub Style Code Block</h3>
+        <div class="artifact-code">
+          <div class="code-content">
+<span class="code-comment">// Automated appointment booking function</span>
+<span class="code-keyword">async function</span> bookAppointment(patientData) {
+  <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(<span class="code-string">'/api/appointments'</span>, {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>,
+    },
+    body: JSON.stringify(patientData)
+  });
+  
+  <span class="code-keyword">if</span> (response.ok) {
+    <span class="code-comment">// Send confirmation SMS</span>
+    sendSMS(patientData.phone, <span class="code-string">'Appointment confirmed!'</span>);
+    <span class="code-keyword">return</span> <span class="code-keyword">await</span> response.json();
+  }
 }
-        </div>
-      </div>
-    </div>
-
-    <!-- INTEGRATION -->
-    <div class="demo-section">
-      <div class="demo-title">🔗 Integrations</div>
-      <div class="artifact-integration">
-        <div class="integration-tile">
-          📧<span>Gmail</span>
-        </div>
-        <div class="integration-tile">
-          📊<span>Airtable</span>
-        </div>
-        <div class="integration-tile">
-          💬<span>Slack</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLACK -->
-    <div class="demo-section">
-      <div class="demo-title">💬 Slack Chat</div>
-      <div class="artifact-slack">
-        <div class="slack-msg">
-          <div class="slack-avatar">A</div>
-          <div class="slack-content">
-            <div class="slack-username">Alice</div>
-            <div class="slack-text">CRM connected to Make.com!</div>
           </div>
         </div>
-        <div class="slack-msg">
-          <div class="slack-avatar">J</div>
-          <div class="slack-content">
-            <div class="slack-username">John</div>
-            <div class="slack-text">Great! Can you add the webhook?</div>
+        <div class="platform-badge">Automated Code Generation</div>
+      </div>
+
+      <!-- API DOCUMENTATION -->
+      <div class="artifact-section">
+        <h3 class="section-title">📡 API Documentation</h3>
+        <div class="artifact-api">
+          <div class="api-header">
+            <div class="api-method">POST</div>
+            <div class="api-url">/api/appointments</div>
+          </div>
+          
+          <div><strong>Request Body:</strong></div>
+          <div class="api-block">{
+  "patient_name": "Sarah Johnson",
+  "phone": "(555) 123-4567",
+  "appointment_type": "cleaning",
+  "preferred_date": "2025-08-15",
+  "preferred_time": "14:30"
+}</div>
+
+          <div class="api-response">
+            <div class="api-status">200 OK</div>
+            <div><strong>Response:</strong></div>
+            <div class="api-block">{
+  "appointment_id": "apt_12345",
+  "status": "confirmed",
+  "scheduled_time": "2025-08-15T14:30:00Z",
+  "doctor": "Dr. Johnson",
+  "location": "Room 3"
+}</div>
           </div>
         </div>
+        <div class="platform-badge">REST API Integration</div>
       </div>
-    </div>
 
-    <!-- CHECKLIST -->
-    <div class="demo-section">
-      <div class="demo-title">✅ Task Checklist</div>
-      <div class="artifact-checklist">
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div class="check-label">Create project folder</div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Универсальных Артефактов - Демо</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --color-surface: #ffffff;
+      --color-surface-light: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text-primary: #1f2937;
+      --color-text-secondary: #6b7280;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 60px;
+    }
+
+    .artifacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .artifact-section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* ===== CALENDAR EVENT (Google Calendar Style) ===== */
+    .artifact-calendar {
+      background: white;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: 'Google Sans', -apple-system, sans-serif;
+      max-width: 420px;
+      box-shadow: 0 2px 10px rgba(60,64,67,0.15);
+    }
+
+    .calendar-header {
+      background: linear-gradient(135deg, #1a73e8, #4285f4);
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .calendar-date {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .calendar-month {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .calendar-day {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .calendar-event-info {
+      flex: 1;
+    }
+
+    .calendar-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .calendar-time {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .calendar-body {
+      padding: 20px;
+    }
+
+    .calendar-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .calendar-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .calendar-icon {
+      width: 20px;
+      text-align: center;
+      color: #5f6368;
+    }
+
+    .calendar-attendees {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .attendee-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #34a853, #137333);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ===== INVOICE/RECEIPT (Professional) ===== */
+    .artifact-invoice {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 400px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .invoice-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .invoice-number {
+      text-align: right;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .invoice-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 4px;
+    }
+
+    .invoice-billing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .billing-section h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .billing-section p {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .invoice-items {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .item-row:last-child {
+      border-bottom: none;
+      font-weight: 600;
+      font-size: 16px;
+      color: #1f2937;
+    }
+
+    .item-name {
+      flex: 1;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .item-price {
+      font-size: 14px;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .invoice-status {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    /* ===== SOCIAL MEDIA POST (LinkedIn Style) ===== */
+    .artifact-social {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 420px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .social-header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0077b5, #005885);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .social-user-info {
+      flex: 1;
+    }
+
+    .social-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 2px;
+    }
+
+    .social-handle {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .social-time {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .social-content {
+      padding: 0 20px 16px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #000;
+    }
+
+    .social-hashtags {
+      color: #0077b5;
+    }
+
+    .social-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .social-stats {
+      padding: 12px 20px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+    }
+
+    .social-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* ===== ANALYTICS CHART (Dashboard Style) ===== */
+    .artifact-analytics {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 450px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .analytics-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .analytics-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .analytics-period {
+      font-size: 14px;
+      color: #6b7280;
+      background: #f3f4f6;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .analytics-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-change {
+      font-size: 11px;
+      color: #10b981;
+      margin-top: 2px;
+    }
+
+    .analytics-chart {
+      height: 120px;
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      border-radius: 8px;
+      display: flex;
+      align-items: end;
+      justify-content: space-around;
+      padding: 16px;
+      gap: 4px;
+    }
+
+    .chart-bar {
+      background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+      border-radius: 4px 4px 0 0;
+      width: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .chart-bar:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+
+    .chart-bar:nth-child(1) { height: 40%; }
+    .chart-bar:nth-child(2) { height: 65%; }
+    .chart-bar:nth-child(3) { height: 80%; }
+    .chart-bar:nth-child(4) { height: 45%; }
+    .chart-bar:nth-child(5) { height: 90%; }
+    .chart-bar:nth-child(6) { height: 75%; }
+    .chart-bar:nth-child(7) { height: 100%; }
+
+    .chart-labels {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* ===== SUPPORT TICKET (Help Desk Style) ===== */
+    .artifact-ticket {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 420px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .ticket-header {
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .ticket-id {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ticket-number {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .ticket-status {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .ticket-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .ticket-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .ticket-body {
+      padding: 20px;
+    }
+
+    .ticket-section {
+      margin-bottom: 20px;
+    }
+
+    .ticket-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .ticket-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .ticket-description {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #3b82f6;
+    }
+
+    .ticket-assignee {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .assignee-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .assignee-info {
+      flex: 1;
+    }
+
+    .assignee-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .assignee-role {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* ===== PLATFORM BADGE (Enhanced) ===== */
+    .platform-badge {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .artifacts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .artifact-section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 5 Универсальных Артефактов</h1>
+    <p class="subtitle">Календарь, счета, соцсети, аналитика и поддержка</p>
+    
+    <div class="artifacts-grid">
+      
+      <!-- CALENDAR EVENT -->
+      <div class="artifact-section">
+        <h3 class="section-title">📅 Google Calendar Event</h3>
+        <div class="artifact-calendar">
+          <div class="calendar-header">
+            <div class="calendar-date">
+              <div class="calendar-month">AUG</div>
+              <div class="calendar-day">15</div>
+            </div>
+            <div class="calendar-event-info">
+              <div class="calendar-title">Client Consultation Call</div>
+              <div class="calendar-time">2:30 PM - 3:30 PM</div>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-details">
+              <div class="calendar-detail">
+                <div class="calendar-icon">🕐</div>
+                <div>1 hour • August 15, 2025</div>
+              </div>
+              <div class="calendar-detail">
+                <div class="calendar-icon">📍</div>
+                <div>Zoom Meeting (Auto-generated)</div>
+              </div>
+              <div class="calendar-detail">
+                <div class="calendar-icon">📝</div>
+                <div>Discuss automation strategy for dental practice</div>
+              </div>
+            </div>
+            <div class="calendar-attendees">
+              <div class="attendee-avatar">SJ</div>
+              <div class="attendee-avatar">MK</div>
+              <div class="attendee-avatar">AL</div>
+            </div>
+          </div>
         </div>
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div class="check-label">Configure Airtable base</div>
-        </div>
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div class="check-label">Connect Make.com scenario</div>
-        </div>
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div class="check-label">Test automation flow</div>
-        </div>
+        <div class="platform-badge">Calendar Integration</div>
       </div>
-    </div>
 
+      <!-- INVOICE/RECEIPT -->
+      <div class="artifact-section">
+        <h3 class="section-title">💰 Professional Invoice</h3>
+        <div class="artifact-invoice">
+          <div class="invoice-header">
+            <div class="invoice-logo">SmileRight</div>
+            <div class="invoice-number">
+              <div class="invoice-title">INVOICE</div>
+              <div>#INV-2025-0847</div>
+            </div>
+          </div>
+          
+          <div class="invoice-billing">
+            <div class="billing-section">
+              <h4>Billed To</h4>
+              <p>Sarah Johnson<br>
+                 123 Main Street<br>
+                 New York, NY 10001<br>
+                 sarah@email.com</p>
+            </div>
+            <div class="billing-section">
+              <h4>Payment Details</h4>
+              <p>Issue Date: Aug 15, 2025<br>
+                 Due Date: Aug 30, 2025<br>
+                 Payment Method: Auto-Pay<br>
+                 Status: <strong>Paid</strong></p>
+            </div>
+          </div>
+
+          <div class="invoice-items">
+            <div class="item-row">
+              <div class="item-name">Dental Cleaning</div>
+              <div class="item-price">$120.00</div>
+            </div>
+            <div class="item-row">
+              <div class="item-name">X-Ray (2 images)</div>
+              <div class="item-price">$85.00</div>
+            </div>
+            <div class="item-row">
+              <div class="item-name">Consultation</div>
+              <div class="item-price">$65.00</div>
+            </div>
+            <div class="item-row">
+              <div class="item-name"><strong>Total Amount</strong></div>
+              <div class="item-price"><strong>$270.00</strong></div>
+            </div>
+          </div>
+
+          <div class="invoice-status">
+            ✅ Payment Processed Automatically
+          </div>
+        </div>
+        <div class="platform-badge">Automated Billing</div>
+      </div>
+
+      <!-- SOCIAL MEDIA POST -->
+      <div class="artifact-section">
+        <h3 class="section-title">📱 LinkedIn Success Post</h3>
+        <div class="artifact-social">
+          <div class="social-header">
+            <div class="social-avatar">DR</div>
+            <div class="social-user-info">
+              <div class="social-name">Dr. Roberts DDS</div>
+              <div class="social-handle">@drroberts_dental • Following</div>
+            </div>
+            <div class="social-time">2h</div>
+          </div>
+          <div class="social-content">
+            🎉 Just automated our entire patient communication system! 
+            <br><br>
+            Results after 3 months:<br>
+            ✅ 47% increase in bookings<br>
+            ✅ 92% patient satisfaction<br>
+            ✅ 8 hours saved per week<br>
+            <br>
+            The future of dental practice is here! <span class="social-hashtags">#DentalTech #Automation #PatientCare #SmileRight</span>
+          </div>
+          <div class="social-image">📊</div>
+          <div class="social-stats">
+            <div class="social-stat">❤️ 234 likes</div>
+            <div class="social-stat">💬 18 comments</div>
+            <div class="social-stat">🔄 45 shares</div>
+          </div>
+        </div>
+        <div class="platform-badge">Social Media Automation</div>
+      </div>
+
+      <!-- ANALYTICS CHART -->
+      <div class="artifact-section">
+        <h3 class="section-title">📊 Analytics Dashboard</h3>
+        <div class="artifact-analytics">
+          <div class="analytics-header">
+            <div class="analytics-title">Performance Metrics</div>
+            <div class="analytics-period">Last 7 Days</div>
+          </div>
+          
+          <div class="analytics-metrics">
+            <div class="metric-item">
+              <div class="metric-number">2,847</div>
+              <div class="metric-label">Website Visits</div>
+              <div class="metric-change">+23% ↗</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-number">127</div>
+              <div class="metric-label">New Leads</div>
+              <div class="metric-change">+18% ↗</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-number">94%</div>
+              <div class="metric-label">Conversion</div>
+              <div class="metric-change">+12% ↗</div>
+            </div>
+          </div>
+
+          <div class="analytics-chart">
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+            <div class="chart-bar"></div>
+          </div>
+          
+          <div class="chart-labels">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+          </div>
+        </div>
+        <div class="platform-badge">Real-time Analytics</div>
+      </div>
+
+      <!-- SUPPORT TICKET -->
+      <div class="artifact-section">
+        <h3 class="section-title">🎫 Support Ticket System</h3>
+        <div class="artifact-ticket">
+          <div class="ticket-header">
+            <div class="ticket-id">
+              <div class="ticket-number">Ticket #SR-2025-0156</div>
+              <div class="ticket-status">In Progress</div>
+            </div>
+            <div class="ticket-title">SMS Integration Setup Request</div>
+            <div class="ticket-meta">
+              <span>Created: Aug 15, 2025</span>
+              <span>Priority: High</span>
+              <span>SLA: 4h remaining</span>
+            </div>
+          </div>
+          
+          <div class="ticket-body">
+            <div class="ticket-section">
+              <div class="ticket-label">Description</div>
+              <div class="ticket-description">
+                Need help setting up automated SMS notifications for appointment reminders. Currently using manual calls which takes too much staff time. Looking for 24-hour and 1-hour reminder system.
+              </div>
+            </div>
+            
+            <div class="ticket-section">
+              <div class="ticket-label">Assigned To</div>
+              <div class="ticket-assignee">
+                <div class="assignee-avatar">MK</div>
+                <div class="assignee-info">
+                  <div class="assignee-name">Mike Johnson</div>
+                  <div class="assignee-role">Senior Integration Specialist</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="platform-badge">24/7 Support System</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Финальные 5 Артефактов - Демо</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --color-surface: #ffffff;
+      --color-surface-light: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text-primary: #1f2937;
+      --color-text-secondary: #6b7280;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 60px;
+    }
+
+    .artifacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .artifact-section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* ===== SLACK MESSAGE (Ultra Realistic) ===== */
+    .artifact-slack {
+      background: #1a1d29;
+      border-radius: 12px;
+      font-family: 'Slack', -apple-system, sans-serif;
+      max-width: 420px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .slack-sidebar {
+      background: #19171d;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #2f2d37;
+    }
+
+    .slack-workspace {
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .slack-channel {
+      color: #b9bbbe;
+      font-size: 14px;
+    }
+
+    .slack-messages {
+      padding: 16px;
+    }
+
+    .slack-message {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .slack-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .slack-content {
+      flex: 1;
+    }
+
+    .slack-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .slack-name {
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .slack-time {
+      color: #b9bbbe;
+      font-size: 12px;
+    }
+
+    .slack-text {
+      color: #dcddde;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .slack-notification {
+      background: #e74c3c;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 8px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .slack-bot-badge {
+      background: #5865f2;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* ===== DISCORD CHAT (Gaming Style) ===== */
+    .artifact-discord {
+      background: #36393f;
+      border-radius: 12px;
+      font-family: 'Whitney', -apple-system, sans-serif;
+      max-width: 420px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .discord-header {
+      background: #2f3136;
+      padding: 12px 16px;
+      border-bottom: 1px solid #202225;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .discord-channel-icon {
+      color: #72767d;
+      font-size: 18px;
+    }
+
+    .discord-channel-name {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .discord-messages {
+      padding: 16px;
+    }
+
+    .discord-message {
+      margin-bottom: 16px;
+    }
+
+    .discord-message-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .discord-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7289da, #5b6eae);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .discord-username {
+      color: #7289da;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .discord-bot-tag {
+      background: #5865f2;
+      color: white;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .discord-timestamp {
+      color: #72767d;
+      font-size: 12px;
+    }
+
+    .discord-text {
+      color: #dcddde;
+      font-size: 16px;
+      line-height: 1.375;
+      margin-left: 40px;
+    }
+
+    .discord-embed {
+      background: #2f3136;
+      border-left: 4px solid #00d166;
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin: 8px 0 0 40px;
+      max-width: 300px;
+    }
+
+    .discord-embed-title {
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .discord-embed-desc {
+      color: #b9bbbe;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    /* ===== ZOOM MEETING INTERFACE ===== */
+    .artifact-zoom {
+      background: #1f2937;
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 450px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .zoom-header {
+      background: #374151;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .zoom-title {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .zoom-time {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .zoom-participants {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .zoom-participant {
+      background: #374151;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .zoom-video {
+      width: 120px;
+      height: 90px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      margin: 0 auto 8px;
+    }
+
+    .zoom-name {
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .zoom-status {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #10b981;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .zoom-controls {
+      background: #1f2937;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      border-top: 1px solid #374151;
+    }
+
+    .zoom-control {
+      background: #4b5563;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .zoom-control.active {
+      background: #dc2626;
+    }
+
+    /* ===== BANKING TRANSACTION ===== */
+    .artifact-banking {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 400px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .banking-header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .banking-logo {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .banking-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .banking-transaction {
+      padding: 20px;
+    }
+
+    .transaction-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .transaction-status {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .transaction-amount {
+      font-size: 32px;
+      font-weight: 800;
+      color: #16a34a;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .transaction-details {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .transaction-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .transaction-row:last-child {
+      margin-bottom: 0;
+      padding-top: 8px;
+      border-top: 1px solid #e5e7eb;
+      font-weight: 600;
+    }
+
+    .transaction-label {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .transaction-value {
+      color: #1f2937;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ===== E-COMMERCE PRODUCT CARD ===== */
+    .artifact-ecommerce {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 380px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .product-description {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .product-features {
+      margin-bottom: 16px;
+    }
+
+    .product-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .feature-icon {
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 16px;
+    }
+
+    .rating-text {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .product-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .price-current {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .price-period {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .product-button {
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .product-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    /* ===== PLATFORM BADGE (Enhanced) ===== */
+    .platform-badge {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .artifacts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .artifact-section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Финальные 5 Артефактов</h1>
+    <p class="subtitle">Slack, Discord, Zoom, банкинг и e-commerce</p>
+    
+    <div class="artifacts-grid">
+      
+      <!-- SLACK MESSAGE -->
+      <div class="artifact-section">
+        <h3 class="section-title">💬 Slack Team Notification</h3>
+        <div class="artifact-slack">
+          <div class="slack-sidebar">
+            <div class="slack-workspace">SmileRight Dental</div>
+            <div class="slack-channel"># leads</div>
+          </div>
+          <div class="slack-messages">
+            <div class="slack-message">
+              <div class="slack-avatar">🤖</div>
+              <div class="slack-content">
+                <div class="slack-header">
+                  <div class="slack-name">LeadBot</div>
+                  <div class="slack-bot-badge">BOT</div>
+                  <div class="slack-time">2:34 PM</div>
+                </div>
+                <div class="slack-text">
+                  🎉 <strong>New qualified lead!</strong><br>
+                  <strong>Sarah Johnson</strong> just booked a consultation<br>
+                  📞 (555) 123-4567<br>
+                  📅 Aug 16, 2025 at 2:30 PM<br>
+                  💰 Estimated value: $2,400
+                </div>
+                <div class="slack-notification">
+                  🔔 High-value lead alert!
+                </div>
+              </div>
+            </div>
+            <div class="slack-message">
+              <div class="slack-avatar">DR</div>
+              <div class="slack-content">
+                <div class="slack-header">
+                  <div class="slack-name">Dr. Roberts</div>
+                  <div class="slack-time">2:35 PM</div>
+                </div>
+                <div class="slack-text">
+                  Perfect! I'll prep the consultation materials 👍
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="platform-badge">Slack Integration</div>
+      </div>
+
+      <!-- DISCORD CHAT -->
+      <div class="artifact-section">
+        <h3 class="section-title">🎮 Discord Community Bot</h3>
+        <div class="artifact-discord">
+          <div class="discord-header">
+            <div class="discord-channel-icon">#</div>
+            <div class="discord-channel-name">patient-support</div>
+          </div>
+          <div class="discord-messages">
+            <div class="discord-message">
+              <div class="discord-message-header">
+                <div class="discord-avatar">🦷</div>
+                <div class="discord-username">SmileBot</div>
+                <div class="discord-bot-tag">BOT</div>
+                <div class="discord-timestamp">Today at 2:45 PM</div>
+              </div>
+              <div class="discord-text">
+                Hi @everyone! Welcome to our patient community! 👋
+              </div>
+              <div class="discord-embed">
+                <div class="discord-embed-title">🎯 How can I help you today?</div>
+                <div class="discord-embed-desc">
+                  React with:<br>
+                  📅 Schedule appointment<br>
+                  ❓ Ask questions<br>
+                  💊 Post-care tips<br>
+                  📞 Emergency contact
+                </div>
+              </div>
+            </div>
+            <div class="discord-message">
+              <div class="discord-message-header">
+                <div class="discord-avatar">SJ</div>
+                <div class="discord-username">sarah_j</div>
+                <div class="discord-timestamp">Today at 2:47 PM</div>
+              </div>
+              <div class="discord-text">
+                Thanks! Just had my cleaning today. When should I schedule the next one? 😊
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="platform-badge">Discord Bot API</div>
+      </div>
+
+      <!-- ZOOM MEETING -->
+      <div class="artifact-section">
+        <h3 class="section-title">📹 Zoom Consultation Call</h3>
+        <div class="artifact-zoom">
+          <div class="zoom-header">
+            <div class="zoom-title">Patient Consultation</div>
+            <div class="zoom-time">14:32 / 60:00</div>
+          </div>
+          <div class="zoom-participants">
+            <div class="zoom-participant">
+              <div class="zoom-status"></div>
+              <div class="zoom-video">👩‍⚕️</div>
+              <div class="zoom-name">Dr. Johnson</div>
+            </div>
+            <div class="zoom-participant">
+              <div class="zoom-status"></div>
+              <div class="zoom-video">👤</div>
+              <div class="zoom-name">Sarah (Patient)</div>
+            </div>
+          </div>
+          <div class="zoom-controls">
+            <button class="zoom-control">🎤 Mute</button>
+            <button class="zoom-control">📹 Video</button>
+            <button class="zoom-control">📱 Share</button>
+            <button class="zoom-control active">🔴 Record</button>
+            <button class="zoom-control">📝 Notes</button>
+          </div>
+        </div>
+        <div class="platform-badge">Video Consultation System</div>
+      </div>
+
+      <!-- BANKING TRANSACTION -->
+      <div class="artifact-section">
+        <h3 class="section-title">🏦 Bank Transaction Alert</h3>
+        <div class="artifact-banking">
+          <div class="banking-header">
+            <div class="banking-logo">First National Bank</div>
+            <div class="banking-subtitle">Business Account</div>
+          </div>
+          <div class="banking-transaction">
+            <div class="transaction-header">
+              <div class="transaction-status">✅ Completed</div>
+            </div>
+            <div class="transaction-amount">+$270.00</div>
+            <div class="transaction-details">
+              <div class="transaction-row">
+                <div class="transaction-label">From</div>
+                <div class="transaction-value">Sarah Johnson</div>
+              </div>
+              <div class="transaction-row">
+                <div class="transaction-label">Description</div>
+                <div class="transaction-value">Dental Services - Auto Pay</div>
+              </div>
+              <div class="transaction-row">
+                <div class="transaction-label">Date</div>
+                <div class="transaction-value">Aug 15, 2025 2:45 PM</div>
+              </div>
+              <div class="transaction-row">
+                <div class="transaction-label">Reference</div>
+                <div class="transaction-value">#INV-2025-0847</div>
+              </div>
+              <div class="transaction-row">
+                <div class="transaction-label">New Balance</div>
+                <div class="transaction-value">$18,724.50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="platform-badge">Auto-Payment Processing</div>
+      </div>
+
+      <!-- E-COMMERCE PRODUCT -->
+      <div class="artifact-section">
+        <h3 class="section-title">🛒 Service Package Card</h3>
+        <div class="artifact-ecommerce">
+          <div class="product-image">🦷</div>
+          <div class="product-content">
+            <div class="product-title">Complete Dental Care Package</div>
+            <div class="product-description">
+              Comprehensive dental automation system including patient management, SMS reminders, and online booking.
+            </div>
+            <div class="product-features">
+              <div class="product-feature">
+                <div class="feature-icon">✓</div>
+                <div>24/7 Online Booking System</div>
+              </div>
+              <div class="product-feature">
+                <div class="feature-icon">✓</div>
+                <div>Automated SMS Reminders</div>
+              </div>
+              <div class="product-feature">
+                <div class="feature-icon">✓</div>
+                <div>Patient Management CRM</div>
+              </div>
+              <div class="product-feature">
+                <div class="feature-icon">✓</div>
+                <div>Review Collection System</div>
+              </div>
+            </div>
+            <div class="product-rating">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <div class="rating-text">4.9/5 (127 reviews)</div>
+            </div>
+            <div class="product-price">
+              <div>
+                <div class="price-current">$299</div>
+                <div class="price-period">per month</div>
+              </div>
+            </div>
+            <button class="product-button">Start Free Trial</button>
+          </div>
+        </div>
+        <div class="platform-badge">SaaS Product Page</div>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
