@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimized Realistic Artifacts</title>
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 20px;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .demo-section {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .demo-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    /* ===== EMAIL (Gmail Style) ===== */
+    .artifact-email {
+      background: white;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 11px;
+      max-width: 280px;
+    }
+
+    .email-header {
+      background: #f8f9fa;
+      padding: 8px 12px;
+      border-bottom: 1px solid #dadce0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .email-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1a73e8;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 10px;
+    }
+
+    .email-sender {
+      flex: 1;
+      font-size: 10px;
+    }
+
+    .sender-name {
+      font-weight: 500;
+      color: #202124;
+    }
+
+    .sender-email {
+      color: #5f6368;
+    }
+
+    .email-time {
+      font-size: 9px;
+      color: #5f6368;
+    }
+
+    .email-subject {
+      padding: 8px 12px 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #202124;
+    }
+
+    .email-body {
+      padding: 4px 12px 12px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #3c4043;
+    }
+
+    /* ===== SMS (iPhone Style) ===== */
+    .artifact-sms {
+      background: #000;
+      border-radius: 16px;
+      padding: 12px;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .sms-header {
+      color: white;
+      font-size: 10px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .sms-bubble {
+      background: #007aff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 16px;
+      border-bottom-right-radius: 4px;
+      margin-left: auto;
+      margin-right: 6px;
+      max-width: 180px;
+      font-size: 11px;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .sms-time {
+      text-align: right;
+      color: #8e8e93;
+      font-size: 9px;
+      margin-right: 8px;
+    }
+
+    /* ===== WHATSAPP ===== */
+    .artifact-whatsapp {
+      background: #ece5dd;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    .whatsapp-bubble {
+      background: #dcf8c6;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-time {
+      font-size: 9px;
+      color: #667781;
+      text-align: right;
+    }
+
+    /* ===== NOTIFICATION (macOS Style) ===== */
+    .artifact-notification {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+      max-width: 260px;
+      font-size: 11px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .notification-app-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: #007aff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+    }
+
+    .notification-app-name {
+      font-size: 10px;
+      font-weight: 600;
+      color: #1d1d1f;
+      flex: 1;
+    }
+
+    .notification-time {
+      font-size: 9px;
+      color: #86868b;
+    }
+
+    .notification-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 2px;
+    }
+
+    .notification-body {
+      font-size: 10px;
+      color: #424245;
+      line-height: 1.3;
+    }
+
+    /* ===== DASHBOARD (SaaS Style) ===== */
+    .artifact-dashboard {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .dashboard-header {
+      font-size: 12px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .metric-label {
+      font-size: 9px;
+      color: #6b7280;
+    }
+
+    /* ===== FORM (Modern Style) ===== */
+    .artifact-form {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .form-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .form-field {
+      margin-bottom: 8px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 3px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 10px;
+      box-sizing: border-box;
+    }
+
+    .form-button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* ===== WORKFLOW (n8n Style) ===== */
+    .artifact-workflow {
+      background: #fefefe;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      max-width: 280px;
+      overflow-x: auto;
+    }
+
+    .workflow-node {
+      background: #ffffff;
+      border: 1px solid #c5d4ea;
+      border-radius: 4px;
+      padding: 4px 8px;
+      min-width: 60px;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 500;
+      color: #2a2a2a;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .workflow-node::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      transform: translateY(-50%);
+      color: #bbb;
+      font-size: 10px;
+    }
+
+    .workflow-node:last-child::after {
+      content: none;
+    }
+
+    .node-icon {
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    /* ===== PIPELINE ===== */
+    .artifact-pipeline {
+      background: #fffbe6;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      max-width: 280px;
+    }
+
+    .pipeline-column {
+      background: #ffffff;
+      flex: 1;
+      border-radius: 6px;
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .pipeline-title {
+      font-size: 10px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    .pipeline-card {
+      background: #f4f6f8;
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 9px;
+      margin-bottom: 4px;
+      color: #1f2937;
+    }
+
+    /* ===== CODE BLOCK ===== */
+    .artifact-code {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: 'Courier New', monospace;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 10px;
+      max-width: 280px;
+      overflow-x: auto;
+    }
+
+    /* ===== API ===== */
+    .artifact-api {
+      background: #f8f9fa;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 10px;
+      max-width: 280px;
+    }
+
+    .api-method {
+      font-weight: bold;
+      color: #0b69ff;
+    }
+
+    .api-block {
+      background: #ffffff;
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    /* ===== INTEGRATION ===== */
+    .artifact-integration {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 280px;
+    }
+
+    .integration-tile {
+      background: #f1f3f5;
+      padding: 8px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 9px;
+    }
+
+    .integration-tile span {
+      display: block;
+      margin-top: 4px;
+      color: #374151;
+    }
+
+    /* ===== SLACK CHAT ===== */
+    .artifact-slack {
+      background: #f8f9fa;
+      border: 1px solid #e1e5e9;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 10px;
+      max-width: 280px;
+    }
+
+    .slack-msg {
+      display: flex;
+      gap: 6px;
+    }
+
+    .slack-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 3px;
+      background: #4A154B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .slack-content {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 4px 8px;
+      flex: 1;
+    }
+
+    .slack-username {
+      font-weight: 600;
+      color: #1264a3;
+      font-size: 9px;
+      margin-bottom: 2px;
+    }
+
+    .slack-text {
+      color: #1d1c1d;
+      font-size: 9px;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .artifact-checklist {
+      background: #fff0f0;
+      border-radius: 8px;
+      padding: 12px;
+      max-width: 280px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .check-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      border: 2px solid #db4c3f;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .check-label {
+      font-size: 10px;
+      color: #374151;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- EMAIL -->
+    <div class="demo-section">
+      <div class="demo-title">📧 Gmail Email</div>
+      <div class="artifact-email">
+        <div class="email-header">
+          <div class="email-avatar">M</div>
+          <div class="email-sender">
+            <div class="sender-name">Mike Thompson</div>
+            <div class="sender-email">mike@agency.com</div>
+          </div>
+          <div class="email-time">2:45 PM</div>
+        </div>
+        <div class="email-subject">
+          Perfect Property Match Found
+        </div>
+        <div class="email-body">
+          Hi Sarah,<br><br>
+          Great news! Found a 3BR/2BA home in Downtown for $445K - exactly what you're looking for!<br><br>
+          Want to schedule a showing?
+        </div>
+      </div>
+    </div>
+
+    <!-- SMS -->
+    <div class="demo-section">
+      <div class="demo-title">💬 iPhone SMS</div>
+      <div class="artifact-sms">
+        <div class="sms-header">Messages</div>
+        <div class="sms-bubble">
+          Your showing at 123 Oak Street is confirmed for tomorrow at 2:30 PM. See you there! 🏠
+        </div>
+        <div class="sms-time">Read 2:47 PM</div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div class="demo-section">
+      <div class="demo-title">💚 WhatsApp Chat</div>
+      <div class="artifact-whatsapp">
+        <div class="whatsapp-bubble">
+          Hey! Just checking — are we still on for the property viewing at 3PM?
+        </div>
+        <div class="whatsapp-time">10:41 AM</div>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div class="demo-section">
+      <div class="demo-title">🔔 Push Notification</div>
+      <div class="artifact-notification">
+        <div class="notification-header">
+          <div class="notification-app-icon">🏠</div>
+          <div class="notification-app-name">Property Manager</div>
+          <div class="notification-time">now</div>
+        </div>
+        <div class="notification-title">New Lead Generated</div>
+        <div class="notification-body">
+          Sarah Johnson viewed 123 Oak Street and requested more information.
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="demo-section">
+      <div class="demo-title">📊 CRM Dashboard</div>
+      <div class="artifact-dashboard">
+        <div class="dashboard-header">Client Overview - Sarah Johnson</div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Properties Shown</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">High</div>
+            <div class="metric-label">Interest Level</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">2</div>
+            <div class="metric-label">Days Since Contact</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">95%</div>
+            <div class="metric-label">Match Score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="demo-section">
+      <div class="demo-title">📋 Lead Capture Form</div>
+      <div class="artifact-form">
+        <div class="form-title">Property Interest</div>
+        <div class="form-field">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" value="Sarah Johnson" readonly>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Budget Range</label>
+          <input type="text" class="form-input" value="$400K - $500K" readonly>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Preferred Areas</label>
+          <input type="text" class="form-input" value="Downtown, Suburbs" readonly>
+        </div>
+        <button class="form-button">Submit Interest</button>
+      </div>
+    </div>
+
+    <!-- WORKFLOW -->
+    <div class="demo-section">
+      <div class="demo-title">🔄 n8n Workflow</div>
+      <div class="artifact-workflow">
+        <div class="workflow-node">
+          <div class="node-icon">🟢</div>
+          Webhook
+        </div>
+        <div class="workflow-node">
+          <div class="node-icon">🧠</div>
+          OpenAI
+        </div>
+        <div class="workflow-node">
+          <div class="node-icon">📤</div>
+          Notion
+        </div>
+      </div>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="demo-section">
+      <div class="demo-title">📈 Sales Pipeline</div>
+      <div class="artifact-pipeline">
+        <div class="pipeline-column">
+          <div class="pipeline-title">Leads</div>
+          <div class="pipeline-card">John S.</div>
+          <div class="pipeline-card">Tanya K.</div>
+        </div>
+        <div class="pipeline-column">
+          <div class="pipeline-title">Progress</div>
+          <div class="pipeline-card">Alex D.</div>
+        </div>
+        <div class="pipeline-column">
+          <div class="pipeline-title">Closed</div>
+          <div class="pipeline-card">Hugo M.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CODE -->
+    <div class="demo-section">
+      <div class="demo-title">💻 Code Snippet</div>
+      <div class="artifact-code">
+const lead = {<br>
+&nbsp;&nbsp;name: "John Doe",<br>
+&nbsp;&nbsp;email: "john@example.com",<br>
+&nbsp;&nbsp;status: "New Lead"<br>
+};<br><br>
+sendToCRM(lead);
+      </div>
+    </div>
+
+    <!-- API -->
+    <div class="demo-section">
+      <div class="demo-title">🔌 API Endpoint</div>
+      <div class="artifact-api">
+        <div><span class="api-method">POST</span> /api/leads</div>
+        <div class="api-block">
+{<br>
+&nbsp;&nbsp;"name": "Sarah Johnson",<br>
+&nbsp;&nbsp;"email": "sarah@email.com",<br>
+&nbsp;&nbsp;"source": "website"<br>
+}
+        </div>
+      </div>
+    </div>
+
+    <!-- INTEGRATION -->
+    <div class="demo-section">
+      <div class="demo-title">🔗 Integrations</div>
+      <div class="artifact-integration">
+        <div class="integration-tile">
+          📧<span>Gmail</span>
+        </div>
+        <div class="integration-tile">
+          📊<span>Airtable</span>
+        </div>
+        <div class="integration-tile">
+          💬<span>Slack</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLACK -->
+    <div class="demo-section">
+      <div class="demo-title">💬 Slack Chat</div>
+      <div class="artifact-slack">
+        <div class="slack-msg">
+          <div class="slack-avatar">A</div>
+          <div class="slack-content">
+            <div class="slack-username">Alice</div>
+            <div class="slack-text">CRM connected to Make.com!</div>
+          </div>
+        </div>
+        <div class="slack-msg">
+          <div class="slack-avatar">J</div>
+          <div class="slack-content">
+            <div class="slack-username">John</div>
+            <div class="slack-text">Great! Can you add the webhook?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="demo-section">
+      <div class="demo-title">✅ Task Checklist</div>
+      <div class="artifact-checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">Create project folder</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">Configure Airtable base</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">Connect Make.com scenario</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">Test automation flow</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
