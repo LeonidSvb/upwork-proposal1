@@ -6,6 +6,51 @@
     <title>You Found Me 👀 - Leonid Shvorob</title>
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+    <style>
+        /* Переопределение для темной темы */
+        body { 
+            background: #0a0a0a; 
+            color: #e0e0e0; 
+        }
+        .slide-1 { 
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); 
+        }
+        .client-title { 
+            color: #00ff88; 
+            background: linear-gradient(135deg, #00ff88, #00cc70);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .problem-title { 
+            color: #ff6b6b;
+            background: linear-gradient(135deg, #ff6b6b, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cost-card { 
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .cost-value { 
+            background: linear-gradient(135deg, #00ff88, #00cc70);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .quote-block {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 4px solid #00ff88;
+            color: #bbb;
+        }
+        .artifact-analytics, .artifact-email, .artifact-dashboard {
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            color: #e0e0e0;
+        }
+        .analytics-title, .dashboard-title { color: #00ff88; }
+        .metric-number, .metric-value { color: #00ff88; }
+        .chart-bar { background: linear-gradient(180deg, #00ff88, #00cc70); }
+        .email-subject { color: #ff6b6b; }
+    </style>
 </head>
 <body>
     <div class="slide slide-1">
@@ -14,106 +59,102 @@
             <h1 class="client-title">Well, hello there 👋</h1>
         </div>
         
-        <div class="quote-block typewriter">
-            If you're here, you're probably either doing detective work, wondering if I'm actually good, bored and clicking random links, or looking for someone who delivers what they promise.
-        </div>
+        <p style="color: #e0e0e0; font-size: 1.1rem; margin-bottom: 20px;">If you're here, you're probably either:</p>
+        
+        <ul style="list-style: none; padding-left: 0; margin: 30px 0;">
+            <li style="margin-bottom: 12px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">🕵️</span>
+                Doing some detective work on who built your latest project
+            </li>
+            <li style="margin-bottom: 12px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">🤔</span>
+                Wondering if I'm actually as good as I claim to be
+            </li>
+            <li style="margin-bottom: 12px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">😴</span>
+                Bored and clicking random links (no judgment here)
+            </li>
+            <li style="margin-bottom: 12px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">🎯</span>
+                Looking for someone who can actually deliver what they promise
+            </li>
+        </ul>
         
         <div class="problem-reframe">
             <h2 class="problem-title">Plot twist: You found the right person</h2>
-            <p class="problem-text">I'm that developer who builds automation systems that actually work and delivers projects that make clients say "This is exactly what we needed."</p>
+            <p class="problem-text" style="color: #e0e0e0;">I'm <strong style="color: #fff;">that developer</strong> who builds automation systems that actually work and delivers projects that make clients say <em style="color: #00ff88;">"This is exactly what we needed."</em></p>
+        </div>
+        
+        <div class="quote-block">
+            <p style="font-size: 1.2rem; margin: 0;">"I don't just build solutions. I build solutions that generate revenue while you focus on what matters most."</p>
         </div>
         
         <div class="cost-grid">
             <div class="cost-card">
-                <div class="cost-value">200</div>
-                <div class="cost-label">Hours Saved</div>
-                <div class="cost-desc">Weekly across all clients</div>
+                <div class="cost-value">200+</div>
+                <div class="cost-label" style="color: #fff;">Hours Saved Weekly</div>
+                <div class="cost-desc" style="color: #aaa;">Across all client projects</div>
             </div>
             <div class="cost-card">
-                <div class="cost-value money">2M</div>
-                <div class="cost-label">Revenue Generated</div>
-                <div class="cost-desc">Through automation systems</div>
+                <div class="cost-value">$2M+</div>
+                <div class="cost-label" style="color: #fff;">Revenue Generated</div>
+                <div class="cost-desc" style="color: #aaa;">Through automation systems</div>
             </div>
             <div class="cost-card">
                 <div class="cost-value">0</div>
-                <div class="cost-label">Projects Failed</div>
-                <div class="cost-desc">Because I know what I'm doing</div>
+                <div class="cost-label" style="color: #fff;">Projects Failed</div>
+                <div class="cost-desc" style="color: #aaa;">Because I actually know what I'm doing</div>
             </div>
         </div>
     </div>
 
-    <div class="slide slide-2">
-        <h2 class="roadmap-title">What I Actually Do</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 60px; color: var(--text-gray);">While others talk, I build:</p>
+    <div style="padding: 80px 40px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="color: #ff6b6b; font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; background: linear-gradient(135deg, #ff6b6b, #ff4757); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What I Actually Do</h2>
+        <p style="color: #e0e0e0; font-size: 1.1rem; margin-bottom: 40px;">While others talk, I build:</p>
         
-        <div class="roadmap-container">
-            <div class="roadmap-line"></div>
-            
-            <div class="step">
-                <div class="step-marker">1</div>
-                <div class="step-content">
-                    <h3 class="step-title">AI Automation Pipelines</h3>
-                    <p class="step-process">DATA TRANSFORMATION</p>
-                    <p class="step-desc">Transform your data chaos into executive insights that drive decisions.</p>
-                    <div class="step-hint">Real-time processing • Custom dashboards • Executive reporting</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-marker">2</div>
-                <div class="step-content">
-                    <h3 class="step-title">Business Systems</h3>
-                    <p class="step-process">OPERATION AUTOMATION</p>
-                    <p class="step-desc">Handle operations automatically while you focus on growth.</p>
-                    <div class="step-hint">24/7 monitoring • Error handling • Scalable architecture</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-marker">3</div>
-                <div class="step-content">
-                    <h3 class="step-title">Custom Dashboards</h3>
-                    <p class="step-process">REVENUE TRACKING</p>
-                    <p class="step-desc">Show you exactly what's making (or losing) money in real-time.</p>
-                    <div class="step-hint">Live metrics • Profit analysis • Performance insights</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-marker">4</div>
-                <div class="step-content">
-                    <h3 class="step-title">Integration Solutions</h3>
-                    <p class="step-process">SYSTEM CONNECTIVITY</p>
-                    <p class="step-desc">Connect systems that were never meant to work together.</p>
-                    <div class="step-hint">API integration • Data sync • Workflow automation</div>
-                </div>
-            </div>
-        </div>
+        <ul style="list-style: none; padding-left: 0; margin: 30px 0;">
+            <li style="margin-bottom: 15px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">▶</span>
+                <strong style="color: #fff;">AI Automation Pipelines</strong> that transform your data chaos into executive insights
+            </li>
+            <li style="margin-bottom: 15px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">▶</span>
+                <strong style="color: #fff;">Business Systems</strong> that handle operations while you focus on growth
+            </li>
+            <li style="margin-bottom: 15px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">▶</span>
+                <strong style="color: #fff;">Custom Dashboards</strong> that show you exactly what's making (or losing) money
+            </li>
+            <li style="margin-bottom: 15px; color: #e0e0e0; padding-left: 30px; position: relative;">
+                <span style="position: absolute; left: 0; color: #00ff88;">▶</span>
+                <strong style="color: #fff;">Integration Solutions</strong> between systems that were never meant to work together
+            </li>
+        </ul>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px auto; max-width: 900px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin: 60px 0;">
             <div class="artifact-analytics">
                 <div class="analytics-header">
-                    <div class="analytics-title">Live Performance</div>
-                    <div class="analytics-period">Real Results</div>
+                    <div class="analytics-title">Real Results Dashboard</div>
+                    <div class="analytics-period" style="background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3);">Live Stats</div>
                 </div>
                 <div class="analytics-metrics">
                     <div class="metric-item">
-                        <div class="metric-number">$247K</div>
-                        <div class="metric-label">Generated</div>
-                        <div class="metric-change">This Month ↗</div>
+                        <div class="metric-number">200+</div>
+                        <div class="metric-label" style="color: #ccc;">Hours Saved</div>
+                        <div class="metric-change">Weekly ⚡</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-number">99.8%</div>
-                        <div class="metric-label">Uptime</div>
-                        <div class="metric-change">All Systems 🎯</div>
+                        <div class="metric-number">$2M+</div>
+                        <div class="metric-label" style="color: #ccc;">Revenue Gen</div>
+                        <div class="metric-change">Client Success 💰</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-number">847</div>
-                        <div class="metric-label">Operations</div>
-                        <div class="metric-change">Daily Average ⚡</div>
+                        <div class="metric-number">0</div>
+                        <div class="metric-label" style="color: #ccc;">Failed Projects</div>
+                        <div class="metric-change">Perfect Record 🎯</div>
                     </div>
                 </div>
-                <div class="analytics-chart">
+                <div class="analytics-chart" style="background: rgba(0, 0, 0, 0.3);">
                     <div class="chart-bar"></div>
                     <div class="chart-bar"></div>
                     <div class="chart-bar"></div>
@@ -125,48 +166,43 @@
             </div>
             
             <div class="artifact-email">
-                <div class="email-header">
+                <div class="email-header" style="background: rgba(255, 107, 107, 0.1); border-bottom: 1px solid rgba(255, 107, 107, 0.2);">
                     <div class="email-avatar">🤖</div>
                     <div class="email-sender">
-                        <div class="sender-name">AutomationBot</div>
+                        <div class="sender-name" style="color: #e0e0e0;">AutomationBot</div>
                         <div class="sender-email">system@yourcompany.com</div>
                     </div>
                     <div class="email-time">24/7</div>
                 </div>
                 <div class="email-subject">
-                    🎯 Daily Automation Summary
+                    🎯 Systems Running Perfectly
                 </div>
-                <div class="email-body">
-                    <strong>Today's Impact:</strong><br><br>
-                    • 47 hours saved on data processing<br>
-                    • $23K revenue from automated leads<br>
+                <div class="email-body" style="color: #ccc;">
+                    <strong>Today's Performance:</strong><br><br>
+                    • 47 hours saved automatically<br>
+                    • $23K revenue from AI systems<br>
                     • 0 manual errors detected<br><br>
-                    <strong>Status:</strong> All systems operational ✅<br>
-                    <strong>Action:</strong> Ready to scale
+                    <strong>Status:</strong> All green ✅<br>
+                    <strong>Next:</strong> Ready to scale up
                 </div>
             </div>
         </div>
         
-        <div class="call-to-action">
-            <h3 class="cta-title">The Real Question Is...</h3>
-            <p class="cta-text">Are you tired of paying for "solutions" that create more problems? Ready for something that actually delivers results?</p>
-            <p class="cta-text">Each project represents real results for real businesses. No fluff, no overnight success stories, just systems that deliver consistent value.</p>
-        </div>
-    </div>
-    
-    <div class="slide slide-1">
+        <h2 style="color: #ff6b6b; font-size: 1.8rem; font-weight: 600; margin: 40px 0 20px; background: linear-gradient(135deg, #ff6b6b, #ff4757); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Real Question Is...</h2>
+        
+        <p style="color: #e0e0e0; font-size: 1.1rem; margin-bottom: 20px;">Are you tired of paying for "solutions" that create more problems? Ready for something that actually delivers results?</p>
+        
+        <p style="color: #e0e0e0; font-size: 1.1rem; margin-bottom: 30px;">Each project in this repository represents <strong style="color: #fff;">real results</strong> for real businesses. No fluff, no overnight success stories, just systems that deliver consistent value.</p>
+        
         <div class="quote-block">
-            <p style="font-size: 1.3rem; margin-bottom: 0;">"I don't just build solutions. I build solutions that generate revenue while you focus on what matters most."</p>
+            <p style="margin: 0;">Pro tip: If you're still reading this, you probably need help with automation. Good news - you're in the right place.</p>
         </div>
         
-        <div class="problem-reframe">
-            <h2 class="problem-title">Bottom Line</h2>
-            <p class="problem-text">I build systems that make you money. Everything else is just details.</p>
+        <div style="background: rgba(0, 255, 136, 0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(0, 255, 136, 0.2); text-align: center; margin: 40px 0;">
+            <p style="color: #e0e0e0; font-size: 1.2rem; margin: 0;"><strong style="color: #00ff88;">Bottom line:</strong> I build systems that make you money. Everything else is just details.</p>
         </div>
         
-        <div class="powered-by-badge">
-            P.S. - If you made it this far, you're probably the type of client I actually want to work with. 🎯
-        </div>
+        <p style="color: #666; font-size: 0.9rem; margin-top: 30px; text-align: center; font-style: italic;">P.S. - If you made it this far, you're probably the type of client I actually want to work with. 🎯</p>
     </div>
 </body>
 </html>
