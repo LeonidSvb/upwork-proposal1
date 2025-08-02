@@ -1,282 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>You Found Me 👀</title>
-   <style>
-       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-       
-       * { margin: 0; padding: 0; box-sizing: border-box; }
-       
-       body {
-           font-family: 'Inter', sans-serif;
-           background: #0a0a0a;
-           color: #e0e0e0;
-           line-height: 1.6;
-           font-weight: 300;
-       }
-       
-       .container {
-           max-width: 1000px;
-           margin: 0 auto;
-           padding: 60px 40px;
-           min-height: 100vh;
-       }
-       
-       h1 {
-           color: #00ff88;
-           font-size: 2.5rem;
-           font-weight: 700;
-           margin-bottom: 30px;
-           background: linear-gradient(135deg, #00ff88, #00cc70);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-           background-clip: text;
-       }
-       
-       h2 {
-           color: #ff6b6b;
-           font-size: 1.8rem;
-           font-weight: 600;
-           margin: 40px 0 20px 0;
-           background: linear-gradient(135deg, #ff6b6b, #ff4757);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-           background-clip: text;
-       }
-       
-       p {
-           margin-bottom: 20px;
-           color: #e0e0e0;
-           font-size: 1rem;
-       }
-       
-       ul {
-           margin: 20px 0 20px 20px;
-       }
-       
-       li {
-           margin-bottom: 8px;
-           color: #e0e0e0;
-       }
-       
-       strong {
-           color: #ffffff;
-           font-weight: 600;
-       }
-       
-       em {
-           color: #00ff88;
-           font-style: italic;
-       }
-       
-       .quote-block {
-           background: rgba(0, 255, 136, 0.05);
-           border-left: 4px solid #00ff88;
-           padding: 20px 30px;
-           margin: 30px 0;
-           border-radius: 0 8px 8px 0;
-           backdrop-filter: blur(10px);
-           font-style: italic;
-           color: #bbb;
-           position: relative;
-           overflow: hidden;
-       }
-       
-       .quote-block::before {
-           content: '';
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           height: 2px;
-           background: linear-gradient(90deg, transparent, #00ff88, transparent);
-           animation: shimmer 2s infinite;
-       }
-       
-       .stats-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-           gap: 40px;
-           margin: 50px 0;
-           padding: 40px 20px;
-           background: rgba(255, 255, 255, 0.02);
-           border-radius: 16px;
-           border: 1px solid rgba(255, 255, 255, 0.05);
-           backdrop-filter: blur(20px);
-       }
-       
-       .stat-item {
-           text-align: center;
-           transition: transform 0.3s ease;
-       }
-       
-       .stat-item:hover {
-           transform: translateY(-4px);
-       }
-       
-       .stat-number {
-           font-size: 2.5rem;
-           font-weight: 700;
-           background: linear-gradient(135deg, #00ff88, #00cc70);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-           background-clip: text;
-           margin-bottom: 8px;
-       }
-       
-       .stat-label {
-           font-weight: 500;
-           color: #ffffff;
-           margin-bottom: 4px;
-       }
-       
-       .stat-desc {
-           font-size: 0.8rem;
-           color: #aaa;
-       }
-       
-       .feature-list {
-           background: rgba(255, 255, 255, 0.02);
-           padding: 30px;
-           border-radius: 12px;
-           border: 1px solid rgba(255, 255, 255, 0.05);
-           margin: 30px 0;
-       }
-       
-       .feature-list li {
-           margin-bottom: 12px;
-           padding-left: 10px;
-           position: relative;
-       }
-       
-       .feature-list li::before {
-           content: '▶';
-           color: #00ff88;
-           position: absolute;
-           left: -10px;
-           font-size: 0.8rem;
-       }
-       
-       hr {
-           border: none;
-           height: 1px;
-           background: linear-gradient(90deg, transparent, #333, transparent);
-           margin: 40px 0;
-       }
-       
-       .bottom-line {
-           background: rgba(0, 255, 136, 0.05);
-           padding: 30px;
-           border-radius: 12px;
-           border: 1px solid rgba(0, 255, 136, 0.2);
-           text-align: center;
-           margin: 40px 0;
-       }
-       
-       .ps-note {
-           color: #666;
-           font-size: 0.9rem;
-           margin-top: 30px;
-           text-align: center;
-           font-style: italic;
-       }
-       
-       @keyframes shimmer {
-           0% { transform: translateX(-100%); }
-           50%, 100% { transform: translateX(100%); }
-       }
-       
-       @media (max-width: 768px) {
-           .container {
-               padding: 40px 20px;
-           }
-           
-           h1 {
-               font-size: 2rem;
-           }
-           
-           h2 {
-               font-size: 1.5rem;
-           }
-           
-           .stats-grid {
-               grid-template-columns: 1fr;
-               gap: 20px;
-           }
-           
-           .stat-number {
-               font-size: 2rem;
-           }
-       }
-   </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Found Me 👀 - Leonid Shvorob</title>
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
 </head>
 <body>
-   <div class="container">
-       <h1>Well, hello there 👋</h1>
-       
-       <p>If you're here, you're probably either:</p>
-       <ul>
-           <li>🕵️ Doing some detective work on who built your latest project</li>
-           <li>🤔 Wondering if I'm actually as good as I claim to be</li>
-           <li>😴 Bored and clicking random links (no judgment here)</li>
-           <li>🎯 Looking for someone who can actually deliver what they promise</li>
-       </ul>
-       
-       <h2>Plot twist: You found the right person</h2>
-       
-       <p>I'm <strong>that developer</strong> who builds automation systems that actually work and delivers projects that make clients say <em>"This is exactly what we needed."</em></p>
-       
-       <div class="quote-block">
-           <p>"I don't just build solutions. I build solutions that generate revenue while you focus on what matters most."</p>
-       </div>
-       
-       <div class="stats-grid">
-           <div class="stat-item">
-               <div class="stat-number">200+</div>
-               <div class="stat-label">Hours Saved Weekly</div>
-               <div class="stat-desc">Across all client projects</div>
-           </div>
-           <div class="stat-item">
-               <div class="stat-number">$2M+</div>
-               <div class="stat-label">Revenue Generated</div>
-               <div class="stat-desc">Through automation systems</div>
-           </div>
-           <div class="stat-item">
-               <div class="stat-number">0</div>
-               <div class="stat-label">Projects Failed</div>
-               <div class="stat-desc">Because I actually know what I'm doing</div>
-           </div>
-       </div>
-       
-       <h2>What I Actually Do</h2>
-       <p>While others talk, I build:</p>
-       <div class="feature-list">
-           <ul>
-               <li><strong>AI Automation Pipelines</strong> that transform your data chaos into executive insights</li>
-               <li><strong>Business Systems</strong> that handle operations while you focus on growth</li>
-               <li><strong>Custom Dashboards</strong> that show you exactly what's making (or losing) money</li>
-               <li><strong>Integration Solutions</strong> between systems that were never meant to work together</li>
-           </ul>
-       </div>
-       
-       <h2>The Real Question Is...</h2>
-       <p>Are you tired of paying for "solutions" that create more problems? Ready for something that actually delivers results?</p>
-       
-       <p>Each project in this repository represents <strong>real results</strong> for real businesses. No fluff, no overnight success stories, just systems that deliver consistent value.</p>
-       
-       <div class="quote-block">
-           <p>Pro tip: If you're still reading this, you probably need help with automation. Good news - you're in the right place.</p>
-       </div>
-       
-       <hr>
-       
-       <div class="bottom-line">
-           <p><strong>Bottom line:</strong> I build systems that make you money. Everything else is just details.</p>
-       </div>
-       
-       <p class="ps-note">P.S. - If you made it this far, you're probably the type of client I actually want to work with. 🎯</p>
-   </div>
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">👀 You Found Me</div>
+            <h1 class="client-title">Well, hello there 👋</h1>
+        </div>
+        
+        <div class="quote-block typewriter">
+            If you're here, you're probably either doing detective work, wondering if I'm actually good, bored and clicking random links, or looking for someone who delivers what they promise.
+        </div>
+        
+        <div class="problem-reframe">
+            <h2 class="problem-title">Plot twist: You found the right person</h2>
+            <p class="problem-text">I'm that developer who builds automation systems that actually work and delivers projects that make clients say "This is exactly what we needed."</p>
+        </div>
+        
+        <div class="cost-grid">
+            <div class="cost-card">
+                <div class="cost-value">200</div>
+                <div class="cost-label">Hours Saved</div>
+                <div class="cost-desc">Weekly across all clients</div>
+            </div>
+            <div class="cost-card">
+                <div class="cost-value money">2M</div>
+                <div class="cost-label">Revenue Generated</div>
+                <div class="cost-desc">Through automation systems</div>
+            </div>
+            <div class="cost-card">
+                <div class="cost-value">0</div>
+                <div class="cost-label">Projects Failed</div>
+                <div class="cost-desc">Because I know what I'm doing</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide slide-2">
+        <h2 class="roadmap-title">What I Actually Do</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 60px; color: var(--text-gray);">While others talk, I build:</p>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">AI Automation Pipelines</h3>
+                    <p class="step-process">DATA TRANSFORMATION</p>
+                    <p class="step-desc">Transform your data chaos into executive insights that drive decisions.</p>
+                    <div class="step-hint">Real-time processing • Custom dashboards • Executive reporting</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">Business Systems</h3>
+                    <p class="step-process">OPERATION AUTOMATION</p>
+                    <p class="step-desc">Handle operations automatically while you focus on growth.</p>
+                    <div class="step-hint">24/7 monitoring • Error handling • Scalable architecture</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">Custom Dashboards</h3>
+                    <p class="step-process">REVENUE TRACKING</p>
+                    <p class="step-desc">Show you exactly what's making (or losing) money in real-time.</p>
+                    <div class="step-hint">Live metrics • Profit analysis • Performance insights</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">Integration Solutions</h3>
+                    <p class="step-process">SYSTEM CONNECTIVITY</p>
+                    <p class="step-desc">Connect systems that were never meant to work together.</p>
+                    <div class="step-hint">API integration • Data sync • Workflow automation</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px auto; max-width: 900px;">
+            <div class="artifact-analytics">
+                <div class="analytics-header">
+                    <div class="analytics-title">Live Performance</div>
+                    <div class="analytics-period">Real Results</div>
+                </div>
+                <div class="analytics-metrics">
+                    <div class="metric-item">
+                        <div class="metric-number">$247K</div>
+                        <div class="metric-label">Generated</div>
+                        <div class="metric-change">This Month ↗</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">99.8%</div>
+                        <div class="metric-label">Uptime</div>
+                        <div class="metric-change">All Systems 🎯</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">847</div>
+                        <div class="metric-label">Operations</div>
+                        <div class="metric-change">Daily Average ⚡</div>
+                    </div>
+                </div>
+                <div class="analytics-chart">
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                    <div class="chart-bar"></div>
+                </div>
+            </div>
+            
+            <div class="artifact-email">
+                <div class="email-header">
+                    <div class="email-avatar">🤖</div>
+                    <div class="email-sender">
+                        <div class="sender-name">AutomationBot</div>
+                        <div class="sender-email">system@yourcompany.com</div>
+                    </div>
+                    <div class="email-time">24/7</div>
+                </div>
+                <div class="email-subject">
+                    🎯 Daily Automation Summary
+                </div>
+                <div class="email-body">
+                    <strong>Today's Impact:</strong><br><br>
+                    • 47 hours saved on data processing<br>
+                    • $23K revenue from automated leads<br>
+                    • 0 manual errors detected<br><br>
+                    <strong>Status:</strong> All systems operational ✅<br>
+                    <strong>Action:</strong> Ready to scale
+                </div>
+            </div>
+        </div>
+        
+        <div class="call-to-action">
+            <h3 class="cta-title">The Real Question Is...</h3>
+            <p class="cta-text">Are you tired of paying for "solutions" that create more problems? Ready for something that actually delivers results?</p>
+            <p class="cta-text">Each project represents real results for real businesses. No fluff, no overnight success stories, just systems that deliver consistent value.</p>
+        </div>
+    </div>
+    
+    <div class="slide slide-1">
+        <div class="quote-block">
+            <p style="font-size: 1.3rem; margin-bottom: 0;">"I don't just build solutions. I build solutions that generate revenue while you focus on what matters most."</p>
+        </div>
+        
+        <div class="problem-reframe">
+            <h2 class="problem-title">Bottom Line</h2>
+            <p class="problem-text">I build systems that make you money. Everything else is just details.</p>
+        </div>
+        
+        <div class="powered-by-badge">
+            P.S. - If you made it this far, you're probably the type of client I actually want to work with. 🎯
+        </div>
+    </div>
 </body>
 </html>
