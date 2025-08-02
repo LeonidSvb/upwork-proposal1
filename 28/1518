@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viral Content Automation - Turn Trends Into Scripts Weekly</title>
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+</head>
+<body>
+    <!-- SLIDE 1: PROBLEM -->
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">🎯 For: Content Marketers & Creative Teams | Save Hours Weekly</div>
+            <div class="client-title">Viral Content Research Automation</div>
+            <div class="client-details">Extract viral hooks | Auto-generate scripts | Ready-to-launch copy | Every week</div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter">
+                > "Manually hunting down viral TikToks every week is a nightmare. It eats up our whole day and most videos are just noise."
+            </div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter second">
+                > "We want to instantly know what's working — and generate similar content tailored to our offers without more hands."
+            </div>
+        </div>
+        
+        <div class="problem-reframe">
+            <div class="problem-title">How I understand the problem</div>
+            <div class="problem-text">
+                You're stuck doing research manually — scrolling, copying, guessing. Valuable insights get lost. Your team slows down. Great ideas never get shipped. You need a system that finds viral content and turns it into ready scripts automatically.
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">9</div>
+                    <div class="cost-label">Hours/Week Wasted</div>
+                    <div class="cost-desc">Manual video hunting</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value missed">3-5</div>
+                    <div class="cost-label">Viral Trends Missed</div>
+                    <div class="cost-desc">No systematic tracking</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value percent">10</div>
+                    <div class="cost-label">AI Ideas Lost</div>
+                    <div class="cost-desc">Without proper structure</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: SOLUTION -->
+    <div class="slide slide-2">
+        <div class="roadmap-title">Viral Content Extractor 360</div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">Scrape Viral Content</div>
+                    <div class="step-process">Apify + n8n = Auto-collect trending videos<br>↓<br>Viral content database updated daily</div>
+                    <div class="step-desc">Setup: Apify scraper → n8n workflow → Google Sheets</div>
+                    <div class="artifact">
+                        <div class="artifact-analytics">
+                            <div class="analytics-header">
+                                <div class="analytics-title">Viral Content Database</div>
+                                <div class="analytics-period">Last 7 Days</div>
+                            </div>
+                            <div class="analytics-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-number">247</div>
+                                    <div class="metric-label">Videos</div>
+                                    <div class="metric-change">Collected ✅</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">89</div>
+                                    <div class="metric-label">Viral Hits</div>
+                                    <div class="metric-change">1M+ views 🔥</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">34</div>
+                                    <div class="metric-label">Top Hooks</div>
+                                    <div class="metric-change">Extracted 🎯</div>
+                                </div>
+                            </div>
+                            <div class="analytics-chart">
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                                <span>Sun</span>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #ec4899, #be185d); color: white; padding: 12px; border-radius: 8px; margin-top: 16px; text-align: center;">
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">🔥 Trending Now</div>
+                                <div style="font-size: 16px; font-weight: 800;">"POV: You finally..." hook format</div>
+                                <div style="font-size: 12px; opacity: 0.9;">47 videos using this pattern</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">Extract Emotional Insights</div>
+                    <div class="step-process">n8n + OpenAI = Analyze what makes content viral<br>↓<br>Hook phrases + pain points + top comments</div>
+                    <div class="step-desc">Setup: Video data → OpenAI analysis → Pattern extraction</div>
+                    <div class="artifact">
+                        <div class="artifact-dashboard">
+                            <div class="dashboard-header">
+                                <div class="dashboard-title">Content Analysis Results</div>
+                                <div class="dashboard-period">AI Insights</div>
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">23</div>
+                                    <div class="metric-label">Hook Patterns</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">156</div>
+                                    <div class="metric-label">Pain Points</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">89</div>
+                                    <div class="metric-label">Top Comments</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">🎯</div>
+                                    <div class="metric-label">AI Analyzed</div>
+                                </div>
+                            </div>
+                            <div style="background: #f9fafb; padding: 12px; border-radius: 8px; margin-top: 12px;">
+                                <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 8px;">TOP VIRAL PATTERNS THIS WEEK</div>
+                                <div style="font-size: 11px; color: #6b7280; line-height: 1.4;">
+                                    🔥 "POV: You finally..." - 47 videos, avg 2.3M views<br>
+                                    💡 "Things I wish I knew..." - 34 videos, strong engagement<br>
+                                    😱 "Plot twist..." - 28 videos, high completion rate<br>
+                                    🎯 "If you're struggling with..." - 23 videos, comments heavy<br>
+                                    ✨ Pain point: "Feeling overwhelmed" mentioned 89 times
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">Generate New Content Scripts</div>
+                    <div class="step-process">OpenAI + Custom prompts = Brand-tailored content<br>↓<br>Ready scripts: Title + Hook + Body + CTA</div>
+                    <div class="step-desc">Setup: Viral patterns → AI prompts → Google Docs output</div>
+                    <div class="artifact">
+                        <div class="artifact-email">
+                            <div class="email-header">
+                                <div class="email-avatar">🤖</div>
+                                <div class="email-sender">
+                                    <div class="sender-name">Content AI Generator</div>
+                                    <div class="sender-email">scripts@yourcompany.com</div>
+                                </div>
+                                <div class="email-time">Every Monday 9 AM</div>
+                            </div>
+                            <div class="email-subject">
+                                📝 Your Weekly Viral Scripts Are Ready!
+                            </div>
+                            <div class="email-body">
+                                <strong>This Week's Top Scripts (Based on 247 viral videos):</strong><br><br>
+                                
+                                <strong>Script #1:</strong> "POV: You finally automate your content research"<br>
+                                Hook: Stop spending 9 hours/week hunting viral videos...<br>
+                                Body: Here's what changed everything for our team...<br>
+                                CTA: Get the automation that saves 9 hours weekly<br><br>
+                                
+                                <strong>Script #2:</strong> "Things I wish I knew about viral content"<br>
+                                Hook: Most people think viral = lucky timing...<br><br>
+                                
+                                <strong>+ 8 more ready-to-use scripts</strong><br>
+                                📎 Full Google Doc attached with formatting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">Auto Export & Share</div>
+                    <div class="step-process">Google Docs API + Brand styling = Professional reports<br>↓<br>Weekly branded delivery to your team</div>
+                    <div class="step-desc">Setup: Content generation → Brand templates → Auto email</div>
+                    <div class="artifact">
+                        <div class="artifact-slack">
+                            <div class="slack-sidebar">
+                                <div class="slack-workspace">Content Team</div>
+                                <div class="slack-channel"># weekly-scripts</div>
+                            </div>
+                            <div class="slack-messages">
+                                <div class="slack-message">
+                                    <div class="slack-avatar">📊</div>
+                                    <div class="slack-content">
+                                        <div class="slack-header">
+                                            <div class="slack-name">Content Bot</div>
+                                            <div class="slack-bot-badge">BOT</div>
+                                            <div class="slack-time">Monday 9:00 AM</div>
+                                        </div>
+                                        <div class="slack-text">
+                                            📈 <strong>Weekly Viral Content Report Ready!</strong><br><br>
+                                            
+                                            📊 <strong>This week's intel:</strong><br>
+                                            • 247 videos analyzed<br>
+                                            • 10 viral scripts generated<br>
+                                            • 23 hook patterns identified<br>
+                                            • Top trend: "POV" format (47 videos)<br><br>
+                                            
+                                            🎯 <strong>Ready to use:</strong><br>
+                                            Google Doc with 10 scripts + formatting<br>
+                                            Brand colors applied ✅<br>
+                                            Copy-paste ready ✅<br><br>
+                                            
+                                            📎 <strong>Link:</strong> bit.ly/weekly-scripts-dec-04
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">Media Asset Generation (Optional)</div>
+                    <div class="step-process">Scripts + RunwayML/Canva API = Visual assets<br>↓<br>Auto video thumbnails or image templates</div>
+                    <div class="step-desc">Setup: Script content → Visual AI tools → Branded assets</div>
+                    <div class="artifact">
+                        <div class="artifact-analytics">
+                            <div class="analytics-header">
+                                <div class="analytics-title">Asset Generation Results</div>
+                                <div class="analytics-period">This Week</div>
+                            </div>
+                            <div class="analytics-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-number">47</div>
+                                    <div class="metric-label">Thumbnails</div>
+                                    <div class="metric-change">Generated 🎨</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">23</div>
+                                    <div class="metric-label">Video Clips</div>
+                                    <div class="metric-change">Auto-created 🎬</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">156</div>
+                                    <div class="metric-label">Templates</div>
+                                    <div class="metric-change">Brand ready ✅</div>
+                                </div>
+                            </div>
+                            <div class="analytics-chart">
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Scripts</span>
+                                <span>Thumbs</span>
+                                <span>Videos</span>
+                                <span>Templates</span>
+                                <span>Graphics</span>
+                                <span>Logos</span>
+                                <span>Export</span>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 12px; border-radius: 8px; margin-top: 16px; text-align: center;">
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">🎨 Visual Assets</div>
+                                <div style="font-size: 16px; font-weight: 800;">10 thumbnails + 5 video templates</div>
+                                <div style="font-size: 12px; opacity: 0.9;">Ready for immediate use</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 24px 32px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);">
+            <div style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">✅ COMPLETE VIRAL CONTENT SYSTEM</div>
+            <div style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95;">
+                <strong>Apify scrapes trends → AI analyzes patterns → Scripts auto-generated → Branded reports delivered → Optional visual assets created.</strong><br>
+                9+ hours saved weekly. 10 viral hooks every Monday. Copy-ready content like clockwork.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
