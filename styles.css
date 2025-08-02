@@ -329,4 +329,206 @@ body {
    --step-border: #dbeafe;
    --step-shadow: rgba(37, 99, 235, 0.08);
    --step-shadow-hover: rgba(37, 99, 235, 0.12);
+
+
+/* === НОВЫЕ КЛАССЫ ДЛЯ УЛУЧШЕННЫХ ЛЕНДИНГОВ === */
+
+/* Powered by бейджики */
+.powered-by-badge {
+    background: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+/* Подсказки в серых блоках */
+.step-hint {
+    background: #f3f4f6;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #374151;
+    border-left: 3px solid #3b82f6;
+}
+
+/* Call-to-action секции */
+.call-to-action {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 24px 32px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 900px;
+    margin-top: 60px;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+}
+
+.cta-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background: rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Инсайт блоки в артефактах */
+.insight-block {
+    background: #f9fafb;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.insight-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.insight-content {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+/* Специальные блоки с градиентами */
+.highlight-block {
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.highlight-purple {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.highlight-orange {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.highlight-pink {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.highlight-green {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.highlight-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.highlight-value {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.highlight-desc {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Форма с кнопками */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.btn-approve {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-decline {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background: #f59e0b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Комментарий блоки в социальных артефактах */
+.comment-thread {
+    background: #f3f4f6;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    border-left: 3px solid #1877f2;
+}
+
+.comment-author {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.comment-text {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.comment-reply {
+    font-size: 13px;
+    color: #1877f2;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
 }
