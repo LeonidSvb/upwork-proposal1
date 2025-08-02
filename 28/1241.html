@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartService AI Loop - Home Services Automation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+        
+        /* SLIDE 1 - PROBLEM */
+        .slide-1 {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+        }
+        
+        .client-info {
+            margin-bottom: 40px;
+            text-align: center;
+            animation: slideUp 0.6s ease;
+        }
+        
+        .client-badge {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #22c55e;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .client-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .client-details {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+        
+        .quote-block {
+            background: rgba(255,255,255,0.08);
+            padding: 24px 32px;
+            border-radius: 12px;
+            border-left: 4px solid #60a5fa;
+            margin-bottom: 24px;
+            font-family: 'SF Mono', monospace;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            backdrop-filter: blur(20px);
+            max-width: 850px;
+            animation: slideUp 0.8s ease;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #60a5fa;
+            white-space: nowrap;
+            animation: typing 4s steps(100, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        .typewriter.second {
+            animation: typing2 4s steps(100, end) 4.5s both, blink-caret 0.75s step-end infinite 4.5s;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes typing2 {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #60a5fa; }
+        }
+        
+        .problem-reframe {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            max-width: 900px;
+            margin-bottom: 40px;
+            animation: slideUp 1s ease;
+        }
+        
+        .problem-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #93c5fd;
+        }
+        
+        .problem-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            animation: slideUp 1.2s ease;
+        }
+        
+        .cost-card {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cost-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .cost-card:hover { transform: translateY(-4px); }
+        
+        .cost-value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #93c5fd, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: countUp 2s ease-out forwards;
+        }
+        
+        .cost-value.hours::after { content: "+"; }
+        .cost-value.missed::after { content: ""; }
+        .cost-value.percent::after { content: "%"; }
+        
+        .cost-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+        
+        .cost-desc {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+        
+        /* SLIDE 2 - ROADMAP */
+        .slide-2 {
+            background: #ffffff;
+            padding: 80px 40px;
+        }
+        
+        .roadmap-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .roadmap-container {
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: 60px;
+            width: 3px;
+            background: linear-gradient(180deg, #1e40af, #2563eb, #60a5fa);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .step {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+            animation: roadmapStep 0.8s ease forwards;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+        .step:nth-child(5) { animation-delay: 1s; }
+        
+        .step-marker {
+            position: absolute;
+            left: -50px;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            background: #2563eb;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #dbeafe;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .step-content {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+            border: 1px solid #dbeafe;
+            transition: all 0.3s ease;
+        }
+        
+        .step-content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+        }
+        
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e40af;
+        }
+        
+        .step-process {
+            font-size: 0.75rem;
+            color: #8b5cf6;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-family: 'SF Mono', monospace;
+        }
+        
+        .step-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        /* ARTIFACT STYLES */
+        .artifact {
+            margin-top: 16px;
+        }
+
+        /* AI Prompt Code Block */
+        .artifact-code {
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            max-width: 400px;
+            overflow-x: auto;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .artifact-code::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 32px;
+            background: #21262d;
+            border-radius: 12px 12px 0 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .artifact-code::after {
+            content: '● ● ●';
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 12px;
+            color: #7d8590;
+        }
+
+        .code-content {
+            margin-top: 16px;
+        }
+
+        .code-keyword { color: #ff7b72; }
+        .code-string { color: #a5d6ff; }
+        .code-comment { color: #8b949e; font-style: italic; }
+
+        /* N8N Workflow */
+        .artifact-workflow {
+            background: linear-gradient(135deg, #fafbfc, #f4f6f8);
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            max-width: 450px;
+            overflow-x: auto;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .workflow-node {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 16px;
+            min-width: 80px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1f2937;
+            position: relative;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+
+        .workflow-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .workflow-node::after {
+            content: "→";
+            position: absolute;
+            top: 50%;
+            right: -24px;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .workflow-node:last-child::after {
+            content: none;
+        }
+
+        .node-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .node-label {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* Calendar Event */
+        .artifact-calendar {
+            background: white;
+            border: 1px solid #dadce0;
+            border-radius: 12px;
+            overflow: hidden;
+            font-family: 'Google Sans', -apple-system, sans-serif;
+            max-width: 380px;
+            box-shadow: 0 2px 10px rgba(60,64,67,0.15);
+        }
+
+        .calendar-header {
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .calendar-date {
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .calendar-month {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .calendar-day {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .calendar-event-info {
+            flex: 1;
+        }
+
+        .calendar-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .calendar-time {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .calendar-body {
+            padding: 16px;
+        }
+
+        .calendar-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calendar-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .calendar-icon {
+            width: 16px;
+            text-align: center;
+            color: #5f6368;
+        }
+
+        /* CRM Dashboard */
+        .artifact-dashboard {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 380px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .dashboard-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .dashboard-period {
+            font-size: 12px;
+            color: #6b7280;
+            background: #f9fafb;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            color: #6b7280;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SMS Notification */
+        .artifact-sms {
+            background: #000;
+            border-radius: 20px;
+            padding: 16px;
+            max-width: 300px;
+            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .artifact-sms::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 134px;
+            height: 5px;
+            background: #333;
+            border-radius: 2.5px;
+        }
+
+        .sms-header {
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 600;
+            padding-top: 8px;
+        }
+
+        .sms-bubble {
+            background: linear-gradient(135deg, #007aff, #0051d0);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 20px;
+            border-bottom-right-radius: 6px;
+            margin-left: auto;
+            margin-right: 8px;
+            max-width: 240px;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+        }
+
+        .sms-time {
+            text-align: right;
+            color: #8e8e93;
+            font-size: 12px;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+
+        @keyframes countUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes roadmapStep {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .cost-grid { grid-template-columns: 1fr; gap: 16px; }
+            .roadmap-title { font-size: 2.2rem; }
+            .quote-block { font-size: 0.95rem; padding: 20px; }
+            .artifact-workflow {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .workflow-node::after {
+                content: "↓";
+                top: 100%;
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SLIDE 1: PROBLEM & OPPORTUNITY COST -->
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">🔰 Verified Client | Mid-size Spend | Technical Insight</div>
+            <div class="client-title">Home Services Automation</div>
+            <div class="client-details">U.S.-based | Small team | Seeks hands-free appointment & reschedule system</div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter">
+                > "I want an AI agent that doesn't just talk — it actually books jobs, checks calendars, and updates the CRM."
+            </div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter second">
+                > "Once it's set up, I want the system to run completely hands-off, like a virtual team member."
+            </div>
+        </div>
+        
+        <div class="problem-reframe">
+            <div class="problem-title">How I understand the problem</div>
+            <div class="problem-text">
+                You're handling too much back-and-forth manually — calls, scheduling, notes, FAQs. Even though your AI talks to customers, it can't *do* the work yet. You need an automation layer that bridges AI with real actions like booking, updating, and following up — without you lifting a finger.
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">6</div>
+                    <div class="cost-label">Hours/Week Time Waste</div>
+                    <div class="cost-desc">Manual schedule checking & replies</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value missed">3-5</div>
+                    <div class="cost-label">Missed Leads/Month</div>
+                    <div class="cost-desc">Booking delays reduce conversion</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value percent">20</div>
+                    <div class="cost-label">Slower Operations</div>
+                    <div class="cost-desc">AI chats don't convert without backend</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: SOLUTION ROADMAP -->
+    <div class="slide slide-2">
+        <div class="roadmap-title">SmartService AI Loop</div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">Build Smart AI Prompt</div>
+                    <div class="step-process">HighLevel AI → Prebuilt prompt → Webhook trigger → Context-aware response</div>
+                    <div class="step-desc">Set up AI with function-calling logic</div>
+                    <div class="artifact">
+                        <div class="artifact-code">
+                            <div class="code-content">
+<span class="code-comment">// Smart AI Prompt Configuration</span>
+<span class="code-keyword">const</span> aiPrompt = {
+  <span class="code-string">"role"</span>: <span class="code-string">"home_service_assistant"</span>,
+  <span class="code-string">"functions"</span>: [
+    <span class="code-string">"check_schedule"</span>,
+    <span class="code-string">"book_appointment"</span>,
+    <span class="code-string">"reschedule_visit"</span>
+  ],
+  <span class="code-string">"webhook"</span>: <span class="code-string">"/api/schedule-action"</span>
+};
+
+<span class="code-comment">// Context: "Customer saw bugs again"</span>
+<span class="code-keyword">if</span> (intent === <span class="code-string">"service_request"</span>) {
+  triggerWebhook(<span class="code-string">"check_schedule"</span>, customerData);
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">Set Up Webhooks in n8n</div>
+                    <div class="step-process">HighLevel AI → Webhook (/check-schedule) → n8n logic entry point</div>
+                    <div class="step-desc">Create live endpoint for AI triggers</div>
+                    <div class="artifact">
+                        <div class="artifact-workflow">
+                            <div class="workflow-node">
+                                <div class="node-icon">🎯</div>
+                                Webhook
+                                <div class="node-label">Trigger</div>
+                            </div>
+                            <div class="workflow-node">
+                                <div class="node-icon">🧠</div>
+                                Parse Data
+                                <div class="node-label">Logic</div>
+                            </div>
+                            <div class="workflow-node">
+                                <div class="node-icon">📅</div>
+                                Check Cal
+                                <div class="node-label">Action</div>
+                            </div>
+                            <div class="workflow-node">
+                                <div class="node-icon">✅</div>
+                                Response
+                                <div class="node-label">Reply</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">Appointment Logic Flow</div>
+                    <div class="step-process">n8n → Google Calendar → Conditional Logic → Free visit or reschedule</div>
+                    <div class="step-desc">Smart calendar automation with branching logic</div>
+                    <div class="artifact">
+                        <div class="artifact-calendar">
+                            <div class="calendar-header">
+                                <div class="calendar-date">
+                                    <div class="calendar-month">AUG</div>
+                                    <div class="calendar-day">16</div>
+                                </div>
+                                <div class="calendar-event-info">
+                                    <div class="calendar-title">Bug Treatment - Johnson Home</div>
+                                    <div class="calendar-time">2:30 PM - 3:30 PM</div>
+                                </div>
+                            </div>
+                            <div class="calendar-body">
+                                <div class="calendar-details">
+                                    <div class="calendar-detail">
+                                        <div class="calendar-icon">🏠</div>
+                                        <div>Follow-up service visit</div>
+                                    </div>
+                                    <div class="calendar-detail">
+                                        <div class="calendar-icon">📝</div>
+                                        <div>Auto-booked by AI agent</div>
+                                    </div>
+                                    <div class="calendar-detail">
+                                        <div class="calendar-icon">✅</div>
+                                        <div>Confirmed & SMS sent</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">CRM Notes + Confirmation</div>
+                    <div class="step-process">n8n → HighLevel API → Update contact notes + tags → Trigger confirmation</div>
+                    <div class="step-desc">Auto-update CRM and send confirmations</div>
+                    <div class="artifact">
+                        <div class="artifact-dashboard">
+                            <div class="dashboard-header">
+                                <div class="dashboard-title">Customer: Johnson</div>
+                                <div class="dashboard-period">Updated Now</div>
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">3</div>
+                                    <div class="metric-label">Total Visits</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">✅</div>
+                                    <div class="metric-label">Booked</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">🐛</div>
+                                    <div class="metric-label">Follow-up</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">💬</div>
+                                    <div class="metric-label">Auto SMS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">Final Test with Real Input</div>
+                    <div class="step-process">SMS trigger → AI prompt → n8n call → Booking → CRM update → Confirmation</div>
+                    <div class="step-desc">Complete end-to-end test workflow</div>
+                    <div class="artifact">
+                        <div class="artifact-sms">
+                            <div class="sms-header">Messages • HomeService Pro</div>
+                            <div class="sms-bubble">
+                                Hi! I've automatically scheduled your follow-up visit for tomorrow at 2:30 PM to address the bug issue. 🐛<br><br>
+                                Our technician will bring specialized treatment. No payment needed - this is covered under your service plan!<br><br>
+                                Reply CONFIRM or call if you need to reschedule.
+                            </div>
+                            <div class="sms-time">Delivered • 3:47 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 24px 32px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);">
+            <div style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">✅ SUCCESS TEST</div>
+            <div style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95;">
+                When the client texts <strong>"Customer said they saw bugs again"</strong> — the AI should check service history, offer a visit, book it, confirm it, and log it. <strong>No clicks required.</strong>
+            </div>
+        </div>
