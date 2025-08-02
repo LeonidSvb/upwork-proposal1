@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Automation Solution</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+        
+        /* SLIDE 1 - PROBLEM */
+        .slide-1 {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+        }
+        
+        .client-info {
+            margin-bottom: 40px;
+            text-align: center;
+            animation: slideUp 0.6s ease;
+        }
+        
+        .client-badge {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #22c55e;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .client-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .client-details {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+        
+        .quote-block {
+            background: rgba(255,255,255,0.08);
+            padding: 24px 32px;
+            border-radius: 12px;
+            border-left: 4px solid #60a5fa;
+            margin-bottom: 24px;
+            font-family: 'SF Mono', monospace;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            backdrop-filter: blur(20px);
+            max-width: 850px;
+            animation: slideUp 0.8s ease;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #60a5fa;
+            white-space: nowrap;
+            animation: typing 4s steps(100, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        .typewriter.second {
+            animation: typing2 4s steps(100, end) 4.5s both, blink-caret 0.75s step-end infinite 4.5s;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes typing2 {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #60a5fa; }
+        }
+        
+        .problem-reframe {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            max-width: 900px;
+            margin-bottom: 40px;
+            animation: slideUp 1s ease;
+        }
+        
+        .problem-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #93c5fd;
+        }
+        
+        .problem-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            animation: slideUp 1.2s ease;
+        }
+        
+        .cost-card {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cost-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .cost-card:hover { transform: translateY(-4px); }
+        
+        .cost-value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #93c5fd, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: countUp 2s ease-out forwards;
+        }
+        
+        .cost-value.hours::after { content: "hrs"; }
+        .cost-value.money::before { content: "$"; }
+        .cost-value.percent::after { content: "%"; }
+        
+        @keyframes countUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .cost-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+        
+        .cost-desc {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+        
+        /* SLIDE 2 - ROADMAP */
+        .slide-2 {
+            background: #ffffff;
+            padding: 80px 40px;
+        }
+        
+        .roadmap-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .roadmap-container {
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: 60px;
+            width: 3px;
+            background: linear-gradient(180deg, #1e40af, #2563eb, #60a5fa);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .step {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+            animation: roadmapStep 0.8s ease forwards;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+        .step:nth-child(5) { animation-delay: 1s; }
+        .step:nth-child(6) { animation-delay: 1.2s; }
+        
+        .step-marker {
+            position: absolute;
+            left: -50px;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            background: #2563eb;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #dbeafe;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .step-content {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+            border: 1px solid #dbeafe;
+            transition: all 0.3s ease;
+        }
+        
+        .step-content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+        }
+        
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e40af;
+        }
+        
+        .step-process {
+            font-size: 0.75rem;
+            color: #8b5cf6;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-family: 'SF Mono', monospace;
+        }
+        
+        .step-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        /* PREMIUM ARTIFACTS STYLES */
+        .artifact {
+            margin-top: 16px;
+        }
+        
+        /* Email Artifact */
+        .artifact-email {
+            background: white;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: 'Roboto', -apple-system, sans-serif;
+            max-width: 350px;
+            box-shadow: 0 2px 10px rgba(60,64,67,0.15);
+            font-size: 0.75rem;
+        }
+        
+        .email-header {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-bottom: 1px solid #dadce0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .email-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .email-sender {
+            flex: 1;
+            font-size: 10px;
+        }
+        
+        .sender-name {
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 1px;
+        }
+        
+        .sender-email {
+            color: #5f6368;
+            font-size: 9px;
+        }
+        
+        .email-time {
+            font-size: 9px;
+            color: #5f6368;
+        }
+        
+        .email-subject {
+            padding: 12px 16px 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #202124;
+        }
+        
+        .email-body {
+            padding: 6px 16px 16px;
+            font-size: 10px;
+            line-height: 1.4;
+            color: #3c4043;
+        }
+        
+        /* Dashboard Artifact */
+        .artifact-dashboard {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            max-width: 350px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            font-size: 0.75rem;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .dashboard-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111827;
+        }
+        
+        .dashboard-period {
+            font-size: 9px;
+            color: #6b7280;
+            background: #f9fafb;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 16px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+        
+        .metric-label {
+            font-size: 8px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* SMS Artifact */
+        .artifact-sms {
+            background: #000;
+            border-radius: 16px;
+            padding: 12px;
+            max-width: 280px;
+            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        
+        .sms-header {
+            color: white;
+            font-size: 9px;
+            text-align: center;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .sms-bubble {
+            background: linear-gradient(135deg, #007aff, #0051d0);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 16px;
+            border-bottom-right-radius: 4px;
+            margin-left: auto;
+            margin-right: 6px;
+            max-width: 200px;
+            font-size: 11px;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        
+        .sms-time {
+            text-align: right;
+            color: #8e8e93;
+            font-size: 8px;
+            margin-right: 8px;
+        }
+        
+        /* Analytics Artifact */
+        .artifact-analytics {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            max-width: 350px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .analytics-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .analytics-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .analytics-period {
+            font-size: 9px;
+            color: #6b7280;
+            background: #f3f4f6;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        
+        .analytics-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .metric-item {
+            text-align: center;
+        }
+        
+        .metric-number {
+            font-size: 14px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+        
+        .analytics-chart {
+            height: 60px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 6px;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            padding: 8px;
+            gap: 2px;
+        }
+        
+        .chart-bar {
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            border-radius: 2px 2px 0 0;
+            width: 12px;
+        }
+        
+        .chart-bar:nth-child(1) { height: 40%; }
+        .chart-bar:nth-child(2) { height: 65%; }
+        .chart-bar:nth-child(3) { height: 80%; }
+        .chart-bar:nth-child(4) { height: 45%; }
+        .chart-bar:nth-child(5) { height: 90%; }
+        .chart-bar:nth-child(6) { height: 75%; }
+        .chart-bar:nth-child(7) { height: 100%; }
+        
+        /* Form Artifact */
+        .artifact-form {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            max-width: 300px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .form-header {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+        
+        .form-subtitle {
+            font-size: 9px;
+            color: #6b7280;
+        }
+        
+        .form-field {
+            margin-bottom: 8px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 9px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 3px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            font-size: 10px;
+            background: #f9fafb;
+        }
+        
+        .form-button {
+            width: 100%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes roadmapStep {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .cost-grid { grid-template-columns: 1fr; gap: 16px; }
+            .roadmap-title { font-size: 2.2rem; }
+            .quote-block { font-size: 0.95rem; padding: 20px; }
+            .artifact-email, .artifact-dashboard, .artifact-sms, .artifact-analytics, .artifact-form {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SLIDE 1: PROBLEM & OPPORTUNITY COST -->
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">✅ Payment Verified • 4.9★ Rating • $127K Spent</div>
+            <div class="client-title">Digital Marketing Agency</div>
+            <div class="client-details">San Francisco, CA | 15 Projects • 100% Success Rate | Growing Team (8-15 people)</div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter">
+                > "We're looking for an experienced automation expert to help us build a scalable lead qualification system that can handle 500+ inquiries per week without manual intervention"
+            </div>
+        </div>
+        
+        <div class="quote-block">
+            <div class="typewriter second">
+                > "Build a robust system to manage client communications, proposal generation, and follow-up sequences with performance dashboards"
+            </div>
+        </div>
+        
+        <div class="problem-reframe">
+            <div class="problem-title">How I understand the problem</div>
+            <div class="problem-text">
+                Your team spends too much time on repetitive tasks instead of growing the business. Lead qualification, follow-ups, and proposal creation eat up valuable hours that could be spent on strategy and creative work that actually brings in revenue.
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">35</div>
+                    <div class="cost-label">Weekly Time Loss</div>
+                    <div class="cost-desc">Manual processes</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value money">18K</div>
+                    <div class="cost-label">Monthly Opportunity Cost</div>
+                    <div class="cost-desc">Lost potential revenue</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value percent">67</div>
+                    <div class="cost-label">Response Delays</div>
+                    <div class="cost-desc">Slow manual follow-up</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: SOLUTION ROADMAP -->
+    <div class="slide slide-2">
+        <div class="roadmap-title">Lead Management System</div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">Smart Email Qualification</div>
+                    <div class="step-process">Setup > Configure > Test > Deploy</div>
+                    <div class="step-desc">Automatically qualify leads and book meetings</div>
+                    <div class="artifact">
+                        <div class="artifact-email">
+                            <div class="email-header">
+                                <div class="email-avatar">A</div>
+                                <div class="email-sender">
+                                    <div class="sender-name">SmartFlow Agency</div>
+                                    <div class="sender-email">hello@smartflow.com</div>
+                                </div>
+                                <div class="email-time">2:45 PM</div>
+                            </div>
+                            <div class="email-subject">
+                                🎉 Welcome! Your Strategy Session is Confirmed
+                            </div>
+                            <div class="email-body">
+                                Hi Sarah,<br><br>
+                                Thanks for your interest! I've scheduled your strategy session for tomorrow at 2:30 PM.<br><br>
+                                <strong>What to prepare:</strong> Current marketing challenges, target audience info<br><br>
+                                Looking forward to growing your business together!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">Instant SMS Response</div>
+                    <div class="step-process">Webhook > Parse > Respond > Book</div>
+                    <div class="step-desc">Capture leads immediately when they inquire</div>
+                    <div class="artifact">
+                        <div class="artifact-sms">
+                            <div class="sms-header">Messages • SmartFlow Agency</div>
+                            <div class="sms-bubble">
+                                Hi! Thanks for reaching out about our marketing services 🚀<br><br>
+                                I'd love to schedule a quick 15-min call to discuss your goals.<br><br>
+                                Reply "YES" to book a time that works for you!
+                            </div>
+                            <div class="sms-time">Delivered • 2:47 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">Lead Pipeline Dashboard</div>
+                    <div class="step-process">Connect > Track > Analyze > Optimize</div>
+                    <div class="step-desc">See which leads convert to clients</div>
+                    <div class="artifact">
+                        <div class="artifact-dashboard">
+                            <div class="dashboard-header">
+                                <div class="dashboard-title">Lead Pipeline</div>
+                                <div class="dashboard-period">This Week</div>
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">47</div>
+                                    <div class="metric-label">New Leads</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">89%</div>
+                                    <div class="metric-label">Response Rate</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">$24K</div>
+                                    <div class="metric-label">Pipeline Value</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">12</div>
+                                    <div class="metric-label">Meetings Booked</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">Performance Analytics</div>
+                    <div class="step-process">Measure > Report > Scale > Repeat</div>
+                    <div class="step-desc">Track ROI on your marketing investments</div>
+                    <div class="artifact">
+                        <div class="artifact-analytics">
+                            <div class="analytics-header">
+                                <div class="analytics-title">Conversion Metrics</div>
+                                <div class="analytics-period">Last 30 Days</div>
+                            </div>
+                            <div class="analytics-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-number">847</div>
+                                    <div class="metric-label">Leads</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">23%</div>
+                                    <div class="metric-label">Conversion</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">$89K</div>
+                                    <div class="metric-label">Revenue</div>
+                                </div>
+                            </div>
+                            <div class="analytics-chart">
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">Lead Capture Forms</div>
+                    <div class="step-process">Design > Embed > Qualify > Convert</div>
+                    <div class="step-desc">Turn website visitors into scheduled calls</div>
+                    <div class="artifact">
+                        <div class="artifact-form">
+                            <div class="form-header">
+                                <div class="form-title">Get Your Free Strategy Session</div>
+                                <div class="form-subtitle">Tell us about your business goals</div>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Company Name</label>
+                                <input type="text" class="form-input" value="TechStartup Inc." readonly>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Monthly Revenue</label>
+                                <input type="text" class="form-input" value="$50K - $100K" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Biggest Challenge</label>
+                                <input type="text" class="form-input" value="Lead generation" readonly>
+                            </div>
+                            <button class="form-button">Book Free Strategy Call</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
