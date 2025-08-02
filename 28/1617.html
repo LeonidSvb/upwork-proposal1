@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Facebook Response System - n8n + AI Automation</title>
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+</head>
+<body>
+    <!-- SLIDE 1: PROBLEM -->
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">✅ Payment Verified | 📞 Phone Verified | 4 Jobs Posted | Fixed Budget: $180</div>
+            <div class="client-title">Facebook Ad Marketing Team</div>
+            <div class="client-details">Edmonton, CA | 25% Hire Rate | Looking for Systems Specialist | Clear Requirements</div>
+        </div>
+        
+        <div class="quote-block">
+            <div>
+                > "Looking to build an n8n automation that uses an LLM to generate replies to Facebook ad comments, with a manual approval step before anything gets posted publicly"
+            </div>
+        </div>
+        
+        <div class="quote-block">
+            <div>
+                > "I want to log everything in Airtable - original comment, generated response, what was actually posted, plus timestamps and metadata"
+            </div>
+        </div>
+        
+        <div class="problem-reframe">
+            <div class="problem-title">How I understand your situation</div>
+            <div class="problem-text">
+                Your team is manually responding to Facebook ad comments, which takes forever and risks inconsistent messaging. You need a smart system that drafts responses automatically but keeps human control over what actually gets posted to your audience.
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">4</div>
+                    <div class="cost-label">Hours/Day Lost</div>
+                    <div class="cost-desc">Manual comment monitoring</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value percent">12</div>
+                    <div class="cost-label">Hour Response Delays</div>
+                    <div class="cost-desc">Slow replies hurt engagement</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value money">Zero</div>
+                    <div class="cost-label">Response Tracking</div>
+                    <div class="cost-desc">No data on what works</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: SOLUTION -->
+    <div class="slide slide-2">
+        <div class="roadmap-title">Smart Facebook Response System</div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">Facebook Comment Detection</div>
+                    <div class="step-process">Facebook API + n8n = Auto-capture new comments<br>↓<br>Instant trigger when someone comments</div>
+                    <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #64748b; text-align: center; border: 1px solid #e2e8f0;">
+                        Powered by: Facebook Graph API • n8n • Webhooks
+                    </div>
+                    <div class="artifact">
+                        <div class="artifact-slack">
+                            <div class="slack-sidebar">
+                                <div class="slack-workspace">Marketing Team</div>
+                                <div class="slack-channel"># fb-comments</div>
+                            </div>
+                            <div class="slack-messages">
+                                <div class="slack-message">
+                                    <div class="slack-avatar">📱</div>
+                                    <div class="slack-content">
+                                        <div class="slack-header">
+                                            <div class="slack-name">FB Comment Bot</div>
+                                            <div class="slack-bot-badge">BOT</div>
+                                            <div class="slack-time">2:34 PM</div>
+                                        </div>
+                                        <div class="slack-text">
+                                            📢 <strong>New Facebook Comment Detected</strong><br><br>
+                                            <strong>Post:</strong> "Best productivity tips for 2025"<br>
+                                            <strong>Commenter:</strong> Sarah Martinez<br>
+                                            <strong>Comment:</strong> "This looks great! Do you have any tips specifically for remote workers?"<br>
+                                            <strong>Post ID:</strong> 847263_5829473<br>
+                                            <strong>Time:</strong> 2:33 PM<br><br>
+                                            🤖 <strong>Status:</strong> Sending to AI for response generation...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #374151; border-left: 3px solid #3b82f6;">
+                        n8n webhook instantly captures every new comment on your Facebook ads and extracts all the metadata you need for tracking.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">AI Response Generation</div>
+                    <div class="step-process">GPT-4 + Comment context = Smart reply suggestions<br>↓<br>Professional responses ready for review</div>
+                    <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #64748b; text-align: center; border: 1px solid #e2e8f0;">
+                        Powered by: OpenAI GPT-4 • n8n • Context Analysis
+                    </div>
+                    <div class="artifact">
+                        <div class="artifact-dashboard">
+                            <div class="dashboard-header">
+                                <div class="dashboard-title">AI Response Generator</div>
+                                <div class="dashboard-period">Review Pending</div>
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">📝</div>
+                                    <div class="metric-label">AI Generated</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">⏱️</div>
+                                    <div class="metric-label">30 Seconds</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">🎯</div>
+                                    <div class="metric-label">Brand Voice</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">✅</div>
+                                    <div class="metric-label">Ready Review</div>
+                                </div>
+                            </div>
+                            <div style="background: #f9fafb; padding: 12px; border-radius: 8px; margin-top: 12px;">
+                                <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 8px;">ORIGINAL COMMENT</div>
+                                <div style="font-size: 11px; color: #6b7280; line-height: 1.4; margin-bottom: 12px;">
+                                    "This looks great! Do you have any tips specifically for remote workers?"
+                                </div>
+                                <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 8px;">AI SUGGESTED REPLY</div>
+                                <div style="font-size: 11px; color: #1f2937; line-height: 1.4; background: #e0f2fe; padding: 8px; border-radius: 4px;">
+                                    "Absolutely! Remote work productivity is a game-changer. We actually have a dedicated section on remote work tips in our guide. Would you like me to share the link? 🏠💼"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #374151; border-left: 3px solid #3b82f6;">
+                        AI analyzes the comment context and generates brand-appropriate responses in 30 seconds. Each suggestion is ready for your team's review.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">Manual Approval Workflow</div>
+                    <div class="step-process">Review interface + Team approval = Quality control<br>↓<br>Approve, decline, or edit before posting</div>
+                    <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #64748b; text-align: center; border: 1px solid #e2e8f0;">
+                        Powered by: n8n Forms • Approval Logic • Email Notifications
+                    </div>
+                    <div class="artifact">
+                        <div class="artifact-form">
+                            <div class="form-header">
+                                <div class="form-title">Comment Response Approval</div>
+                                <div class="form-subtitle">Review and approve AI-generated response</div>
+                            </div>
+                            <div style="background: #f9fafb; padding: 12px; border-radius: 6px; margin-bottom: 16px; border-left: 3px solid #3b82f6;">
+                                <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 4px;">Original Comment:</div>
+                                <div style="font-size: 11px; color: #6b7280;">"Do you have tips specifically for remote workers?"</div>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">AI Suggested Response</label>
+                                <textarea class="form-input" rows="3" readonly>Absolutely! Remote work productivity is a game-changer. We actually have a dedicated section on remote work tips in our guide. Would you like me to share the link? 🏠💼</textarea>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                                <button style="background: #10b981; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">✅ Approve</button>
+                                <button style="background: #ef4444; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">❌ Decline</button>
+                                <button style="background: #f59e0b; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">✏️ Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #374151; border-left: 3px solid #3b82f6;">
+                        Your team gets email notifications with approval forms. Three options: approve instantly, decline safely, or edit the response before posting.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">Automated Facebook Posting</div>
+                    <div class="step-process">Approved response + Facebook API = Instant reply<br>↓<br>Professional engagement with your audience</div>
+                    <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #64748b; text-align: center; border: 1px solid #e2e8f0;">
+                        Powered by: Facebook Graph API • n8n • Auto-posting
+                    </div>
+                    <div class="artifact">
+                        <div class="artifact-social">
+                            <div class="social-header">
+                                <div class="social-avatar">📈</div>
+                                <div class="social-user-info">
+                                    <div class="social-name">Your Company Page</div>
+                                    <div class="social-handle">@yourcompany • Facebook</div>
+                                </div>
+                                <div class="social-time">3m</div>
+                            </div>
+                            <div class="social-content">
+                                <strong>Original Post:</strong> "Best productivity tips for 2025 💼✨"<br><br>
+                                
+                                <div style="background: #f3f4f6; padding: 12px; border-radius: 8px; margin: 12px 0; border-left: 3px solid #1877f2;">
+                                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">💬 Sarah Martinez commented:</div>
+                                    <div style="font-size: 13px; margin-bottom: 8px;">"This looks great! Do you have any tips specifically for remote workers?"</div>
+                                    
+                                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">↳ Your Company replied:</div>
+                                    <div style="font-size: 13px; color: #1877f2;">"Absolutely! Remote work productivity is a game-changer. We actually have a dedicated section on remote work tips in our guide. Would you like me to share the link? 🏠💼"</div>
+                                </div>
+                            </div>
+                            <div class="social-stats">
+                                <div class="social-stat">👍 12 likes</div>
+                                <div class="social-stat">💬 3 replies</div>
+                                <div class="social-stat">📤 2 shares</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #374151; border-left: 3px solid #3b82f6;">
+                        Once approved, the response is automatically posted to Facebook within seconds. Your audience gets quick, professional replies every time.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">Complete Airtable Logging</div>
+                    <div class="step-process">All data + Metadata = Complete audit trail<br>↓<br>Track performance and optimize responses</div>
+                    <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #64748b; text-align: center; border: 1px solid #e2e8f0;">
+                        Powered by: Airtable API • n8n • Data Analytics
+                    </div>
+                    <div class="artifact">
+                        <div class="artifact-analytics">
+                            <div class="analytics-header">
+                                <div class="analytics-title">Facebook Comment Database</div>
+                                <div class="analytics-period">All Records</div>
+                            </div>
+                            <div class="analytics-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-number">247</div>
+                                    <div class="metric-label">Comments</div>
+                                    <div class="metric-change">Logged ✅</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">189</div>
+                                    <div class="metric-label">Approved</div>
+                                    <div class="metric-change">76% rate 📈</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-number">34</div>
+                                    <div class="metric-label">Edited</div>
+                                    <div class="metric-change">Improved 🔧</div>
+                                </div>
+                            </div>
+                            <div style="background: #f9fafb; padding: 12px; border-radius: 8px; margin-top: 16px;">
+                                <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 8px;">AIRTABLE FIELDS TRACKED:</div>
+                                <div style="font-size: 11px; color: #6b7280; line-height: 1.4;">
+                                    ✅ Original comment text & commenter name<br>
+                                    ✅ AI-generated response & final posted version<br>
+                                    ✅ Post ID, timestamp, approval status<br>
+                                    ✅ Response time, engagement metrics<br>
+                                    ✅ Team member who approved/edited
+                                </div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 12px; border-radius: 8px; margin-top: 16px; text-align: center;">
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">📊 Performance Insights</div>
+                                <div style="font-size: 16px; font-weight: 800;">3.2x faster response time</div>
+                                <div style="font-size: 12px; opacity: 0.9;">Complete documentation included</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #374151; border-left: 3px solid #3b82f6;">
+                        Everything gets logged in Airtable with timestamps, metadata, and performance metrics. Perfect for analyzing what responses work best.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 24px 32px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);">
+            <div style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">⚡ Ready to Automate Your Facebook Comments?</div>
+            <div style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95; margin-bottom: 20px;">
+                <strong>I can build your complete system in 1-2 weeks for exactly $180.</strong><br>
+                Includes n8n setup, AI integration, approval workflow, and full Airtable logging.
+            </div>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                    💬 Message me your questions
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                    📋 Let's review the workflow
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                    🚀 Start your automation
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
