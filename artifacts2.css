@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 New Premium Artifacts - Live Preview</title>
+    <style>
+        /* Включаю все CSS из артефакта выше */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+        
+        .artifacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .artifact-section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+        
+        .section-description {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        /* Instagram Artifact Styles */
+        .artifact-instagram {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 380px;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border: 1px solid #dbdbdb;
+        }
+
+        .ig-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #efefef;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ig-username {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .ig-verified {
+            color: #1da1f2;
+            font-size: 16px;
+        }
+
+        .ig-profile-section {
+            padding: 16px 20px;
+        }
+
+        .ig-profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .ig-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .ig-stats {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .ig-stat-number {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+            display: block;
+        }
+
+        .ig-stat-label {
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+
+        .ig-bio {
+            margin-bottom: 16px;
+        }
+
+        .ig-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .ig-bio-text {
+            font-size: 14px;
+            color: #262626;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .ig-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .ig-button {
+            flex: 1;
+            padding: 7px 16px;
+            background: #efefef;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .ig-button.primary {
+            background: #0095f6;
+            color: white;
+        }
+
+        .ig-highlights {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .ig-highlight {
+            text-align: center;
+            min-width: 64px;
+        }
+
+        .ig-highlight-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 4px;
+            border: 2px solid #dbdbdb;
+        }
+
+        .ig-highlight-label {
+            font-size: 12px;
+            color: #262626;
+        }
+
+        .ig-posts-header {
+            border-top: 1px solid #efefef;
+            display: flex;
+        }
+
+        .ig-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+
+        .ig-tab.active {
+            color: #262626;
+            border-bottom: 1px solid #262626;
+        }
+
+        .ig-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #efefef;
+        }
+
+        .ig-post {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* YouTube Styles */
+        .artifact-youtube {
+            background: #0f0f0f;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+
+        .yt-video-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .yt-video-player {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .yt-play-button {
+            position: absolute;
+            width: 68px;
+            height: 48px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 20px;
+        }
+
+        .yt-info {
+            padding: 16px 12px;
+            background: #0f0f0f;
+        }
+
+        .yt-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .yt-meta {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .yt-views, .yt-date {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .yt-channel {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .yt-channel-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .yt-channel-info {
+            flex: 1;
+        }
+
+        .yt-channel-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .yt-channel-subs {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .yt-subscribe {
+            background: #cc0000;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .yt-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .yt-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 18px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Make.com Styles */
+        .artifact-make-workflow {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .make-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .make-logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: #6366f1;
+        }
+
+        .make-scenario-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .make-run-button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .make-workflow-canvas {
+            min-height: 300px;
+            position: relative;
+            background: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .make-node {
+            position: absolute;
+            width: 120px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .make-node.trigger {
+            border-color: #059669;
+            background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+            top: 50px;
+            left: 50px;
+        }
+
+        .make-node.action {
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+        }
+
+        .make-node:nth-child(2) { top: 50px; left: 220px; }
+        .make-node:nth-child(3) { top: 50px; left: 390px; }
+
+        .make-node-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 8px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            background: #6366f1;
+        }
+
+        .make-node.trigger .make-node-icon {
+            background: #059669;
+        }
+
+        .make-node.action .make-node-icon {
+            background: #2563eb;
+        }
+
+        .make-node-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 4px;
+        }
+
+        .make-node-desc {
+            font-size: 10px;
+            color: #6b7280;
+        }
+
+        /* N8N Styles */
+        .artifact-n8n-workflow {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .n8n-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .n8n-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff6d5a;
+        }
+
+        .n8n-workflow-name {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .n8n-execute-button {
+            background: #ff6d5a;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .n8n-canvas {
+            min-height: 300px;
+            position: relative;
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .n8n-node {
+            position: absolute;
+            width: 140px;
+            background: #3a3a3a;
+            border: 2px solid #555;
+            border-radius: 8px;
+            padding: 12px;
+            color: white;
+        }
+
+        .n8n-node.trigger {
+            border-color: #4ade80;
+            top: 20px;
+            left: 20px;
+        }
+
+        .n8n-node:nth-child(2) { top: 20px; left: 200px; }
+        .n8n-node:nth-child(3) { top: 20px; left: 380px; }
+
+        .n8n-node-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .n8n-node-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            background: #ff6d5a;
+            color: white;
+        }
+
+        .n8n-node.trigger .n8n-node-icon {
+            background: #4ade80;
+        }
+
+        .n8n-node-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .n8n-node-type {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-bottom: 4px;
+        }
+
+        .n8n-node-desc {
+            font-size: 11px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .artifacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1 class="demo-title">5 New Premium Artifacts</h1>
+            <p class="demo-subtitle">Instagram • YouTube • Notion • Make.com • N8N</p>
+        </div>
+
+        <div class="artifacts-grid">
+            <!-- Instagram Profile -->
+            <div class="artifact-section">
+                <h2 class="section-title">📱 Instagram Profile</h2>
+                <p class="section-description">Social media marketing showcase</p>
+                
+                <div class="artifact-instagram">
+                    <div class="ig-header">
+                        <div class="ig-username">automationexpert</div>
+                        <div class="ig-verified">✓</div>
+                    </div>
+                    <div class="ig-profile-section">
+                        <div class="ig-profile-info">
+                            <div class="ig-avatar">AE</div>
+                            <div class="ig-stats">
+                                <div>
+                                    <div class="ig-stat-number">247</div>
+                                    <div class="ig-stat-label">posts</div>
+                                </div>
+                                <div>
+                                    <div class="ig-stat-number">12.5K</div>
+                                    <div class="ig-stat-label">followers</div>
+                                </div>
+                                <div>
+                                    <div class="ig-stat-number">1,847</div>
+                                    <div class="ig-stat-label">following</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ig-bio">
+                            <div class="ig-name">Automation Expert</div>
+                            <div class="ig-bio-text">🤖 Make.com & N8N Specialist<br>💰 Helping businesses save 20+ hours/week</div>
+                        </div>
+                        <div class="ig-buttons">
+                            <button class="ig-button primary">Follow</button>
+                            <button class="ig-button">Message</button>
+                        </div>
+                        <div class="ig-highlights">
+                            <div class="ig-highlight">
+                                <div class="ig-highlight-circle">📧</div>
+                                <div class="ig-highlight-label">Email</div>
+                            </div>
+                            <div class="ig-highlight">
+                                <div class="ig-highlight-circle">💰</div>
+                                <div class="ig-highlight-label">CRM</div>
+                            </div>
+                            <div class="ig-highlight">
+                                <div class="ig-highlight-circle">📅</div>
+                                <div class="ig-highlight-label">Calendar</div>
+                            </div>
+                        </div>
+                        <div class="ig-posts-header">
+                            <div class="ig-tab active">POSTS</div>
+                            <div class="ig-tab">REELS</div>
+                            <div class="ig-tab">TAGGED</div>
+                        </div>
+                        <div class="ig-posts-grid">
+                            <div class="ig-post">📧</div>
+                            <div class="ig-post">🤖</div>
+                            <div class="ig-post">📊</div>
+                            <div class="ig-post">💼</div>
+                            <div class="ig-post">⚡</div>
+                            <div class="ig-post">📈</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Interface -->
+            <div class="artifact-section">
+                <h2 class="section-title">🎥 YouTube Interface</h2>
+                <p class="section-description">Video content showcase</p>
+                
+                <div class="artifact-youtube">
+                    <div class="yt-video-container">
+                        <div class="yt-video-player">
+                            🎬
+                            <div class="yt-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="yt-info">
+                        <div class="yt-title">How to Build Email Automation with Make.com</div>
+                        <div class="yt-meta">
+                            <div class="yt-views">47,832 views</div>
+                            <div class="yt-date">2 days ago</div>
+                        </div>
+                        <div class="yt-channel">
+                            <div class="yt-channel-avatar">AE</div>
+                            <div class="yt-channel-info">
+                                <div class="yt-channel-name">Automation Expert</div>
+                                <div class="yt-channel-subs">12.5K subscribers</div>
+                            </div>
+                            <button class="yt-subscribe">Subscribe</button>
+                        </div>
+                        <div class="yt-actions">
+                            <div class="yt-action">👍 2.1K</div>
+                            <div class="yt-action">👎 12</div>
+                            <div class="yt-action">📤 Share</div>
+                            <div class="yt-action">💾 Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Make.com Workflow -->
+            <div class="artifact-section">
+                <h2 class="section-title">🔄 Make.com Workflow</h2>
+                <p class="section-description">Visual automation builder</p>
+                
+                <div class="artifact-make-workflow">
+                    <div class="make-toolbar">
+                        <div class="make-logo">Make</div>
+                        <div class="make-scenario-name">Email Response Automation</div>
+                        <button class="make-run-button">▶ Run</button>
+                    </div>
+                    <div class="make-workflow-canvas">
+                        <div class="make-node trigger">
+                            <div class="make-node-icon">📧</div>
+                            <div class="make-node-title">Gmail Trigger</div>
+                            <div class="make-node-desc">New email received</div>
+                        </div>
+                        <div class="make-node action">
+                            <div class="make-node-icon">🤖</div>
+                            <div class="make-node-title">OpenAI</div>
+                            <div class="make-node-desc">Analyze & draft</div>
+                        </div>
+                        <div class="make-node action">
+                            <div class="make-node-icon">📤</div>
+                            <div class="make-node-title">Gmail Send</div>
+                            <div class="make-node-desc">Send response</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- N8N Workflow -->
+            <div class="artifact-section">
+                <h2 class="section-title">🔗 N8N Workflow</h2>
+                <p class="section-description">Advanced automation platform</p>
+                
+                <div class="artifact-n8n-workflow">
+                    <div class="n8n-header">
+                        <div class="n8n-logo">n8n</div>
+                        <div class="n8n-workflow-name">Advanced Email Processing</div>
+                        <button class="n8n-execute-button">Execute Workflow</button>
+                    </div>
+                    <div class="n8n-canvas">
+                        <div class="n8n-node trigger">
+                            <div class="n8n-node-header">
+                                <div class="n8n-node-icon">🔗</div>
+                                <div class="n8n-node-title">Webhook</div>
+                            </div>
+                            <div class="n8n-node-type">Trigger</div>
+                            <div class="n8n-node-desc">Listen for emails</div>
+                        </div>
+                        <div class="n8n-node">
+                            <div class="n8n-node-header">
+                                <div class="n8n-node-icon">🧠</div>
+                                <div class="n8n-node-title">OpenAI</div>
+                            </div>
+                            <div class="n8n-node-type">Action</div>
+                            <div class="n8n-node-desc">Generate response</div>
+                        </div>
+                        <div class="n8n-node">
+                            <div class="n8n-node-header">
+                                <div class="n8n-node-icon">📧</div>
+                                <div class="n8n-node-title">Gmail</div>
+                            </div>
+                            <div class="n8n-node-type">Action</div>
+                            <div class="n8n-node-desc">Send email</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
