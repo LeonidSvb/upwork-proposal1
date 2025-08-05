@@ -3,73 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Automation Demo - Henare Construction</title>
+    <title>Workflow Demo - Henare Construction</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+    <style>
+        /* Henare Construction Brand Colors */
+        :root {
+            --henare-red: #dc2626;
+            --henare-dark: #1f1f1f;
+            --henare-white: #ffffff;
+            --henare-gray: #f5f5f5;
+            --henare-text: #333333;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--henare-white);
+            color: var(--henare-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Header in Henare style */
+        .henare-header {
+            background: var(--henare-dark);
+            color: var(--henare-white);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .henare-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .henare-tagline {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Main content */
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .demo-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--henare-text);
+            margin-bottom: 16px;
+        }
+        
+        .demo-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        /* Workflow sections */
+        .workflow-section {
+            margin-bottom: 80px;
+            background: var(--henare-white);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .workflow-header {
+            background: linear-gradient(135deg, var(--henare-red), #b91c1c);
+            color: var(--henare-white);
+            padding: 24px 32px;
+            text-align: center;
+        }
+        
+        .workflow-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .workflow-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .workflow-content {
+            padding: 40px 32px;
+        }
+        
+        .workflow-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .workflow-step {
+            background: var(--henare-gray);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 16px 20px;
+            min-width: 120px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--henare-text);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .workflow-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15);
+        }
+        
+        .workflow-step::after {
+            content: "→";
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            color: var(--henare-red);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .workflow-step:last-child::after {
+            content: none;
+        }
+        
+        .step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .step-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .workflow-result {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--henare-text);
+            text-align: center;
+        }
+        
+        /* Learning section */
+        .learning-section {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 16px;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        
+        .learning-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--henare-text);
+            margin-bottom: 16px;
+        }
+        
+        .learning-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .workflow-visual {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .workflow-step::after {
+                content: "↓";
+                right: 50%;
+                transform: translateX(50%);
+                top: 100%;
+                bottom: -30px;
+            }
+            
+            .workflow-step:last-child::after {
+                content: none;
+            }
+            
+            .workflow-result {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- SLIDE 1: PROBLEM -->
-    <div class="slide slide-1">
-        <div class="client-info">
-            <div class="client-badge">🏗️ For: Henare Construction | Northland, NZ | Save 15+ Hours Weekly</div>
-            <div class="client-title">Construction Email Automation</div>
-            <div class="client-details">Auto-respond | Smart scheduling | Invoice processing | Professional efficiency</div>
-        </div>
-        
-        <div class="quote-block">
-            <div class="typewriter">
-                > "A lot of my time is spent on emails... I feel scattered across meetings, emails, and admin tasks that could be automated."
-            </div>
-        </div>
-        
-        <div class="quote-block">
-            <div class="typewriter second">
-                > "I want to reduce all my overheads and admin heavy tasks while staying ahead of automation trends in New Zealand construction."
-            </div>
-        </div>
-        
-        <div class="problem-reframe">
-            <div class="problem-title">How I understand your situation</div>
-            <div class="problem-text">
-                You're managing multiple construction entities (roofing, electrical, general construction) but drowning in manual email responses, invoice processing, and calendar management. You want professional automation that saves time without feeling "scary" or overwhelming.
-            </div>
-            
-            <div class="cost-grid">
-                <div class="cost-card">
-                    <div class="cost-value hours">15</div>
-                    <div class="cost-label">Hours/Week Wasted</div>
-                    <div class="cost-desc">Manual email responses</div>
-                </div>
-                
-                <div class="cost-card">
-                    <div class="cost-value money">750</div>
-                    <div class="cost-label">Weekly Value Lost</div>
-                    <div class="cost-desc">Time = money in construction</div>
-                </div>
-                
-                <div class="cost-card">
-                    <div class="cost-value percent">80</div>
-                    <div class="cost-label">Repetitive Tasks</div>
-                    <div class="cost-desc">Could be automated</div>
-                </div>
-            </div>
-        </div>
+    <!-- Header -->
+    <div class="henare-header">
+        <div class="henare-logo">HENARE CONSTRUCTION</div>
+        <div class="henare-tagline">Workflow Automation Demo</div>
     </div>
 
-    <!-- SLIDE 2: SOLUTION -->
-    <div class="slide slide-2">
-        <div class="roadmap-title">Henare Construction Automation</div>
-        
-        <div class="roadmap-container">
-            <div class="roadmap-line"></div>
-            
-            <div class="step">
-                <div class="step-marker">1</div>
-                <div class="step-content">
-                    <div class="step-title">Smart Email Responses</div>
-                    <div class="step-process">Gmail + Make.com + AI = Professional auto-replies<br>↓<br>Construction inquiries handled instantly</div>
-                    <div class="step-desc">Setup: Email trigger → AI analysis → Draft response → Your approval</div>
-                    <div class="artifact">
+    <div class="demo-container">
+        <!-- Main Title -->
+        <h1 class="demo-title">How Your 3 Core Automations Work</h1>
+        <p class="demo-subtitle">See exactly what we'll build together for your construction business</p>
+
+        <!-- Workflow 1: Email Automation -->
+        <div class="workflow-section">
+            <div class="workflow-header">
+                <div class="workflow-title">📧 Email Response Automation</div>
+                <div class="workflow-desc">Professional responses to construction inquiries in seconds</div>
+            </div>
+            <div class="workflow-content">
+                <div class="workflow-visual">
+                    <div class="workflow-step">
+                        <div class="step-icon">📧</div>
+                        <div>Gmail Trigger</div>
+                        <div class="step-label">construction@henare.co</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">🤖</div>
+                        <div>AI Analysis</div>
+                        <div class="step-label">Make.com + OpenAI</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">✍️</div>
+                        <div>Draft Response</div>
+                        <div class="step-label">Professional tone</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">👤</div>
+                        <div>Your Review</div>
+                        <div class="step-label">Edit & approve</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">✅</div>
+                        <div>Send</div>
+                        <div class="step-label">Client impressed</div>
+                    </div>
+                </div>
+                
+                <div class="workflow-result">
+                    <div>
+                        <div class="result-title">Email Result</div>
                         <div class="artifact-email">
                             <div class="email-header">
                                 <div class="email-avatar">HC</div>
@@ -77,35 +287,121 @@
                                     <div class="sender-name">Henare Construction</div>
                                     <div class="sender-email">construction@henare.co</div>
                                 </div>
-                                <div class="email-time">Auto-sent 3:42 PM</div>
+                                <div class="email-time">Auto-drafted</div>
                             </div>
                             <div class="email-subject">
                                 Re: Commercial Renovation Quote Request
                             </div>
                             <div class="email-body">
                                 Kia ora Sarah,<br><br>
-                                Thanks for reaching out about your retail fit-out project in Whangarei. I've reviewed your requirements for the 200sqm space.<br><br>
+                                Thanks for reaching out about your retail fit-out in Whangarei. Based on your 200sqm space requirements:<br><br>
                                 <strong>Next steps:</strong><br>
-                                • Site visit scheduled for Thursday 2PM<br>
+                                • Site visit this Thursday 2PM<br>
                                 • Detailed quote within 48 hours<br>
-                                • Timeline: 4-6 weeks completion<br><br>
+                                • 4-6 weeks completion timeline<br><br>
                                 Looking forward to bringing your vision to life.<br><br>
-                                Tohi Henry<br>
-                                Henare Construction
+                                Cheers,<br>
+                                Tohi Henry
                             </div>
                         </div>
-                        <div class="platform-badge">Powered by Make.com + OpenAI</div>
+                    </div>
+                    <div>
+                        <div class="result-title">Mobile Notification</div>
+                        <div class="artifact-sms">
+                            <div class="sms-header">Henare Construction Bot</div>
+                            <div class="sms-bubble">
+                                New email auto-drafted for Sarah Mitchell (retail fit-out). Professional response ready for your review and approval 👍
+                            </div>
+                            <div class="sms-time">Just now</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="step">
-                <div class="step-marker">2</div>
-                <div class="step-content">
-                    <div class="step-title">Invoice Processing Automation</div>
-                    <div class="step-process">Email + Xero + Make.com = Zero manual entry<br>↓<br>Suppliers automatically filed & categorized</div>
-                    <div class="step-desc">Setup: Invoice email → Extract data → File in Drive → Upload to Xero</div>
-                    <div class="artifact">
+        </div>
+
+        <!-- Workflow 2: Invoice Processing -->
+        <div class="workflow-section">
+            <div class="workflow-header">
+                <div class="workflow-title">💰 Invoice Processing</div>
+                <div class="workflow-desc">Automatic filing and Xero integration for all suppliers</div>
+            </div>
+            <div class="workflow-content">
+                <div class="workflow-visual">
+                    <div class="workflow-step">
+                        <div class="step-icon">📧</div>
+                        <div>Invoice Email</div>
+                        <div class="step-label">PDF attachment</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">🔍</div>
+                        <div>Extract Data</div>
+                        <div class="step-label">AI reads invoice</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">📁</div>
+                        <div>File in Drive</div>
+                        <div class="step-label">Organized folders</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">💰</div>
+                        <div>Upload to Xero</div>
+                        <div class="step-label">Categorized correctly</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">✅</div>
+                        <div>Notify</div>
+                        <div class="step-label">All done!</div>
+                    </div>
+                </div>
+                
+                <div class="workflow-result">
+                    <div>
+                        <div class="result-title">Processed Invoice</div>
+                        <div class="artifact-invoice">
+                            <div class="invoice-header">
+                                <div class="invoice-logo">PlaceMakers</div>
+                                <div class="invoice-number">
+                                    <div class="invoice-title">INVOICE</div>
+                                    <div>#PM-2025-0847</div>
+                                </div>
+                            </div>
+                            <div class="invoice-billing">
+                                <div class="billing-section">
+                                    <h4>Bill To</h4>
+                                    <p>Henare Construction<br>
+                                    Whangarei, Northland<br>
+                                    construction@henare.co</p>
+                                </div>
+                                <div class="billing-section">
+                                    <h4>Invoice Date</h4>
+                                    <p>August 5, 2025<br>
+                                    Due: August 19, 2025<br>
+                                    Project: Thompson Reno</p>
+                                </div>
+                            </div>
+                            <div class="invoice-items">
+                                <div class="item-row">
+                                    <div class="item-name">Timber framing - H1.2</div>
+                                    <div class="item-price">$1,245.50</div>
+                                </div>
+                                <div class="item-row">
+                                    <div class="item-name">Roofing materials</div>
+                                    <div class="item-price">$847.30</div>
+                                </div>
+                                <div class="item-row">
+                                    <div class="item-name">Fixings & hardware</div>
+                                    <div class="item-price">$234.70</div>
+                                </div>
+                                <div class="item-row">
+                                    <div class="item-name"><strong>Total</strong></div>
+                                    <div class="item-price"><strong>$2,327.50</strong></div>
+                                </div>
+                            </div>
+                            <div class="invoice-status">✅ Auto-processed to Xero</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="result-title">Processing Dashboard</div>
                         <div class="artifact-dashboard">
                             <div class="dashboard-header">
                                 <div class="dashboard-title">Invoice Processing</div>
@@ -121,32 +417,58 @@
                                     <div class="metric-label">Total Value</div>
                                 </div>
                                 <div class="metric-card">
-                                    <div class="metric-value">3</div>
-                                    <div class="metric-label">Manual Review</div>
+                                    <div class="metric-value">45s</div>
+                                    <div class="metric-label">Avg Time</div>
                                 </div>
                                 <div class="metric-card">
                                     <div class="metric-value">100%</div>
                                     <div class="metric-label">Accuracy</div>
                                 </div>
                             </div>
-                            <div class="step-hint">
-                                📊 <strong>Breakdown by entity:</strong> Construction (12), Roofing (7), Electrical (4)<br>
-                                🎯 <strong>Top suppliers:</strong> PlaceMakers, Mitre 10, Electrical Wholesalers<br>
-                                ⚡ <strong>Average processing:</strong> 45 seconds vs 8 minutes manual
-                            </div>
                         </div>
-                        <div class="platform-badge">Powered by Make.com + Xero API</div>
                     </div>
                 </div>
             </div>
-            
-            <div class="step">
-                <div class="step-marker">3</div>
-                <div class="step-content">
-                    <div class="step-title">Project Calendar Management</div>
-                    <div class="step-process">Website form + Google Cal + SMS = Seamless booking<br>↓<br>Site visits scheduled automatically</div>
-                    <div class="step-desc">Setup: Quote request → Available slots → Confirmation → Reminders</div>
-                    <div class="artifact">
+        </div>
+
+        <!-- Workflow 3: Calendar Management -->
+        <div class="workflow-section">
+            <div class="workflow-header">
+                <div class="workflow-title">📅 Calendar & Booking Management</div>
+                <div class="workflow-desc">Seamless scheduling from website to confirmed appointments</div>
+            </div>
+            <div class="workflow-content">
+                <div class="workflow-visual">
+                    <div class="workflow-step">
+                        <div class="step-icon">📝</div>
+                        <div>Website Form</div>
+                        <div class="step-label">henare.co contact</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">📅</div>
+                        <div>Check Calendar</div>
+                        <div class="step-label">Available slots</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">📧</div>
+                        <div>Send Options</div>
+                        <div class="step-label">Professional email</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">✅</div>
+                        <div>Book Slot</div>
+                        <div class="step-label">Auto-confirm</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-icon">📱</div>
+                        <div>SMS Reminder</div>
+                        <div class="step-label">Day before visit</div>
+                    </div>
+                </div>
+                
+                <div class="workflow-result">
+                    <div>
+                        <div class="result-title">Calendar Event</div>
                         <div class="artifact-calendar">
                             <div class="calendar-header">
                                 <div class="calendar-date">
@@ -154,7 +476,7 @@
                                     <div class="calendar-day">08</div>
                                 </div>
                                 <div class="calendar-event-info">
-                                    <div class="calendar-title">Site Visit - Residential Extension</div>
+                                    <div class="calendar-title">Site Visit - Kitchen Renovation</div>
                                     <div class="calendar-time">2:00 PM - 3:30 PM</div>
                                 </div>
                             </div>
@@ -170,115 +492,114 @@
                                     </div>
                                     <div class="calendar-detail">
                                         <div class="calendar-icon">🏗️</div>
-                                        <div>Kitchen & bathroom renovation quote</div>
+                                        <div>Kitchen & bathroom quote</div>
                                     </div>
                                     <div class="calendar-detail">
-                                        <div class="calendar-icon">📱</div>
-                                        <div>021 555 0123 (SMS reminder sent)</div>
+                                        <div class="calendar-icon">💰</div>
+                                        <div>Budget: $40K-60K range</div>
                                     </div>
                                 </div>
-                                <div class="calendar-attendees">
-                                    <div class="attendee-avatar">TH</div>
-                                </div>
                             </div>
                         </div>
-                        <div class="platform-badge">Powered by Google Calendar + Make.com</div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-marker">4</div>
-                <div class="step-content">
-                    <div class="step-title">Client Communication Hub</div>
-                    <div class="step-process">Multi-channel sync + Follow-ups + Status updates<br>↓<br>Professional image across all touchpoints</div>
-                    <div class="step-desc">Setup: CRM integration → Automated sequences → Progress notifications</div>
-                    <div class="artifact">
+                    <div>
+                        <div class="result-title">SMS Confirmation</div>
                         <div class="artifact-sms">
-                            <div class="sms-header">Messages • Henare Construction</div>
+                            <div class="sms-header">Henare Construction</div>
                             <div class="sms-bubble">
-                                Hi Mike! Your kitchen renovation is progressing well 🏗️<br><br>
-                                ✅ Demolition complete<br>
-                                🔨 Plumbing starts Monday<br>
-                                📅 On track for 3-week completion<br><br>
-                                Any questions? Just reply here!
+                                Hi Mike! Your site visit is confirmed for Thursday 2PM at Bank Street. I'll bring samples and discuss your renovation timeline. Looking forward to it! 🏗️<br><br>- Tohi
                             </div>
-                            <div class="sms-time">Delivered • Auto-sent</div>
+                            <div class="sms-time">Delivered</div>
                         </div>
-                        <div class="platform-badge">Powered by Make.com + SMS Gateway</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-marker">5</div>
-                <div class="step-content">
-                    <div class="step-title">Business Intelligence Dashboard</div>
-                    <div class="step-process">All data streams + Analytics + Insights<br>↓<br>Make smarter business decisions</div>
-                    <div class="step-desc">Setup: Data consolidation → Real-time reporting → Performance tracking</div>
-                    <div class="artifact">
-                        <div class="artifact-analytics">
-                            <div class="analytics-header">
-                                <div class="analytics-title">Henare Construction Overview</div>
-                                <div class="analytics-period">August 2025</div>
-                            </div>
-                            <div class="analytics-metrics">
-                                <div class="metric-item">
-                                    <div class="metric-number">47</div>
-                                    <div class="metric-label">New Inquiries</div>
-                                    <div class="metric-change">+23% vs July</div>
-                                </div>
-                                <div class="metric-item">
-                                    <div class="metric-number">12</div>
-                                    <div class="metric-label">Active Projects</div>
-                                    <div class="metric-change">All on schedule</div>
-                                </div>
-                                <div class="metric-item">
-                                    <div class="metric-number">89%</div>
-                                    <div class="metric-label">Quote Win Rate</div>
-                                    <div class="metric-change">Industry leading</div>
-                                </div>
-                            </div>
-                            <div class="analytics-chart">
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                            </div>
-                            <div class="chart-labels">
-                                <span>Residential</span>
-                                <span>Commercial</span>
-                                <span>Roofing</span>
-                                <span>Electrical</span>
-                                <span>Renovations</span>
-                                <span>Maintenance</span>
-                                <span>Design/Build</span>
-                            </div>
-                            <div class="highlight-block highlight-green">
-                                <div class="highlight-title">💡 Key Insight</div>
-                                <div class="highlight-value">Commercial projects = highest profit margin</div>
-                                <div class="highlight-desc">Focus automation on B2B lead nurturing</div>
-                            </div>
-                        </div>
-                        <div class="platform-badge">Powered by Make.com + Multiple APIs</div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="call-to-action">
-            <div class="cta-title">🚀 COMPLETE HENARE CONSTRUCTION AUTOMATION</div>
-            <div class="cta-text">
-                <strong>Gmail auto-responses → Xero invoice processing → Calendar booking → SMS updates → Business intelligence.</strong><br>
-                15+ hours saved weekly. Professional image maintained. Ready to scale across all entities.
-            </div>
-            <div class="cta-buttons">
-                <div class="cta-button">Future-proof technology</div>
-                <div class="cta-button">New Zealand construction focused</div>
-                <div class="cta-button">Safe, step-by-step training</div>
+
+        <!-- Learning Experience -->
+        <div class="learning-section">
+            <h2 class="learning-title">Your Personal 1-on-1 Training Journey</h2>
+            <p class="learning-subtitle">Here's how we'll build these automations together</p>
+            
+            <div class="learning-grid">
+                <div>
+                    <div class="result-title">Live Training Sessions</div>
+                    <div class="artifact-zoom">
+                        <div class="zoom-header">
+                            <div class="zoom-title">Make.com Training - Session 3</div>
+                            <div class="zoom-time">2:30 PM NZ Time</div>
+                        </div>
+                        <div class="zoom-participants">
+                            <div class="zoom-participant">
+                                <div class="zoom-video">🎥</div>
+                                <div class="zoom-name">Leonid Shvorob</div>
+                                <div class="zoom-status"></div>
+                            </div>
+                            <div class="zoom-participant">
+                                <div class="zoom-video">TH</div>
+                                <div class="zoom-name">Tohi Henry</div>
+                                <div class="zoom-status"></div>
+                            </div>
+                        </div>
+                        <div class="zoom-controls">
+                            <button class="zoom-control">Mute</button>
+                            <button class="zoom-control">Video</button>
+                            <button class="zoom-control">Share</button>
+                            <button class="zoom-control active">Record</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="result-title">Progress Tracking</div>
+                    <div class="artifact-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Tohi's Progress</div>
+                            <div class="dashboard-period">Week 3 of 8</div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">✅</div>
+                                <div class="metric-label">Email Setup</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">🔄</div>
+                                <div class="metric-label">Invoice Process</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">⏳</div>
+                                <div class="metric-label">Calendar Sync</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">75%</div>
+                                <div class="metric-label">Complete</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="result-title">Homework & Materials</div>
+                    <div class="artifact-form">
+                        <div class="form-header">
+                            <div class="form-title">Week 3 Assignment</div>
+                            <div class="form-subtitle">Test your invoice automation</div>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Upload test invoice</label>
+                            <input type="file" class="form-input" placeholder="invoice.pdf">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Xero integration working?</label>
+                            <input type="text" class="form-input" value="✅ Yes, uploaded successfully">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Questions or issues</label>
+                            <input type="text" class="form-input" placeholder="All working perfectly!">
+                        </div>
+                        <button class="form-button">Submit Homework</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
