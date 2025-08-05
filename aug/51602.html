@@ -3,9 +3,131 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Multi-Agent Instagram Content Factory - AI Automation Solution</title>
+   <title>AI Instagram Content Factory - Multi-Agent Automation</title>
+   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+   <style>
+       :root {
+           --primary-color: #7C3AED;
+           --primary-light: #A855F7;
+           --secondary-color: #1DA1F2;
+           --accent-color: #F97316;
+           --bg-light: #F8FAFC;
+           --bg-white: #FFFFFF;
+           --text-dark: #1E293B;
+           --text-gray: #64748B;
+           --border-color: #E2E8F0;
+       }
+
+       body {
+           background: linear-gradient(135deg, var(--bg-light) 0%, #E2E8F0 100%);
+           color: var(--text-dark);
+       }
+
+       .slide-1 {
+           background: var(--bg-white);
+           border: 1px solid var(--border-color);
+           box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+       }
+
+       .slide-2 {
+           background: var(--bg-white);
+           border: 1px solid var(--border-color);
+           box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+       }
+
+       .client-badge {
+           background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+           color: white;
+           border: none;
+       }
+
+       .client-title, .client-details {
+           color: var(--text-dark);
+       }
+
+       .quote-block {
+           background: rgba(124, 58, 237, 0.08);
+           border: 1px solid var(--primary-light);
+           color: var(--text-dark);
+       }
+
+       .problem-title {
+           color: var(--primary-color);
+       }
+
+       .problem-text {
+           color: var(--text-gray);
+       }
+
+       .cost-card {
+           background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(168, 85, 247, 0.05));
+           border: 1px solid var(--primary-light);
+           color: var(--text-dark);
+       }
+
+       .cost-value {
+           color: var(--accent-color);
+       }
+
+       .roadmap-title {
+           background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+       }
+
+       .step {
+           background: var(--bg-white);
+           border: 1px solid var(--border-color);
+           box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+       }
+
+       .step-marker {
+           background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+       }
+
+       .step-title {
+           color: var(--text-dark);
+       }
+
+       .step-process {
+           color: var(--secondary-color);
+       }
+
+       .step-desc {
+           color: var(--text-gray);
+       }
+
+       .cta-title {
+           color: var(--text-dark);
+       }
+
+       .cta-text {
+           color: var(--text-gray);
+       }
+
+       .cta-button {
+           background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+           border: 1px solid var(--primary-color);
+           color: white;
+       }
+
+       .cta-button:hover {
+           background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+       }
+
+       .step-hint {
+           background: rgba(124, 58, 237, 0.05);
+           border: 1px solid rgba(124, 58, 237, 0.2);
+           border-radius: 8px;
+           padding: 12px;
+           margin-top: 16px;
+           color: var(--primary-color);
+           font-size: 14px;
+           font-weight: 500;
+       }
+   </style>
 </head>
 <body>
    <!-- SLIDE 1: PROBLEM -->
@@ -17,17 +139,17 @@
        </div>
        
        <div class="quote-block">
-           <div class="typewriter">I need a multi-agent AI system that generates high-quality Instagram content aligned with my business strategy using Claude 3 and ChatGPT</div>
+           <div>I need a multi-agent AI system that generates high-quality Instagram content aligned with my business strategy using Claude 3 and ChatGPT</div>
        </div>
        
        <div class="quote-block">
-           <div class="typewriter second">Build separate agents for ideas, hooks, captions, CTAs - reference PDF documents and output to Google Sheets</div>
+           <div>Build separate agents for ideas, hooks, captions, CTAs - reference PDF documents and output to Google Sheets</div>
        </div>
        
        <div class="problem-reframe">
            <div class="problem-title">How I understand your needs</div>
            <div class="problem-text">
-               You need to scale Instagram content creation without losing quality or brand alignment. Manual content creation is limiting your marketing reach and consuming valuable time that should be spent on strategy and growth.
+               You need to scale Instagram content creation without losing quality or brand alignment. Manual content creation is limiting your marketing reach and consuming valuable time.
            </div>
            
            <div class="cost-grid">
@@ -54,7 +176,7 @@
 
    <!-- SLIDE 2: SOLUTION -->
    <div class="slide slide-2">
-       <div class="roadmap-title">Multi-Agent Instagram Content Factory</div>
+       <div class="roadmap-title">AI Instagram Content Factory</div>
        
        <div class="roadmap-container">
            <div class="roadmap-line"></div>
@@ -62,43 +184,37 @@
            <div class="step">
                <div class="step-marker">1</div>
                <div class="step-content">
-                   <div class="step-title">Strategy Agent Architecture</div>
-                   <div class="step-process">Claude 3 + Business Strategy = Content Ideas → Brand-Aligned Topics</div>
-                   <div class="step-desc">Configure Claude to analyze PDF guides and generate strategic content concepts</div>
-                   <div class="powered-by-badge">
-                       Powered by: Claude 3 API • HTTP Module • Brand Strategy Analysis
-                   </div>
+                   <div class="step-title">🎯 AI Setup + Brand Integration</div>
+                   <div class="step-desc">Connect Claude 3 + GPT-4 APIs and upload your brand PDFs for consistent tone</div>
+                   <div class="step-process">⚙️ Make.com HTTP modules → Claude/OpenAI → PDF text parser → Brand context injection</div>
+                   
                    <div class="artifact-make-workflow">
                        <div class="make-toolbar">
                            <div class="make-logo">Make</div>
-                           <div class="make-scenario-name">Strategy Agent - Content Ideas</div>
+                           <div class="make-scenario-name">Instagram Content Strategy System</div>
                            <button class="make-run-button">▶ Live</button>
                        </div>
                        <div class="make-workflow-canvas">
                            <div class="make-node trigger">
                                <div class="make-node-icon">📅</div>
-                               <div class="make-node-title">Schedule</div>
-                               <div class="make-node-desc">Weekly trigger</div>
+                               <div class="make-node-title">Weekly Schedule</div>
+                               <div class="make-node-desc">Content batch creation</div>
                            </div>
                            <div class="make-node action">
                                <div class="make-node-icon">📄</div>
-                               <div class="make-node-title">Parse PDFs</div>
-                               <div class="make-node-desc">Brand guidelines</div>
+                               <div class="make-node-title">Brand PDFs</div>
+                               <div class="make-node-desc">Strategy + tone guides</div>
                            </div>
                            <div class="make-node action">
                                <div class="make-node-icon">🧠</div>
-                               <div class="make-node-title">Claude 3</div>
-                               <div class="make-node-desc">Generate ideas</div>
-                           </div>
-                           <div class="make-node action" style="top: 120px; left: 220px;">
-                               <div class="make-node-icon">📊</div>
-                               <div class="make-node-title">Store Ideas</div>
-                               <div class="make-node-desc">Content queue</div>
+                               <div class="make-node-title">Claude 3.5</div>
+                               <div class="make-node-desc">Strategy-aligned ideas</div>
                            </div>
                        </div>
                    </div>
+                   
                    <div class="step-hint">
-                       Strategic content ideas generator that references your brand PDFs and business goals to ensure every post aligns with your marketing strategy.
+                       Your brand strategy PDFs and tone guides become the foundation for every AI-generated post, ensuring consistent voice and strategic alignment across all Instagram content
                    </div>
                </div>
            </div>
@@ -106,46 +222,68 @@
            <div class="step">
                <div class="step-marker">2</div>
                <div class="step-content">
-                   <div class="step-title">Multi-AI Content Generation</div>
-                   <div class="step-process">GPT-4 + Claude 3 = Diverse Outputs → High-Quality Variations</div>
-                   <div class="step-desc">Parallel AI agents for hooks, captions, and CTAs with comparison logic</div>
-                   <div class="powered-by-badge">
-                       Powered by: OpenAI GPT-4 • Claude 3 • Parallel Processing • Agent Comparison
+                   <div class="step-title">🤖 Content Generation Engine</div>
+                   <div class="step-desc">Single AI agent creates complete posts: ideas, hooks, captions, CTAs, and hashtags</div>
+                   <div class="step-process">⚙️ Claude 3 mega-prompt → Complete post structure → Format suggestions → Ready content</div>
+                   
+                   <div class="artifact-instagram">
+                       <div class="ig-header">
+                           <div class="ig-username">birmingham_business</div>
+                           <div class="ig-verified">✓</div>
+                       </div>
+                       <div class="ig-profile-section">
+                           <div class="ig-profile-info">
+                               <div class="ig-avatar">BB</div>
+                               <div class="ig-stats">
+                                   <div>
+                                       <div class="ig-stat-number">127</div>
+                                       <div class="ig-stat-label">posts</div>
+                                   </div>
+                                   <div>
+                                       <div class="ig-stat-number">8.4K</div>
+                                       <div class="ig-stat-label">followers</div>
+                                   </div>
+                                   <div>
+                                       <div class="ig-stat-number">1,240</div>
+                                       <div class="ig-stat-label">following</div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="ig-bio">
+                               <div class="ig-name">Your Birmingham Business</div>
+                               <div class="ig-bio-text">📈 <strong>AI-Generated Hook:</strong> "Stop scrolling if you're struggling with content creation..."<br>✨ <strong>Brand-Aligned Caption:</strong> Strategic post content matching your tone<br>🚀 <strong>Smart CTA:</strong> "Save this post and follow for weekly tips!"</div>
+                           </div>
+                           <div class="ig-buttons">
+                               <button class="ig-button primary">Follow</button>
+                               <button class="ig-button">Message</button>
+                           </div>
+                           <div class="ig-highlights">
+                               <div class="ig-highlight">
+                                   <div class="ig-highlight-circle">💡</div>
+                                   <div class="ig-highlight-label">Strategy</div>
+                               </div>
+                               <div class="ig-highlight">
+                                   <div class="ig-highlight-circle">📝</div>
+                                   <div class="ig-highlight-label">Content</div>
+                               </div>
+                               <div class="ig-highlight">
+                                   <div class="ig-highlight-circle">🎯</div>
+                                   <div class="ig-highlight-label">Results</div>
+                               </div>
+                           </div>
+                           <div class="ig-posts-grid">
+                               <div class="ig-post">🎯</div>
+                               <div class="ig-post">📈</div>
+                               <div class="ig-post">💡</div>
+                               <div class="ig-post">🚀</div>
+                               <div class="ig-post">📊</div>
+                               <div class="ig-post">✨</div>
+                           </div>
+                       </div>
                    </div>
-                   <div class="artifact-workflow">
-                       <div class="workflow-node">
-                           <div class="node-icon">💡</div>
-                           Idea Input
-                           <div class="node-label">From Strategy</div>
-                       </div>
-                       <div class="workflow-node">
-                           <div class="node-icon">🎯</div>
-                           Format Agent
-                           <div class="node-label">Post Type</div>
-                       </div>
-                       <div class="workflow-node">
-                           <div class="node-icon">🪝</div>
-                           Hook Agent
-                           <div class="node-label">GPT-4 + Claude</div>
-                       </div>
-                       <div class="workflow-node">
-                           <div class="node-icon">📝</div>
-                           Content Agent
-                           <div class="node-label">Full Caption</div>
-                       </div>
-                       <div class="workflow-node">
-                           <div class="node-icon">📢</div>
-                           CTA Agent
-                           <div class="node-label">Call to Action</div>
-                       </div>
-                       <div class="workflow-node">
-                           <div class="node-icon">🏆</div>
-                           Evaluator
-                           <div class="node-label">Best Output</div>
-                       </div>
-                   </div>
+                   
                    <div class="step-hint">
-                       Six specialized AI agents working in parallel - each one optimized for specific content components with dual AI comparison for maximum quality.
+                       One comprehensive AI prompt generates complete Instagram posts: scroll-stopping hooks, strategic captions matching your brand voice, effective CTAs, and relevant hashtags - all aligned with your business goals
                    </div>
                </div>
            </div>
@@ -153,44 +291,10 @@
            <div class="step">
                <div class="step-marker">3</div>
                <div class="step-content">
-                   <div class="step-title">PDF Reference Integration</div>
-                   <div class="step-process">Brand PDFs + AI Context = Consistent Tone → On-Brand Content</div>
-                   <div class="step-desc">Parse and inject brand guidelines into AI prompts for consistency</div>
-                   <div class="powered-by-badge">
-                       Powered by: PDF Processing • Brand Context Injection • Tone Consistency
-                   </div>
-                   <div class="artifact-code">
-                       <div class="code-content">
-                           <span class="code-comment">// Brand PDF Processing for AI Context</span><br>
-                           <span class="code-keyword">const</span> brandContext = {<br>
-                           &nbsp;&nbsp;<span class="code-string">tone</span>: extractFromPDF(<span class="code-string">'brand-voice.pdf'</span>),<br>
-                           &nbsp;&nbsp;<span class="code-string">strategy</span>: extractFromPDF(<span class="code-string">'content-strategy.pdf'</span>),<br>
-                           &nbsp;&nbsp;<span class="code-string">guidelines</span>: extractFromPDF(<span class="code-string">'style-guide.pdf'</span>)<br>
-                           };<br><br>
-                           <span class="code-comment">// Inject into Claude prompt</span><br>
-                           <span class="code-keyword">const</span> prompt = <span class="code-string">`Write Instagram caption using this brand voice: ${brandContext.tone} 
-                           
-                           Strategy focus: ${brandContext.strategy}
-                           
-                           Topic: ${contentIdea}`</span>;<br><br>
-                           <span class="code-comment">// Ensures every output matches your brand</span>
-                       </div>
-                   </div>
-                   <div class="step-hint">
-                       Your brand PDFs become the foundation for all AI-generated content, ensuring consistent voice and strategy across every post.
-                   </div>
-               </div>
-           </div>
-           
-           <div class="step">
-               <div class="step-marker">4</div>
-               <div class="step-content">
-                   <div class="step-title">Content Output Pipeline</div>
-                   <div class="step-process">Generated Content + Google Sheets = Organized Results → Ready-to-Post</div>
-                   <div class="step-desc">Structure output with format suggestions, hooks, captions, and CTAs</div>
-                   <div class="powered-by-badge">
-                       Powered by: Google Sheets API • Content Organization • Publishing Pipeline
-                   </div>
+                   <div class="step-title">📊 Content Library Organization</div>
+                   <div class="step-desc">Automatically organize all generated content in Google Sheets with post types and publishing status</div>
+                   <div class="step-process">⚙️ Google Sheets API → Structured data → Content categorization → Publishing pipeline</div>
+                   
                    <div class="artifact-dashboard">
                        <div class="dashboard-header">
                            <div class="dashboard-title">Content Library</div>
@@ -198,47 +302,46 @@
                        </div>
                        <div class="metrics-grid">
                            <div class="metric-card">
-                               <div class="metric-value">24</div>
+                               <div class="metric-value">28</div>
                                <div class="metric-label">Posts Generated</div>
                            </div>
                            <div class="metric-card">
-                               <div class="metric-value">8</div>
+                               <div class="metric-value">12</div>
                                <div class="metric-label">Carousel Ideas</div>
                            </div>
                            <div class="metric-card">
-                               <div class="metric-value">12</div>
+                               <div class="metric-value">8</div>
                                <div class="metric-label">Reel Concepts</div>
                            </div>
                            <div class="metric-card">
-                               <div class="metric-value">4</div>
-                               <div class="metric-label">Story Templates</div>
+                               <div class="metric-value">8</div>
+                               <div class="metric-label">Story Ideas</div>
                            </div>
                        </div>
-                       <div style="background: #f9fafb; padding: 16px; border-radius: 8px; margin-top: 16px;">
-                           <div style="font-size: 14px; color: #374151; margin-bottom: 12px;"><strong>📋 Ready to Post:</strong></div>
-                           <div style="font-size: 12px; color: #6b7280; line-height: 1.6;">
-                               <strong>Hook:</strong> "Stop scrolling if you're tired of..."<br>
-                               <strong>Format:</strong> Carousel (5 slides)<br>
-                               <strong>CTA:</strong> "Save this post and follow for more tips!"<br>
-                               <strong>Status:</strong> ✅ Brand-approved • 📅 Scheduled for Tuesday
+                       <div style="background: rgba(15, 23, 42, 0.8); padding: 16px; border-radius: 8px; margin-top: 16px; border: 1px solid #334155;">
+                           <div style="font-size: 14px; color: #F8FAFC; margin-bottom: 12px;"><strong>📋 Ready to Post Queue:</strong></div>
+                           <div style="font-size: 12px; color: #94A3B8; line-height: 1.6;">
+                               <strong>Type:</strong> Carousel (5 slides)<br>
+                               <strong>Hook:</strong> "3 mistakes killing your engagement..."<br>
+                               <strong>CTA:</strong> "Save + follow for daily tips!"<br>
+                               <strong>Status:</strong> ✅ Ready • 📅 Queue for Tuesday
                            </div>
                        </div>
                    </div>
-                   <div class="step-hint">
-                       Organized content library with everything you need - format type, scroll-stopping hooks, full captions, and engaging CTAs ready for immediate use.
+                   
+                   <div style="margin-top: 16px; padding: 12px; background: rgba(249, 115, 22, 0.1); border-radius: 8px; color: #F97316; font-size: 14px;">
+                       💡 <strong>Loom Tip:</strong> "Show the organized Google Sheet with all content categorized by type, ready for immediate scheduling"
                    </div>
                </div>
            </div>
            
            <div class="step">
-               <div class="step-marker">5</div>
+               <div class="step-marker">4</div>
                <div class="step-content">
-                   <div class="step-title">Quality Control & Optimization</div>
-                   <div class="step-process">Evaluator Agent + Performance Data = Content Refinement → Improved Results</div>
-                   <div class="step-desc">AI agent that selects best outputs and tracks performance patterns</div>
-                   <div class="powered-by-badge">
-                       Powered by: AI Evaluation • Performance Analytics • Continuous Optimization
-                   </div>
+                   <div class="step-title">🎯 Quality Control + Performance</div>
+                   <div class="step-desc">Track content performance and optimize future generation based on engagement data</div>
+                   <div class="step-process">⚙️ Performance tracking → AI optimization → Content refinement → Improved results</div>
+                   
                    <div class="artifact-analytics">
                        <div class="analytics-header">
                            <div class="analytics-title">Content Performance</div>
@@ -246,19 +349,19 @@
                        </div>
                        <div class="analytics-metrics">
                            <div class="metric-item">
-                               <div class="metric-number">847%</div>
-                               <div class="metric-label">Engagement Rate</div>
-                               <div class="metric-change">+23% vs manual 📈</div>
+                               <div class="metric-number">340%</div>
+                               <div class="metric-label">Engagement Boost</div>
+                               <div class="metric-change">vs manual content 📈</div>
                            </div>
                            <div class="metric-item">
-                               <div class="metric-number">94%</div>
-                               <div class="metric-label">Hook Success</div>
-                               <div class="metric-change">AI-generated hooks 🎯</div>
+                               <div class="metric-number">24</div>
+                               <div class="metric-label">Posts Per Week</div>
+                               <div class="metric-change">vs 4 manual posts 🚀</div>
                            </div>
                            <div class="metric-item">
-                               <div class="metric-number">156</div>
-                               <div class="metric-label">Posts Created</div>
-                               <div class="metric-change">vs 24 manual posts 🚀</div>
+                               <div class="metric-number">92%</div>
+                               <div class="metric-label">Brand Consistency</div>
+                               <div class="metric-change">AI-maintained tone ✨</div>
                            </div>
                        </div>
                        <div class="analytics-chart">
@@ -271,13 +374,14 @@
                            <div class="chart-bar"></div>
                        </div>
                        <div class="highlight-block highlight-green">
-                           <div class="highlight-title">🎯 AI Optimization Active</div>
-                           <div class="highlight-value">Claude + GPT-4 comparison running</div>
-                           <div class="highlight-desc">Best outputs auto-selected</div>
+                           <div class="highlight-title">🎯 AI System Active</div>
+                           <div class="highlight-value">Claude 3 + GPT-4 running</div>
+                           <div class="highlight-desc">Consistent brand-aligned content</div>
                        </div>
                    </div>
-                   <div class="step-hint">
-                       Continuous improvement system that learns from your best-performing content and optimizes future outputs for maximum engagement.
+                   
+                   <div style="margin-top: 16px; padding: 12px; background: rgba(124, 58, 237, 0.1); border-radius: 8px; color: #A855F7; font-size: 14px;">
+                       💡 <strong>Loom Tip:</strong> "Show how the system learns from your best-performing content to generate even better posts over time"
                    </div>
                </div>
            </div>
@@ -286,12 +390,12 @@
        <div class="call-to-action">
            <div class="cta-title">🚀 Ready for AI-Powered Content at Scale?</div>
            <div class="cta-text">
-               <strong>I can build your complete 6-agent system in 5-7 hours as specified.</strong><br>
-               Claude 3 + GPT-4 → Brand-aligned content → Google Sheets → Ready-to-post Instagram content factory.
+               <strong>I can build your complete AI content system in 5-7 hours as specified.</strong><br>
+               Claude 3 + GPT-4 → Brand-aligned content → Google Sheets → 20+ posts weekly on autopilot.
            </div>
            <div class="cta-buttons">
                <div class="cta-button">💬 Discuss your content strategy</div>
-               <div class="cta-button">🤖 See multi-agent automation demo</div>
+               <div class="cta-button">🤖 See AI automation demo</div>
                <div class="cta-button">⚡ Start your content factory today</div>
            </div>
        </div>
