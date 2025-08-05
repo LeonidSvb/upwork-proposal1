@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Web Intelligence Bot System</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css" />
-    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Intelligence Bot System</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css" />
+  <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css" />
 </head>
 <body>
 
@@ -53,99 +53,117 @@
 
 <!-- SLIDE 2 -->
 <div class="slide slide-2">
-  <div class="roadmap-title">System: Web Intelligence Bot</div>
+  <div class="roadmap-title">How will users experience it</div>
   <div class="roadmap-container">
     <div class="roadmap-line"></div>
 
     <div class="step">
       <div class="step-marker">1</div>
       <div class="step-content">
-        <div class="step-title">🧠 User Input & Trigger</div>
-        <div class="step-process">Make.com webhook trigger</div>
-        <div class="step-desc">User submits a keyword → triggers scenario with a token check</div>
-        <div class="artifact-form artifact">
-          <div class="form-header">
-            <div class="form-title">Start a New Report</div>
-            <div class="form-subtitle">Enter topic and hit generate</div>
+        <div class="step-title">🔔 Instant Notification</div>
+        <div class="step-process">60 seconds after keyword input</div>
+        <div class="step-desc">User receives an alert that their research report is ready</div>
+        <div class="artifact-notification artifact">
+          <div class="notification-header">
+            <div class="notification-app-icon">📊</div>
+            <div class="notification-app-name">IntelBot</div>
+            <div class="notification-time">Just now</div>
           </div>
-          <div class="form-field">
-            <label class="form-label">Search Term</label>
-            <input type="text" class="form-input" placeholder="e.g. OpenAI vs Anthropic">
-          </div>
-          <div class="form-field">
-            <label class="form-label">Token</label>
-            <input type="text" class="form-input" placeholder="User API Token">
-          </div>
-          <button class="form-button">Generate</button>
+          <div class="notification-title">Your Market Report is Ready</div>
+          <div class="notification-body">Topic: OpenAI vs Anthropic<br/>Click to view insights, trends, and news analysis.</div>
         </div>
-        <div class="platform-badge">Make.com Webhook</div>
+        <div class="platform-badge">Push Notification</div>
       </div>
     </div>
 
     <div class="step">
       <div class="step-marker">2</div>
       <div class="step-content">
-        <div class="step-title">🌐 Data Aggregation</div>
-        <div class="step-process">Multiple API calls (news, trends, social)</div>
-        <div class="step-desc">Pull data from NewsAPI, Reddit, X/Twitter, Google Trends etc.</div>
-        <div class="artifact-api artifact">
-          <div class="api-header">
-            <div class="api-method">GET</div>
-            <div class="api-url">https://api.newsapi.org/v2/everything?q=openai</div>
+        <div class="step-title">📊 Report Dashboard</div>
+        <div class="step-process">AI Summary + Metrics</div>
+        <div class="step-desc">User opens a sleek dashboard with auto-generated insights</div>
+        <div class="artifact-dashboard artifact">
+          <div class="dashboard-header">
+            <div class="dashboard-title">OpenAI vs Anthropic</div>
+            <div class="dashboard-period">Last 7 days</div>
           </div>
-          <div class="api-block">
-            { "articles": [...], "status": "ok", "totalResults": 20 }
-          </div>
-          <div class="api-response">
-            <div class="api-status">200 OK</div>
-            Top 20 recent articles
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-value">89%</div>
+              <div class="metric-label">Buzz Index</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">120</div>
+              <div class="metric-label">Mentions</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">14</div>
+              <div class="metric-label">News Sources</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">4.6★</div>
+              <div class="metric-label">Sentiment Score</div>
+            </div>
           </div>
         </div>
-        <div class="platform-badge">NewsAPI + Reddit API</div>
+        <div class="platform-badge">Web Dashboard</div>
       </div>
     </div>
 
     <div class="step">
       <div class="step-marker">3</div>
       <div class="step-content">
-        <div class="step-title">🤖 AI Report Generation</div>
-        <div class="step-process">OpenAI GPT + Prompt Engineering</div>
-        <div class="step-desc">Processed content is passed into GPT prompt for summary & insight</div>
-        <div class="artifact-code artifact">
-          <div class="code-content">
-            <span class="code-comment">// prompt structure</span><br>
-            <span class="code-keyword">const</span> prompt = `Summarize key insights about ${"{topic}"}`;<br>
-            <span class="code-keyword">const</span> response = await openai.create(prompt);
+        <div class="step-title">💬 Slack Notification</div>
+        <div class="step-process">Auto-published to internal channel</div>
+        <div class="step-desc">Team sees the report appear with headline insights</div>
+        <div class="artifact-slack artifact">
+          <div class="slack-sidebar">
+            <div class="slack-workspace">WebIntel</div>
+            <div class="slack-channel">#reports</div>
+          </div>
+          <div class="slack-messages">
+            <div class="slack-message">
+              <div class="slack-avatar">🤖</div>
+              <div class="slack-content">
+                <div class="slack-header">
+                  <div class="slack-name">intel.bot</div>
+                  <div class="slack-bot-badge">BOT</div>
+                  <div class="slack-time">10:01 AM</div>
+                </div>
+                <div class="slack-text">
+                  New report available: <strong>OpenAI vs Anthropic</strong><br/>
+                  - 🚀 Trend: +32% buzz<br/>
+                  - 🔍 Sentiment: 4.6 / 5<br/>
+                  - 🗞️ Top news: TechCrunch, Wired, Forbes
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="platform-badge">OpenAI ChatGPT API</div>
+        <div class="platform-badge">Slack Integration</div>
       </div>
     </div>
 
     <div class="step">
       <div class="step-marker">4</div>
       <div class="step-content">
-        <div class="step-title">📤 Output Delivery</div>
-        <div class="step-process">Email / Notion / HTML / Slack</div>
-        <div class="step-desc">Formatted report is sent to user with clean layout & sections</div>
-        <div class="artifact-email artifact">
-          <div class="email-header">
-            <div class="email-avatar">A</div>
-            <div class="email-sender">
-              <div class="sender-name">AI Report Engine</div>
-              <div class="sender-email">bot@webintel.ai</div>
-            </div>
-            <div class="email-time">Just now</div>
+        <div class="step-title">💚 WhatsApp Delivery</div>
+        <div class="step-process">Mobile-friendly format</div>
+        <div class="step-desc">Optional delivery to WhatsApp with key highlights</div>
+        <div class="artifact-whatsapp artifact">
+          <div class="whatsapp-header">
+            <div class="whatsapp-avatar">📈</div>
+            <div class="whatsapp-name">IntelBot Report</div>
           </div>
-          <div class="email-subject">Your Market Research Report is Ready</div>
-          <div class="email-body">
-            - 📈 Trends on OpenAI<br>
-            - 📰 Latest news summary<br>
-            - 💬 Top social discussions<br>
-            - 🧠 Insights & recommendations
+          <div class="whatsapp-bubble">
+            📊 *OpenAI vs Anthropic*<br/>
+            Buzz: +89%<br/>
+            Sentiment: 4.6 ★<br/>
+            🔗 View full report
           </div>
+          <div class="whatsapp-time">10:02 AM</div>
         </div>
-        <div class="platform-badge">Gmail + Slack API</div>
+        <div class="platform-badge">WhatsApp API</div>
       </div>
     </div>
   </div>
