@@ -2,7 +2,7 @@
 ==============================================
 PREMIUM REALISTIC ARTIFACTS CSS FRAMEWORK
 ==============================================
-15 Ultra-Realistic UI Components for Landing Pages
+15 + 4 Ultra-Realistic UI Components for Landing Pages
 
 USAGE INSTRUCTIONS:
 - Use exact class names and HTML structure
@@ -1734,5 +1734,537 @@ USAGE INSTRUCTIONS:
   .invoice-billing {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+
+
+/* ===== 📱 INSTAGRAM PROFILE (Social media showcase) ===== */
+.artifact-instagram {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 380px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border: 1px solid #dbdbdb;
+}
+
+.ig-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ig-username {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.ig-verified {
+  color: #1da1f2;
+  font-size: 16px;
+}
+
+.ig-profile-section {
+  padding: 16px 20px;
+}
+
+.ig-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.ig-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.ig-stats {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.ig-stat-number {
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+  display: block;
+}
+
+.ig-stat-label {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.ig-bio {
+  margin-bottom: 16px;
+}
+
+.ig-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 4px;
+}
+
+.ig-bio-text {
+  font-size: 14px;
+  color: #262626;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.ig-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ig-button {
+  flex: 1;
+  padding: 7px 16px;
+  background: #efefef;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.ig-button.primary {
+  background: #0095f6;
+  color: white;
+}
+
+.ig-highlights {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ig-highlight {
+  text-align: center;
+  min-width: 64px;
+}
+
+.ig-highlight-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 4px;
+  border: 2px solid #dbdbdb;
+}
+
+.ig-highlight-label {
+  font-size: 12px;
+  color: #262626;
+}
+
+.ig-posts-header {
+  border-top: 1px solid #efefef;
+  display: flex;
+}
+
+.ig-tab {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+
+.ig-tab.active {
+  color: #262626;
+  border-bottom: 1px solid #262626;
+}
+
+.ig-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #efefef;
+}
+
+.ig-post {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+/* ===== 🎥 YOUTUBE INTERFACE (Video content showcase) ===== */
+.artifact-youtube {
+  background: #0f0f0f;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.yt-video-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+
+.yt-video-player {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 48px;
+}
+
+.yt-play-button {
+  position: absolute;
+  width: 68px;
+  height: 48px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 20px;
+}
+
+.yt-info {
+  padding: 16px 12px;
+  background: #0f0f0f;
+}
+
+.yt-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.yt-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.yt-views, .yt-date {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.yt-channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.yt-channel-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yt-channel-info {
+  flex: 1;
+}
+
+.yt-channel-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.yt-channel-subs {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.yt-subscribe {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.yt-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.yt-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 18px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ===== 🔄 MAKE.COM WORKFLOW (Visual automation builder) ===== */
+.artifact-make-workflow {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.make-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+}
+
+.make-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.make-scenario-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.make-run-button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.make-workflow-canvas {
+  min-height: 300px;
+  position: relative;
+  background: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.make-node {
+  position: absolute;
+  width: 120px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.make-node.trigger {
+  border-color: #059669;
+  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+  top: 50px;
+  left: 50px;
+}
+
+.make-node.action {
+  border-color: #2563eb;
+  background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+}
+
+.make-node:nth-child(2) { top: 50px; left: 220px; }
+.make-node:nth-child(3) { top: 50px; left: 390px; }
+
+.make-node-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  background: #6366f1;
+}
+
+.make-node.trigger .make-node-icon {
+  background: #059669;
+}
+
+.make-node.action .make-node-icon {
+  background: #2563eb;
+}
+
+.make-node-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.make-node-desc {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+/* ===== 🔗 N8N WORKFLOW (Advanced automation platform) ===== */
+.artifact-n8n-workflow {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.n8n-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.n8n-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff6d5a;
+}
+
+.n8n-workflow-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.n8n-execute-button {
+  background: #ff6d5a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.n8n-canvas {
+  min-height: 300px;
+  position: relative;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.n8n-node {
+  position: absolute;
+  width: 140px;
+  background: #3a3a3a;
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+}
+
+.n8n-node.trigger {
+  border-color: #4ade80;
+  top: 20px;
+  left: 20px;
+}
+
+.n8n-node:nth-child(2) { top: 20px; left: 200px; }
+.n8n-node:nth-child(3) { top: 20px; left: 380px; }
+
+.n8n-node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.n8n-node-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background: #ff6d5a;
+  color: white;
+}
+
+.n8n-node.trigger .n8n-node-icon {
+  background: #4ade80;
+}
+
+.n8n-node-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.n8n-node-type {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.n8n-node-desc {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .artifact-instagram,
+  .artifact-youtube,
+  .artifact-make-workflow,
+  .artifact-n8n-workflow {
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
