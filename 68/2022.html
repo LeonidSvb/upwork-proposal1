@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Automation n8n Expert - Production Ready Workflow</title>
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>🤖</text></svg>" />
+    <style>
+        :root {
+            --primary-blue: #dc2626;
+            --secondary-blue: #ef4444;
+            --accent-blue: #f87171;
+            --light-blue: #fca5a5;
+        }
+    </style>
+</head>
+<body>
+    <!-- SLIDE 1: ПРОБЛЕМА -->
+    <div class="slide slide-1">
+        <!-- Персонализация -->
+        <div class="client-info">
+            <div class="client-badge">🇳🇱 YouTube Automation Expert | $3.2K Spent | 100% Hire Rate | Contract-to-Hire | n8n Self-Studied</div>
+            <div class="client-title">YouTube Automation Production Workflow</div>
+            <div class="client-details">Netherlands | 9 Jobs Posted | 11 Interviews Active | Short Sprints with Video Calls</div>
+        </div>
+        
+        <!-- Проблема для чтения в Loom -->
+        <div class="problem-reframe">
+            <div class="problem-title">How I understand your challenge</div>
+            <div class="problem-text">
+                You've mapped out your YouTube automation workflow perfectly, but building it in n8n requires deep expertise you don't want to spend months learning.
+            </div>
+            
+            <!-- Цифры для визуала -->
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">40</div>
+                    <div class="cost-label">Hours/Month Lost</div>
+                    <div class="cost-desc">Manual workflow management</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value money">2,000</div>
+                    <div class="cost-label">Revenue Delayed</div>
+                    <div class="cost-desc">Automation launch pushed back</div>
+                </div>
+                
+                <div class="cost-card">
+                    <div class="cost-value percent">6</div>
+                    <div class="cost-label">Months Learning Curve</div>
+                    <div class="cost-desc">Without expert help</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: РЕШЕНИЕ -->
+    <div class="slide slide-2">
+        <div class="roadmap-title">YouTube Production Automation</div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">Research Automation Setup</div>
+                    <div class="artifact">
+                        <div class="artifact-n8n-workflow">
+                            <div class="n8n-header">
+                                <div class="n8n-logo">n8n</div>
+                                <div class="n8n-workflow-name">YouTube Research Bot</div>
+                                <div class="n8n-execute-button">Execute</div>
+                            </div>
+                            <div class="n8n-canvas">
+                                <div class="n8n-node trigger">
+                                    <div class="n8n-node-header">
+                                        <div class="n8n-node-icon">🕒</div>
+                                        <div class="n8n-node-title">Schedule</div>
+                                    </div>
+                                    <div class="n8n-node-type">Weekly Trigger</div>
+                                    <div class="n8n-node-desc">Every Monday 9AM</div>
+                                </div>
+                                <div class="n8n-node">
+                                    <div class="n8n-node-header">
+                                        <div class="n8n-node-icon">🔍</div>
+                                        <div class="n8n-node-title">YouTube API</div>
+                                    </div>
+                                    <div class="n8n-node-type">Data Source</div>
+                                    <div class="n8n-node-desc">Trending videos research</div>
+                                </div>
+                                <div class="n8n-node">
+                                    <div class="n8n-node-header">
+                                        <div class="n8n-node-icon">🤖</div>
+                                        <div class="n8n-node-title">Claude AI</div>
+                                    </div>
+                                    <div class="n8n-node-type">Content Analysis</div>
+                                    <div class="n8n-node-desc">Generate 10 video ideas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">Script Generation with Claude & Poppy.ai</div>
+                    <div class="artifact">
+                        <div class="artifact-code">
+                            <div class="code-content">
+<span class="code-comment">// Auto Script Generation Node</span>
+<span class="code-keyword">const</span> scriptPrompt = {
+  <span class="code-string">"model"</span>: <span class="code-string">"claude-3-sonnet"</span>,
+  <span class="code-string">"prompt"</span>: <span class="code-string">"Create engaging YouTube script for: {{$json.videoTopic}}"</span>,
+  <span class="code-string">"style"</span>: <span class="code-string">"conversational, hook-heavy"</span>,
+  <span class="code-string">"length"</span>: <span class="code-string">"{{$json.targetLength}} minutes"</span>
+};
+
+<span class="code-comment">// Fallback to Poppy.ai if Claude fails</span>
+<span class="code-keyword">if</span> (claudeResponse.error) {
+  <span class="code-keyword">return</span> poppyAI.generateScript(videoTopic);
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">ElevenLabs Voice Generation</div>
+                    <div class="artifact">
+                        <div class="artifact-api">
+                            <div class="api-header">
+                                <div class="api-method">POST</div>
+                                <div class="api-url">/elevenlabs/text-to-speech</div>
+                            </div>
+                            <div class="api-response">
+                                <div class="api-status">Request Payload</div>
+                            </div>
+                            <div class="api-block">
+{
+  "text": "{{$json.finalScript}}",
+  "voice_id": "your_voice_clone_id",
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.8,
+    "style": 0.2
+  }
+}
+                            </div>
+                            <div class="api-response">
+                                <div class="api-status">Response</div>
+                            </div>
+                            <div class="api-block">
+{
+  "audio_url": "https://api.elevenlabs.io/audio.mp3",
+  "duration": 892.5,
+  "status": "completed"
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">Thumbnail Generation & Editor Handoff</div>
+                    <div class="artifact">
+                        <div class="artifact-email">
+                            <div class="email-header">
+                                <div class="email-avatar">🎬</div>
+                                <div class="email-sender">
+                                    <div class="sender-name">YouTube Automation Bot</div>
+                                    <div class="sender-email">automation@youtubepro.nl</div>
+                                </div>
+                                <div class="email-time">Auto-sent</div>
+                            </div>
+                            <div class="email-subject">
+                                📦 Video Package Ready: "How AI Will Change Everything in 2025"
+                            </div>
+                            <div class="email-body">
+                                Hi Video Editor,<br><br>
+                                
+                                Your complete video package is ready for production:<br><br>
+                                
+                                <strong>📝 Script:</strong> 8-minute engaging narrative with hooks<br>
+                                <strong>🎤 Voiceover:</strong> High-quality AI narration (MP3)<br>
+                                <strong>🖼️ Thumbnails:</strong> 3 eye-catching options (A/B test ready)<br>
+                                <strong>📋 Brief:</strong> Style guide, pacing notes, CTA placement<br><br>
+                                
+                                <strong>Target:</strong> 8-12 minute final video<br>
+                                <strong>Deadline:</strong> 48 hours<br>
+                                <strong>Upload Slot:</strong> Thursday 3PM CET
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">YouTube Upload & Scheduling</div>
+                    <div class="artifact">
+                        <div class="artifact-youtube">
+                            <div class="yt-video-container">
+                                <div class="yt-video-player">🎥</div>
+                                <div class="yt-play-button">▶</div>
+                            </div>
+                            <div class="yt-info">
+                                <div class="yt-title">How AI Will Change Everything in 2025 (Mind-Blowing Predictions)</div>
+                                <div class="yt-meta">
+                                    <div class="yt-views">Scheduled for Thu 3PM</div>
+                                    <div class="yt-date">Auto-uploaded by n8n</div>
+                                </div>
+                                <div class="yt-channel">
+                                    <div class="yt-channel-avatar">YA</div>
+                                    <div class="yt-channel-info">
+                                        <div class="yt-channel-name">Your YouTube Channel</div>
+                                        <div class="yt-channel-subs">Auto-managed workflow</div>
+                                    </div>
+                                    <div class="yt-subscribe">✅ Live</div>
+                                </div>
+                                <div class="yt-actions">
+                                    <div class="yt-action">📊 Analytics Ready</div>
+                                    <div class="yt-action">🔔 Notifications Sent</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-marker">6</div>
+                <div class="step-content">
+                    <div class="step-title">Complete Workflow Testing</div>
+                    <div class="artifact">
+                        <div class="artifact-slack">
+                            <div class="slack-sidebar">
+                                <div class="slack-workspace">YouTube Team</div>
+                                <div class="slack-channel">#automation-alerts</div>
+                            </div>
+                            <div class="slack-messages">
+                                <div class="slack-message">
+                                    <div class="slack-avatar">🤖</div>
+                                    <div class="slack-content">
+                                        <div class="slack-header">
+                                            <div class="slack-name">n8n Bot</div>
+                                            <div class="slack-bot-badge">BOT</div>
+                                            <div class="slack-time">3:47 PM</div>
+                                        </div>
+                                        <div class="slack-text">
+                                            ✅ <strong>Workflow Test Complete!</strong><br><br>
+                                            📹 1-minute test video processed successfully<br>
+                                            🎯 All APIs connected and working<br>
+                                            ⏱️ Total processing time: 12 minutes<br>
+                                            🚀 Ready for 15-minute video production!
+                                        </div>
+                                        <div class="slack-notification">Ready for Sprint Review Call</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="call-to-action">
+            <div class="cta-title">🎯 Ready for Your Complete YouTube Automation?</div>
+            <div class="cta-text">
+                I'll build your exact workflow in focused video call sprints. Test with 1-minute video first, then scale to full 15-minute production. n8n expertise + your vision = automated YouTube success.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
