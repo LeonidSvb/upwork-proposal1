@@ -11,40 +11,32 @@
         /* Service badges styling */
         .service-badges {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 16px 0;
+            margin: 8px 0 20px 0;
         }
         
         .service-badge {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            border: 1px solid #cbd5e1;
-            color: #475569;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #6c757d;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            letter-spacing: 0.3px;
         }
         
-        .service-badge.openai { border-color: #10b981; background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #065f46; }
-        .service-badge.n8n { border-color: #ef4444; background: linear-gradient(135deg, #fef2f2, #fecaca); color: #991b1b; }
-        .service-badge.api { border-color: #3b82f6; background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1e40af; }
-        .service-badge.slack { border-color: #8b5cf6; background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
-        .service-badge.email { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #fed7aa); color: #92400e; }
-        
         .step-action {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 20px;
             text-align: center;
             font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
     </style>
 </head>
@@ -104,13 +96,14 @@
                 <div class="step-marker">1</div>
                 <div class="step-content">
                     <div class="step-title">Data Source Integration</div>
-                    <div class="step-action">Connect your POS system, Excel sheets, supplier emails, and staff tracking into one unified data hub that updates automatically.</div>
+                    
+                    <div class="step-action">I'll connect your POS system, Excel files, and supplier emails into one smart system. This means all your restaurant data flows automatically into a single place where we can analyze it.</div>
                     
                     <div class="service-badges">
-                        <div class="service-badge api">⚡ REST API</div>
-                        <div class="service-badge n8n">🔄 n8n</div>
-                        <div class="service-badge">📊 POS Systems</div>
-                        <div class="service-badge email">📧 Gmail API</div>
+                        <div class="service-badge">REST API</div>
+                        <div class="service-badge">n8n</div>
+                        <div class="service-badge">POS Systems</div>
+                        <div class="service-badge">Gmail API</div>
                     </div>
                     
                     <div class="artifact">
@@ -146,13 +139,14 @@
                 <div class="step-marker">2</div>
                 <div class="step-content">
                     <div class="step-title">Automated Processing Workflow</div>
-                    <div class="step-action">Build n8n workflow that calculates real profit margins every time a dish is sold, factoring in current ingredient costs and labor time.</div>
+                    
+                    <div class="step-action">I'll build n8n workflow that calculates real profit for each dish every time it's ordered. The system will automatically factor in current ingredient costs and labor time to show you exact profit margins.</div>
                     
                     <div class="service-badges">
-                        <div class="service-badge n8n">🔄 n8n</div>
-                        <div class="service-badge openai">🤖 OpenAI</div>
-                        <div class="service-badge api">⚡ Webhooks</div>
-                        <div class="service-badge">💾 Database</div>
+                        <div class="service-badge">n8n</div>
+                        <div class="service-badge">OpenAI</div>
+                        <div class="service-badge">Webhooks</div>
+                        <div class="service-badge">Database</div>
                     </div>
                     
                     <div class="artifact">
@@ -186,13 +180,14 @@
                 <div class="step-marker">3</div>
                 <div class="step-content">
                     <div class="step-title">Menu Profitability Analytics</div>
-                    <div class="step-action">Create visual dashboard showing which dishes make money and which ones lose money, with specific euro amounts and profit margins.</div>
+                    
+                    <div class="step-action">I'll create a visual dashboard showing exactly which dishes make money and which ones lose money. You'll see specific euro amounts and profit margins for every item on your menu.</div>
                     
                     <div class="service-badges">
-                        <div class="service-badge">📊 Charts.js</div>
-                        <div class="service-badge api">⚡ Dashboard API</div>
-                        <div class="service-badge">🎨 Custom UI</div>
-                        <div class="service-badge">📈 Real-time Data</div>
+                        <div class="service-badge">Charts.js</div>
+                        <div class="service-badge">Dashboard API</div>
+                        <div class="service-badge">Custom UI</div>
+                        <div class="service-badge">Real-time Data</div>
                     </div>
                     
                     <div class="artifact">
@@ -236,13 +231,14 @@
                 <div class="step-marker">4</div>
                 <div class="step-content">
                     <div class="step-title">Weekly Business Intelligence Reports</div>
-                    <div class="step-action">Send automated weekly email reports with specific recommendations on which dishes to promote, repricing suggestions, and profit opportunities.</div>
+                    
+                    <div class="step-action">I'll set up automated weekly email reports that tell you exactly what to do. You'll get specific recommendations on which dishes to promote, how to adjust prices, and where you're losing money.</div>
                     
                     <div class="service-badges">
-                        <div class="service-badge email">📧 Email API</div>
-                        <div class="service-badge openai">🤖 AI Insights</div>
-                        <div class="service-badge">📅 Scheduler</div>
-                        <div class="service-badge">📝 Report Builder</div>
+                        <div class="service-badge">Email API</div>
+                        <div class="service-badge">AI Insights</div>
+                        <div class="service-badge">Scheduler</div>
+                        <div class="service-badge">Report Builder</div>
                     </div>
                     
                     <div class="artifact">
@@ -280,13 +276,14 @@
                 <div class="step-marker">5</div>
                 <div class="step-content">
                     <div class="step-title">Real-Time Cost Alert System</div>
-                    <div class="step-action">Set up instant Slack notifications when ingredient prices change or dishes become unprofitable, with specific actions to take immediately.</div>
+                    
+                    <div class="step-action">I'll create instant Slack alerts when ingredient prices change or dishes become unprofitable. You'll get immediate notifications with specific actions to take right away.</div>
                     
                     <div class="service-badges">
-                        <div class="service-badge slack">💬 Slack API</div>
-                        <div class="service-badge n8n">🔄 n8n</div>
-                        <div class="service-badge">⚡ Real-time Triggers</div>
-                        <div class="service-badge openai">🤖 Smart Recommendations</div>
+                        <div class="service-badge">Slack API</div>
+                        <div class="service-badge">n8n</div>
+                        <div class="service-badge">Real-time Triggers</div>
+                        <div class="service-badge">Smart Recommendations</div>
                     </div>
                     
                     <div class="artifact">
@@ -330,21 +327,25 @@
         </div>
         
         <!-- Call to Action -->
-        <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 24px 32px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);">
-            <div style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">Ready to See Which Menu Items Are Actually Profitable?</div>
-            <div style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95; margin-bottom: 20px;">
-                <strong>I can build your complete restaurant intelligence system in n8n that shows you exactly where your money is made and lost.</strong><br>
-                Stop guessing about menu profitability - get real data, real insights, and real profit improvements.
+        <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 32px 40px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 24px; line-height: 1.3;">
+                Ready to See Which Menu Items Are Actually Profitable?
             </div>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
-                    See my restaurant workflows
+            <div style="font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; line-height: 1.4;">
+                I can build your complete restaurant intelligence system in 2-3 weeks for exactly €2,800.
+            </div>
+            <div style="font-size: 1.1rem; line-height: 1.5; opacity: 0.95; margin-bottom: 32px; font-weight: 400;">
+                Includes n8n workflow setup, POS integration, automated reporting, and real-time cost alerts.
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto;">
+                <div style="font-size: 1.1rem; font-weight: 500; line-height: 1.5;">
+                    Write to me on Upwork with your questions
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
-                    Schedule a consultation
+                <div style="font-size: 1.1rem; font-weight: 500; line-height: 1.5;">
+                    Let's schedule a call to discuss your requirements
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
-                    Start profit analysis system
+                <div style="font-size: 1.1rem; font-weight: 500; line-height: 1.5;">
+                    I'm ready to start immediately on your project
                 </div>
             </div>
         </div>
