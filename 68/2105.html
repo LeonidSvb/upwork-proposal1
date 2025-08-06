@@ -7,20 +7,58 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
     <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+    <style>
+        /* Service badges styling */
+        .service-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 16px 0;
+        }
+        
+        .service-badge {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .service-badge.openai { border-color: #10b981; background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #065f46; }
+        .service-badge.n8n { border-color: #ef4444; background: linear-gradient(135deg, #fef2f2, #fecaca); color: #991b1b; }
+        .service-badge.api { border-color: #3b82f6; background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1e40af; }
+        .service-badge.slack { border-color: #8b5cf6; background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
+        .service-badge.email { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #fed7aa); color: #92400e; }
+        
+        .step-action {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 16px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
     <!-- SLIDE 1: PROBLEM -->
     <div class="slide slide-1">
         <div class="client-info">
-            <div class="client-badge">🇳🇱 4.8★ Rating | 364 Reviews | Paris Business | $181K Spent | 571 Jobs Posted</div>
+            <div class="client-badge">🇫🇷 4.8★ Rating | 364 Reviews | Paris Business | $181K Spent | 571 Jobs Posted</div>
             <div class="client-title">Restaurant Data Intelligence System</div>
             <div class="client-details">France | High-Volume Client | Data Analysis Focus | Menu Optimization Expert</div>
         </div>
         
         <div class="quote-block">
-            <div class="typewriter">
-                We are seeking a skilled freelancer to create an N8N workflow that effectively analyzes menus for our business
-            </div>
+            We are seeking a skilled freelancer to create an N8N workflow that effectively analyzes menus for our business
         </div>
         
         <div class="problem-reframe">
@@ -53,6 +91,10 @@
 
     <!-- SLIDE 2: SOLUTION ROADMAP -->
     <div class="slide slide-2">
+        <div style="text-align: center; font-size: 1.4rem; font-weight: 600; margin-bottom: 20px; color: var(--primary-color);">
+            How I will solve this:
+        </div>
+        
         <div class="roadmap-title">Menu Intelligence Analysis Engine</div>
         
         <div class="roadmap-container">
@@ -62,6 +104,15 @@
                 <div class="step-marker">1</div>
                 <div class="step-content">
                     <div class="step-title">Data Source Integration</div>
+                    <div class="step-action">Connect your POS system, Excel sheets, supplier emails, and staff tracking into one unified data hub that updates automatically.</div>
+                    
+                    <div class="service-badges">
+                        <div class="service-badge api">⚡ REST API</div>
+                        <div class="service-badge n8n">🔄 n8n</div>
+                        <div class="service-badge">📊 POS Systems</div>
+                        <div class="service-badge email">📧 Gmail API</div>
+                    </div>
+                    
                     <div class="artifact">
                         <div class="artifact-dashboard">
                             <div class="dashboard-header">
@@ -94,7 +145,16 @@
             <div class="step">
                 <div class="step-marker">2</div>
                 <div class="step-content">
-                    <div class="step-title">Automated Data Collection Workflow</div>
+                    <div class="step-title">Automated Processing Workflow</div>
+                    <div class="step-action">Build n8n workflow that calculates real profit margins every time a dish is sold, factoring in current ingredient costs and labor time.</div>
+                    
+                    <div class="service-badges">
+                        <div class="service-badge n8n">🔄 n8n</div>
+                        <div class="service-badge openai">🤖 OpenAI</div>
+                        <div class="service-badge api">⚡ Webhooks</div>
+                        <div class="service-badge">💾 Database</div>
+                    </div>
+                    
                     <div class="artifact">
                         <div class="artifact-workflow">
                             <div class="workflow-node">
@@ -126,6 +186,15 @@
                 <div class="step-marker">3</div>
                 <div class="step-content">
                     <div class="step-title">Menu Profitability Analytics</div>
+                    <div class="step-action">Create visual dashboard showing which dishes make money and which ones lose money, with specific euro amounts and profit margins.</div>
+                    
+                    <div class="service-badges">
+                        <div class="service-badge">📊 Charts.js</div>
+                        <div class="service-badge api">⚡ Dashboard API</div>
+                        <div class="service-badge">🎨 Custom UI</div>
+                        <div class="service-badge">📈 Real-time Data</div>
+                    </div>
+                    
                     <div class="artifact">
                         <div class="artifact-analytics">
                             <div class="analytics-header">
@@ -167,6 +236,15 @@
                 <div class="step-marker">4</div>
                 <div class="step-content">
                     <div class="step-title">Weekly Business Intelligence Reports</div>
+                    <div class="step-action">Send automated weekly email reports with specific recommendations on which dishes to promote, repricing suggestions, and profit opportunities.</div>
+                    
+                    <div class="service-badges">
+                        <div class="service-badge email">📧 Email API</div>
+                        <div class="service-badge openai">🤖 AI Insights</div>
+                        <div class="service-badge">📅 Scheduler</div>
+                        <div class="service-badge">📝 Report Builder</div>
+                    </div>
+                    
                     <div class="artifact">
                         <div class="artifact-email">
                             <div class="email-header">
@@ -202,6 +280,15 @@
                 <div class="step-marker">5</div>
                 <div class="step-content">
                     <div class="step-title">Real-Time Cost Alert System</div>
+                    <div class="step-action">Set up instant Slack notifications when ingredient prices change or dishes become unprofitable, with specific actions to take immediately.</div>
+                    
+                    <div class="service-badges">
+                        <div class="service-badge slack">💬 Slack API</div>
+                        <div class="service-badge n8n">🔄 n8n</div>
+                        <div class="service-badge">⚡ Real-time Triggers</div>
+                        <div class="service-badge openai">🤖 Smart Recommendations</div>
+                    </div>
+                    
                     <div class="artifact">
                         <div class="artifact-slack">
                             <div class="slack-sidebar">
@@ -262,5 +349,7 @@
             </div>
         </div>
     </div>
+
+    <script src="https://LeonidSvb.github.io/upwork-proposal1/premium.js"></script>
 </body>
 </html>
