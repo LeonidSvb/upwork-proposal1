@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-система генерации встреч с инвесторами | Dubai Real Estate</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23D4AF37'/><stop offset='100%' style='stop-color:%23B8860B'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><path d='M20 80 L50 30 L80 80 L70 80 L65 70 L35 70 L30 80 Z' fill='white'/><rect x='45' y='60' width='10' height='20' fill='url(%23g)'/></svg>" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+    <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="slide slide-1">
+        <div class="client-info">
+            <div class="client-badge">🏢 Dubai Real Estate Agency</div>
+            <div class="client-title">AI-система генерации встреч с инвесторами</div>
+            <div class="client-details">Полностью автоматизированная система привлечения квалифицированных инвесторов</div>
+        </div>
+
+        <div class="quote-block">
+            <div class="typewriter">Вы тратите 80% времени на поиск клиентов и только 20% — на продажи</div>
+        </div>
+
+        <div class="quote-block">
+            <div class="typewriter second">Я переворачиваю эту пропорцию с помощью AI-персонализации</div>
+        </div>
+
+        <div class="problem-reframe">
+            <div class="problem-title">💡 Реальная проблема</div>
+            <div class="problem-text">
+                Пока конкуренты используют устаревшие методы — вы получите эксклюзивный канал лидов с AI-преимуществом
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-value hours">40</div>
+                    <div class="cost-label">Часов в неделю</div>
+                    <div class="cost-desc">тратится на поиск клиентов</div>
+                </div>
+                <div class="cost-card">
+                    <div class="cost-value percent">5</div>
+                    <div class="cost-label">Конверсия</div>
+                    <div class="cost-desc">обычных mass-рассылок</div>
+                </div>
+                <div class="cost-card">
+                    <div class="cost-value money">15000</div>
+                    <div class="cost-label">Упущенная прибыль</div>
+                    <div class="cost-desc">ежемесячно от недоработки</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solution Roadmap -->
+    <div class="slide slide-2">
+        <h2 class="roadmap-title">🤖 Как работает AI-система</h2>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <div class="step-title">🔍 Точечный поиск инвесторов</div>
+                    <div class="service-badges">
+                        <span class="service-badge">LinkedIn API</span>
+                        <span class="service-badge">Apollo.io</span>
+                        <span class="service-badge">Hunter.io</span>
+                    </div>
+                    <div class="step-action">Собираю базу квалифицированных инвесторов по вашим критериям</div>
+                    <div class="step-process">AI_SEARCH → FILTER → VALIDATE</div>
+                    <div class="step-desc">
+                        Использую продвинутые инструменты для поиска инвесторов с бюджетом $100K+ и интересом к Dubai недвижимости
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Поиск инвесторов</div>
+                            <div class="dashboard-period">Real-time</div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">247</div>
+                                <div class="metric-label">Найдено профилей</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">89</div>
+                                <div class="metric-label">Квалифицированных</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="platform-badge">Automated Lead Discovery</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <div class="step-title">🧠 AI-анализ каждого инвестора</div>
+                    <div class="service-badges">
+                        <span class="service-badge">ChatGPT API</span>
+                        <span class="service-badge">Claude</span>
+                        <span class="service-badge">Web Scraping</span>
+                    </div>
+                    <div class="step-action">Глубокий анализ каждого профиля для максимальной персонализации</div>
+                    <div class="step-process">SCRAPE → ANALYZE → PROFILE</div>
+                    <div class="step-desc">
+                        AI изучает LinkedIn, соцсети, публичные данные и создает психологический профиль каждого инвестора
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-code">
+                        <div class="code-content">
+<span class="code-comment">// AI анализ инвестора</span>
+<span class="code-keyword">const</span> profile = <span class="code-keyword">await</span> analyzeInvestor({
+  <span class="code-string">"name"</span>: <span class="code-string">"James Morrison"</span>,
+  <span class="code-string">"linkedin"</span>: <span class="code-string">"linkedin.com/in/jmorrison"</span>,
+  <span class="code-string">"interests"</span>: [<span class="code-string">"luxury_real_estate"</span>, <span class="code-string">"dubai"</span>],
+  <span class="code-string">"budget"</span>: <span class="code-string">"$500K+"</span>,
+  <span class="code-string">"tone"</span>: <span class="code-string">"professional_confident"</span>
+});
+                        </div>
+                    </div>
+                    <div class="platform-badge">AI Profile Analysis</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <div class="step-title">✍️ Персонализированные сообщения</div>
+                    <div class="service-badges">
+                        <span class="service-badge">GPT-4</span>
+                        <span class="service-badge">Gmail API</span>
+                        <span class="service-badge">Mailgun</span>
+                    </div>
+                    <div class="step-action">Каждое письмо уникально — инвестор думает, что вы лично его изучали 2 часа</div>
+                    <div class="step-process">GENERATE → PERSONALIZE → SEND</div>
+                    <div class="step-desc">
+                        AI создает индивидуальные сообщения под каждого инвестора. Результат: 2-5% open rate вместо 0.5%
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-email">
+                        <div class="email-header">
+                            <div class="email-avatar">D</div>
+                            <div class="email-sender">
+                                <div class="sender-name">Dubai Prime Properties</div>
+                                <div class="sender-email">alex@dubaiprimeproperties.com</div>
+                            </div>
+                            <div class="email-time">2:45 PM</div>
+                        </div>
+                        <div class="email-subject">
+                            James, noticed your interest in Dubai luxury market 🏢
+                        </div>
+                        <div class="email-body">
+                            Hi James,<br><br>
+                            I saw your recent LinkedIn post about portfolio diversification into emerging markets. Given your background in luxury investments, I thought you'd be interested in our exclusive Dubai waterfront project.<br><br>
+                            <strong>ROI projection:</strong> 12-15% annually<br>
+                            <strong>Location:</strong> Dubai Marina Premium District<br><br>
+                            Would you have 15 minutes for a brief call this week?
+                        </div>
+                    </div>
+                    <div class="platform-badge">AI Email Personalization</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <div class="step-title">🚀 Автоматические последовательности</div>
+                    <div class="service-badges">
+                        <span class="service-badge">n8n</span>
+                        <span class="service-badge">Zapier</span>
+                        <span class="service-badge">Webhooks</span>
+                    </div>
+                    <div class="step-action">Умные серии касаний с оптимальными интервалами</div>
+                    <div class="step-process">SEQUENCE → TRACK → OPTIMIZE</div>
+                    <div class="step-desc">
+                        Запускаю многоэтапные кампании с A/B тестами. 70% инвесторов соглашаются на встречу после 3-4 касания
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-workflow">
+                        <div class="workflow-node">
+                            <div class="node-icon">📧</div>
+                            Email #1
+                            <div class="node-label">Day 1</div>
+                        </div>
+                        <div class="workflow-node">
+                            <div class="node-icon">📱</div>
+                            LinkedIn
+                            <div class="node-label">Day 4</div>
+                        </div>
+                        <div class="workflow-node">
+                            <div class="node-icon">📞</div>
+                            Follow-up
+                            <div class="node-label">Day 7</div>
+                        </div>
+                        <div class="workflow-node">
+                            <div class="node-icon">📅</div>
+                            Meeting
+                            <div class="node-label">Booked</div>
+                        </div>
+                    </div>
+                    <div class="platform-badge">Multi-touch Automation</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <div class="step-title">📅 Встречи в календаре</div>
+                    <div class="service-badges">
+                        <span class="service-badge">Calendly</span>
+                        <span class="service-badge">Google Calendar</span>
+                        <span class="service-badge">Zoom API</span>
+                    </div>
+                    <div class="step-action">Готовые к покупке инвесторы бронируют время в вашем календаре</div>
+                    <div class="step-process">BOOK → CONFIRM → REMIND</div>
+                    <div class="step-desc">
+                        Довожу до конкретной встречи, подтверждаю участие, передаю аналитику по каждому инвестору
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-calendar">
+                        <div class="calendar-header">
+                            <div class="calendar-date">
+                                <div class="calendar-month">AUG</div>
+                                <div class="calendar-day">15</div>
+                            </div>
+                            <div class="calendar-event-info">
+                                <div class="calendar-title">Investor Consultation</div>
+                                <div class="calendar-time">2:30 PM - 3:30 PM</div>
+                            </div>
+                        </div>
+                        <div class="calendar-body">
+                            <div class="calendar-details">
+                                <div class="calendar-detail">
+                                    <div class="calendar-icon">👤</div>
+                                    <div>James Morrison - Qualified Investor</div>
+                                </div>
+                                <div class="calendar-detail">
+                                    <div class="calendar-icon">💰</div>
+                                    <div>Budget: $500K+ | Interest: Dubai Marina</div>
+                                </div>
+                                <div class="calendar-detail">
+                                    <div class="calendar-icon">📋</div>
+                                    <div>Pre-qualified via AI screening</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="platform-badge">Automated Scheduling</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-marker">6</div>
+                <div class="step-content">
+                    <div class="step-title">📊 Результат: 10 встреч в месяц</div>
+                    <div class="service-badges">
+                        <span class="service-badge">Analytics</span>
+                        <span class="service-badge">CRM</span>
+                        <span class="service-badge">Reports</span>
+                    </div>
+                    <div class="step-action">Стабильный поток квалифицированных инвесторов в автоматическом режиме</div>
+                    <div class="step-process">DELIVER → TRACK → SCALE</div>
+                    <div class="step-desc">
+                        Гарантирую 10 подтвержденных встреч ежемесячно. Оплата только при достижении результата
+                    </div>
+                    
+                    <!-- Visualization -->
+                    <div class="artifact-analytics">
+                        <div class="analytics-header">
+                            <div class="analytics-title">Monthly Results</div>
+                            <div class="analytics-period">This Month</div>
+                        </div>
+                        <div class="analytics-metrics">
+                            <div class="metric-item">
+                                <div class="metric-number">12</div>
+                                <div class="metric-label">Meetings Booked</div>
+                                <div class="metric-change">+20% ↗</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">94%</div>
+                                <div class="metric-label">Show-up Rate</div>
+                                <div class="metric-change">+15% ↗</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">$180K</div>
+                                <div class="metric-label">Pipeline Value</div>
+                                <div class="metric-change">+35% ↗</div>
+                            </div>
+                        </div>
+                        <div class="analytics-chart">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>W1</span>
+                            <span>W2</span>
+                            <span>W3</span>
+                            <span>W4</span>
+                        </div>
+                    </div>
+                    <div class="platform-badge">Performance Guaranteed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="call-to-action">
+            <div class="cta-title">💰 Условия — полная гарантия результата</div>
+            <div class="cta-text">
+                <strong>$1,500/месяц</strong> — только при достижении 10 встреч<br>
+                <strong>$0</strong> — если не привожу результат<br>
+                <strong>$150-200</strong> — разовая техническая настройка (возврат при неудаче)
+            </div>
+            <div class="cta-buttons">
+                <div class="cta-button">📞 Обсудить детали</div>
+                <div class="cta-button">⚡ Запуск за 5 дней</div>
+                <div class="cta-button">🎯 Максимум 2-3 клиента одновременно</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://LeonidSvb.github.io/upwork-proposal1/premium.js"></script>
+</body>
+</html>
