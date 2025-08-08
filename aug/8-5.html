@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ChatGPT + Zapier Webhook Integration System - Seamless Automation</title>
+   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+   <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/styles.css">
+   <link rel="stylesheet" href="https://leonidsvb.github.io/upwork-proposal1/artifacts.css">
+   <style>
+       .service-badges {
+           display: flex;
+           gap: 6px;
+           flex-wrap: wrap;
+           justify-content: center;
+           margin: 8px 0 20px 0;
+       }
+       
+       .service-badge {
+           background: #f8f9fa;
+           border: 1px solid #e9ecef;
+           color: #6c757d;
+           padding: 3px 8px;
+           border-radius: 8px;
+           font-size: 9px;
+           font-weight: 500;
+           text-transform: uppercase;
+           letter-spacing: 0.3px;
+       }
+       
+       .step-action {
+           font-size: 1.1rem;
+           color: #374151;
+           margin-bottom: 20px;
+           text-align: center;
+           font-weight: 500;
+           line-height: 1.5;
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       }
+   </style>
+</head>
+<body>
+   <!-- SLIDE 1: PROBLEM -->
+   <div class="slide slide-1">
+       <div class="client-info">
+           <div class="client-badge">🇺🇸 5.0★ Rating | $4.2K Spent | 39 Jobs Posted | 8 Years Experience | Reliable Client</div>
+           <div class="client-title">ChatGPT + Zapier Webhook Integration</div>
+           <div class="client-details">Vincent | $30 Fixed-Price | API Integration | Workflow Automation | Ongoing Project</div>
+       </div>
+       
+       <div class="quote-block">
+           We are looking for a skilled developer to create a seamless integration between ChatGPT and Zapier through webhooks. Your expertise will streamline our workflow by enabling automated responses and data transfers.
+       </div>
+       
+       <div class="problem-reframe">
+           <div class="problem-title">Your workflow automation challenge</div>
+           <div class="problem-text">
+               You need ChatGPT to automatically trigger actions in your other business tools, but there's no direct connection between your AI responses and your workflow systems.
+           </div>
+           
+           <div class="cost-grid">
+               <div class="cost-card">
+                   <div class="cost-value hours">10</div>
+                   <div class="cost-label">Hours Weekly</div>
+                   <div class="cost-desc">Manual data transfers</div>
+               </div>
+               
+               <div class="cost-card">
+                   <div class="cost-value money">800</div>
+                   <div class="cost-label">Monthly Value</div>
+                   <div class="cost-desc">Time saved</div>
+               </div>
+               
+               <div class="cost-card">
+                   <div class="cost-value percent">95</div>
+                   <div class="cost-label">Automation</div>
+                   <div class="cost-desc">Seamless integration</div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- SLIDE 2: SOLUTION ROADMAP -->
+   <div class="slide slide-2">
+       <div style="text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; color: var(--primary-color);">
+           How I'll connect ChatGPT to Zapier:
+       </div>
+       
+       <div class="roadmap-title" style="font-size: 1.6rem;">Webhook Integration System</div>
+       
+       <div class="roadmap-container">
+           <div class="roadmap-line"></div>
+           
+           <div class="step">
+               <div class="step-marker">1</div>
+               <div class="step-content">
+                   <div class="step-title">ChatGPT API Setup & Configuration</div>
+                   
+                   <div class="step-action">I'll configure ChatGPT API with custom functions that can trigger webhooks based on conversation context and user intent.</div>
+                   
+                   <div class="service-badges">
+                       <div class="service-badge">OpenAI API</div>
+                       <div class="service-badge">Function Calling</div>
+                       <div class="service-badge">Custom Triggers</div>
+                       <div class="service-badge">API Keys</div>
+                   </div>
+                   
+                   <div class="artifact">
+                       <div class="artifact-code">
+                           <div class="code-content">
+                               <span class="code-keyword">const</span> openai = <span class="code-keyword">new</span> OpenAI({<br>
+                               &nbsp;&nbsp;apiKey: process.env.OPENAI_API_KEY<br>
+                               });<br><br>
+                               
+                               <span class="code-keyword">const</span> functions = [{<br>
+                               &nbsp;&nbsp;name: <span class="code-string">"trigger_zapier_webhook"</span>,<br>
+                               &nbsp;&nbsp;description: <span class="code-string">"Trigger Zapier automation"</span>,<br>
+                               &nbsp;&nbsp;parameters: {<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;type: <span class="code-string">"object"</span>,<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;properties: {<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action: { type: <span class="code-string">"string"</span> },<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data: { type: <span class="code-string">"object"</span> }<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                               &nbsp;&nbsp;}<br>
+                               }];
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="step">
+               <div class="step-marker">2</div>
+               <div class="step-content">
+                   <div class="step-title">Zapier Webhook Receiver Setup</div>
+                   
+                   <div class="step-action">I'll create Zapier webhooks that receive data from ChatGPT and route it to your chosen applications automatically.</div>
+                   
+                   <div class="service-badges">
+                       <div class="service-badge">Zapier Webhooks</div>
+                       <div class="service-badge">Data Parsing</div>
+                       <div class="service-badge">App Connections</div>
+                       <div class="service-badge">Error Handling</div>
+                   </div>
+                   
+                   <div class="artifact">
+                       <div class="artifact-workflow">
+                           <div class="workflow-node">
+                               <div class="node-icon">🤖</div>
+                               ChatGPT
+                               <div class="node-label">AI Response</div>
+                           </div>
+                           <div class="workflow-node">
+                               <div class="node-icon">⚡</div>
+                               Webhook
+                               <div class="node-label">Trigger</div>
+                           </div>
+                           <div class="workflow-node">
+                               <div class="node-icon">🔧</div>
+                               Zapier
+                               <div class="node-label">Process</div>
+                           </div>
+                           <div class="workflow-node">
+                               <div class="node-icon">📊</div>
+                               Your Apps
+                               <div class="node-label">Action</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="step">
+               <div class="step-marker">3</div>
+               <div class="step-content">
+                   <div class="step-title">Integration Logic & Data Flow</div>
+                   
+                   <div class="step-action">I'll build the logic that determines when and what data to send, ensuring seamless communication between ChatGPT and your business applications.</div>
+                   
+                   <div class="service-badges">
+                       <div class="service-badge">Data Mapping</div>
+                       <div class="service-badge">Conditional Logic</div>
+                       <div class="service-badge">JSON Processing</div>
+                       <div class="service-badge">Response Handling</div>
+                   </div>
+                   
+                   <div class="artifact">
+                       <div class="artifact-api">
+                           <div class="api-header">
+                               <div class="api-method">POST</div>
+                               <div class="api-url">hooks.zapier.com/hooks/catch/webhook-url</div>
+                           </div>
+                           <div class="api-response">
+                               <div class="api-status">200 Success</div>
+                           </div>
+                           <div class="api-block">
+{<br>
+&nbsp;&nbsp;"trigger": "chatgpt_response",<br>
+&nbsp;&nbsp;"user_intent": "book_appointment",<br>
+&nbsp;&nbsp;"extracted_data": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"email": "john@example.com",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"service": "consultation",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"preferred_date": "2025-01-15"<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;"timestamp": "2025-01-10T10:30:00Z"<br>
+}
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="step">
+               <div class="step-marker">4</div>
+               <div class="step-content">
+                   <div class="step-title">Testing & Documentation</div>
+                   
+                   <div class="step-action">I'll test the complete integration and provide clear documentation so you can easily manage and expand the automation.</div>
+                   
+                   <div class="service-badges">
+                       <div class="service-badge">End-to-End Testing</div>
+                       <div class="service-badge">Documentation</div>
+                       <div class="service-badge">Error Monitoring</div>
+                       <div class="service-badge">Handoff Training</div>
+                   </div>
+                   
+                   <div class="artifact">
+                       <div class="artifact-analytics">
+                           <div class="analytics-header">
+                               <div class="analytics-title">Integration Status</div>
+                               <div class="analytics-period">Live Testing</div>
+                           </div>
+                           <div class="analytics-metrics">
+                               <div class="metric-item">
+                                   <div class="metric-number">✅</div>
+                                   <div class="metric-label">ChatGPT API</div>
+                                   <div class="metric-change">Connected</div>
+                               </div>
+                               <div class="metric-item">
+                                   <div class="metric-number">✅</div>
+                                   <div class="metric-label">Zapier Webhook</div>
+                                   <div class="metric-change">Receiving Data</div>
+                               </div>
+                               <div class="metric-item">
+                                   <div class="metric-number">✅</div>
+                                   <div class="metric-label">Automation</div>
+                                   <div class="metric-change">Working Perfectly</div>
+                               </div>
+                           </div>
+                           <div class="analytics-chart">
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                               <div class="chart-bar"></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       
+       <!-- Call to Action -->
+       <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 32px 40px; border-radius: 16px; text-align: center; max-width: 900px; margin-top: 60px; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+           <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 24px; line-height: 1.3;">
+               Ready for seamless ChatGPT + Zapier automation?
+           </div>
+           <div style="font-size: 1.2rem; line-height: 1.5; opacity: 0.95; margin-bottom: 32px; font-weight: 500;">
+               I'll connect your ChatGPT conversations directly to your business workflows. Fast delivery, clean code, and complete documentation included.
+           </div>
+           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+               <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                   Can deliver within 24-48 hours
+               </div>
+               <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                   Complete testing & documentation
+               </div>
+               <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                   Expert in API integrations
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <script src="https://LeonidSvb.github.io/upwork-proposal1/premium.js"></script>
+</body>
+</html>
