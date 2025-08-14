@@ -70,5 +70,3 @@ cp artifacts-system/docs/artifacts-guide.md new-project/
 mkdir -p upwork-proposals/2025/january/2025-01-15_project-name/
 ```
 
----
-*Обновлено: Январь 2025 | Структура оптимизирована для 2025 года*
