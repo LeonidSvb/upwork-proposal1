@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Mobility Program for Desk Workers | Transform Your Movement</title>
+    <meta name="description" content="The complete mobility solution for desk workers. Reduce pain, improve posture, and restore natural movement in just 8-12 weeks.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mobility-purple': '#6B46C1',
+                        'mobility-dark': '#1F2937',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        slideUp: { '0%': { transform: 'translateY(50px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #6B46C1, #553C9A);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #553C9A, #4C1D95);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(107, 70, 193, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                #1 Mobility Program for<br>
+                <span class="text-mobility-purple">Desk Workers</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Transform your movement, eliminate pain, and restore natural mobility with our proven 8-12 week program
+            </p>
+            
+            <div class="mb-8">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&crop=center" alt="Person stretching at desk" class="rounded-lg shadow-lg mx-auto max-w-full h-auto">
+            </div>
+            
+            <button class="cta-button text-white px-12 py-4 text-xl font-semibold rounded-full shadow-lg">
+                Get Mobile Now!
+            </button>
+            
+            <p class="text-sm text-gray-500 mt-4">
+                ✓ Trusted by 500+ remote workers worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Program Features -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                    Complete Mobility Transformation System
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our comprehensive program addresses the root causes of desk worker mobility issues through systematic screening, targeted exercises, and progressive loading.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-mobility-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Movement Screening</h3>
+                    <p class="text-gray-600">Comprehensive assessment to identify your specific mobility restrictions and movement patterns</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-mobility-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Video Instruction</h3>
+                    <p class="text-gray-600">Step-by-step video demonstrations for every exercise and mobility routine</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-mobility-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H9a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Progress Tracking</h3>
+                    <p class="text-gray-600">Monitor your improvements with detailed tracking tools and milestone assessments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+                Are You Tired of Living with Daily Discomfort?
+            </h2>
+            
+            <div class="text-left max-w-3xl mx-auto space-y-6 text-lg text-gray-700">
+                <div class="flex items-start space-x-4">
+                    <span class="text-2xl">😣</span>
+                    <p>You spend 8+ hours at a desk and feel stiff and achy by the end of the day</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <span class="text-2xl">🔄</span>
+                    <p>You've tried stretching routines before but nothing seems to stick or make lasting change</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <span class="text-2xl">⚡</span>
+                    <p>You want a systematic approach that actually addresses the root cause of your mobility issues</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <span class="text-2xl">🎯</span>
+                    <p>You're ready to invest in a proven program that delivers real, measurable results</p>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <button class="cta-button text-white px-12 py-4 text-xl font-semibold rounded-full shadow-lg">
+                    Transform My Mobility
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Breakdown -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                    Your 12-Week Transformation Journey
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our scientifically-designed program progresses through three distinct phases to ensure lasting mobility improvements.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Foundation Phase</h3>
+                        <p class="text-sm text-gray-500">Weeks 1-4</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Movement assessment & baseline testing
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Basic mobility routines
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Posture awareness training
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Daily habit formation
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-center mb-6">
+                        <div class="w-12 h-12 bg-mobility-purple text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Activation Phase</h3>
+                        <p class="text-sm text-gray-500">Weeks 5-8</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Advanced mobility sequences
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Strength & stability integration
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Work-specific movement patterns
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Mid-program assessment
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Mastery Phase</h3>
+                        <p class="text-sm text-gray-500">Weeks 9-12</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Complex movement challenges
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Long-term maintenance strategies
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Lifestyle integration techniques
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Final assessment & certification
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Credibility -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+                Meet Your Mobility Expert
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=center&face" alt="Expert trainer" class="rounded-full w-64 h-64 mx-auto shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Dr. Sarah Chen, DPT</h3>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Doctor of Physical Therapy with 12+ years specializing in workplace ergonomics and movement dysfunction. Former competitive athlete turned movement specialist.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-mobility-purple mr-2">✓</span>
+                            Doctor of Physical Therapy, USC
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-mobility-purple mr-2">✓</span>
+                            Certified Ergonomics Specialist
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-mobility-purple mr-2">✓</span>
+                            500+ successful mobility transformations
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-mobility-purple mr-2">✓</span>
+                            Featured in Health & Wellness Magazine
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 px-4 bg-mobility-purple text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Transform Your Mobility?
+            </h2>
+            <p class="text-xl mb-8">
+                Join hundreds of desk workers who have already reclaimed their movement freedom
+            </p>
+            
+            <button class="bg-white text-mobility-purple px-12 py-4 text-xl font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300">
+                Start My Transformation Today
+            </button>
+            
+            <p class="text-sm mt-4 opacity-90">
+                ✓ 30-day money-back guarantee ✓ Instant access ✓ Lifetime updates
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-slide-up');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                el.style.transition = 'all 0.8s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
