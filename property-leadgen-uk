@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Developer Lead Generation System - Technical Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .phase {
+            margin-bottom: 50px;
+            border-left: 5px solid #667eea;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .phase::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px white;
+        }
+        
+        .phase-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .phase-duration {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        
+        .phase-description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .steps {
+            list-style: none;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            transition: transform 0.2s ease;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .step-detail {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .tech-stack {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .tech-stack h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .tech-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .results {
+            background: #e8f5e8;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #28a745;
+            margin-top: 40px;
+        }
+        
+        .results h3 {
+            color: #155724;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            font-size: 1.1em;
+        }
+        
+        .timeline {
+            text-align: center;
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 15px;
+        }
+        
+        .timeline h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .timeline p {
+            font-size: 1.2em;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            margin-top: 40px;
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .cta h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ Automated Property Developer Lead Generation System</h1>
+            <p>Technical Implementation Plan for Cator Wells Finance</p>
+        </div>
+        
+        <div class="content">
+            <div class="phase">
+                <div class="phase-title">
+                    Phase 1: Foundation & Data Sources
+                    <span class="phase-duration">Weeks 1-2</span>
+                </div>
+                <div class="phase-description">
+                    Setting up the core data collection infrastructure
+                </div>
+                <ul class="steps">
+                    <li class="step">
+                        <div class="step-title">🏢 Companies House API Setup</div>
+                        <div class="step-detail">Connect to official UK company database. Filter new incorporations by SIC codes 41100 (construction) and 68100 (real estate). Daily automated pulls at 6 AM.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">🗺️ Planning Data API Integration</div>
+                        <div class="step-detail">Connect to planning.data.gov.uk for all England planning applications. Filter only Limited Company applicants (exclude individuals/architects).</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">🔗 Cross-Reference Logic</div>
+                        <div class="step-detail">Match planning applicants with Companies House records. Extract director names, addresses, and company details automatically.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">🚫 Duplicate Prevention</div>
+                        <div class="step-detail">Create 6-month company memory system - never send to the same company twice within 6 months.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <div class="phase-title">
+                    Phase 2: Letter Generation & Mailing
+                    <span class="phase-duration">Weeks 3-4</span>
+                </div>
+                <div class="phase-description">
+                    Automated personalized letter creation and postal delivery
+                </div>
+                <ul class="steps">
+                    <li class="step">
+                        <div class="step-title">📄 PDF Letter Template</div>
+                        <div class="step-detail">Professional letter template with merge fields: Director name, company name, planning project address, unique tracking phone number.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">🏃‍♂️ Stannp API Integration</div>
+                        <div class="step-detail">UK hybrid post service - generates, prints, and posts letters automatically. Track delivery status and costs.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">📞 Response Tracking</div>
+                        <div class="step-detail">Each letter gets unique tracking phone number OR landing page URL to measure response rates and attribution.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">💾 CRM Logging</div>
+                        <div class="step-detail">Every lead automatically logged in Airtable with source, date mailed, company details, and tracking info.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <div class="phase-title">
+                    Phase 3: Follow-up & Optimization
+                    <span class="phase-duration">Weeks 5-6</span>
+                </div>
+                <div class="phase-description">
+                    Automated sequences and performance optimization
+                </div>
+                <ul class="steps">
+                    <li class="step">
+                        <div class="step-title">📮 30-Day Follow-up</div>
+                        <div class="step-detail">Automatic second letter to non-responders after 30 days. Different template with "following up" messaging.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">📧 Email Sequences</div>
+                        <div class="step-detail">For companies where we can find email addresses - parallel email follow-up sequences with different messaging.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">📊 Performance Dashboard</div>
+                        <div class="step-detail">Airtable dashboard showing daily leads found, letters sent, responses received, conversion rates, and ROI tracking.</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-title">🔧 Error Handling & Alerts</div>
+                        <div class="step-detail">System monitoring - email alerts if APIs fail, daily reports on system health, automatic retry logic for failed processes.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tech-stack">
+                <h3>🛠️ Technology Stack</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <strong>n8n</strong><br>
+                        Automation backbone
+                    </div>
+                    <div class="tech-item">
+                        <strong>Companies House API</strong><br>
+                        Company data source
+                    </div>
+                    <div class="tech-item">
+                        <strong>Planning Data API</strong><br>
+                        Planning applications
+                    </div>
+                    <div class="tech-item">
+                        <strong>Stannp</strong><br>
+                        UK postal service
+                    </div>
+                    <div class="tech-item">
+                        <strong>Airtable</strong><br>
+                        CRM & dashboard
+                    </div>
+                    <div class="tech-item">
+                        <strong>PDF Generation</strong><br>
+                        Letter templates
+                    </div>
+                </div>
+            </div>
+
+            <div class="results">
+                <h3>🎯 Expected Results</h3>
+                <div class="result-item">
+                    <strong>20-50 qualified leads per day</strong> - New property developers at earliest stage of projects
+                </div>
+                <div class="result-item">
+                    <strong>100% automation</strong> - Zero manual work after setup, runs completely on autopilot
+                </div>
+                <div class="result-item">
+                    <strong>Perfect timing</strong> - Reach developers right when they file planning applications (when they need finance most)
+                </div>
+                <div class="result-item">
+                    <strong>Full tracking</strong> - Know exactly which sources convert best, ROI per letter, response rates
+                </div>
+                <div class="result-item">
+                    <strong>Scalable system</strong> - Can expand to Wales/Scotland or add other data sources easily
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>⏰ 6-Week Timeline</h3>
+                <p>MVP ready in 6 weeks + 3-month maintenance period to optimize performance</p>
+            </div>
+
+            <div class="cta">
+                <h3>🚀 Ready to Get Started?</h3>
+                <p>Let's discuss budget and kick off Phase 1 this week</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
