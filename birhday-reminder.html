@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday SMS Automation - Live System Demo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --color-surface: #ffffff;
+      --color-surface-light: #f8fafc;
+      --color-border: #e2e8f0;
+      --color-text-primary: #1f2937;
+      --color-text-secondary: #6b7280;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .hero-text {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #1f2937;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #6b7280;
+      margin-bottom: 60px;
+    }
+
+    .step-section {
+      margin-bottom: 60px;
+    }
+
+    .step-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    }
+
+    .step-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .step-description {
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .artifacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .artifact-section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .artifact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* ===== DATA TABLE (Customer Database) ===== */
+    .artifact-data {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 480px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .data-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .data-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .data-count {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .data-table {
+      width: 100%;
+    }
+
+    .data-row {
+      display: grid;
+      grid-template-columns: 2fr 2fr 1.5fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3f4f6;
+      align-items: center;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-cell {
+      font-size: 13px;
+    }
+
+    .parent-info {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .child-info {
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    .birthday-cell {
+      text-align: center;
+    }
+
+    .birthday-date {
+      color: #dc2626;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .days-until {
+      color: #059669;
+      font-size: 11px;
+      background: #d1fae5;
+      padding: 2px 6px;
+      border-radius: 8px;
+      margin-top: 2px;
+      display: inline-block;
+    }
+
+    /* ===== iPhone SMS (Ultra Realistic) ===== */
+    .artifact-sms {
+      background: #000;
+      border-radius: 20px;
+      padding: 16px;
+      max-width: 340px;
+      margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .artifact-sms::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 134px;
+      height: 5px;
+      background: #333;
+      border-radius: 2.5px;
+    }
+
+    .sms-header {
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 600;
+      padding-top: 8px;
+    }
+
+    .sms-conversation {
+      margin-bottom: 16px;
+    }
+
+    .sms-bubble {
+      background: linear-gradient(135deg, #007aff, #0051d0);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 20px;
+      border-bottom-right-radius: 6px;
+      margin-left: auto;
+      margin-right: 8px;
+      max-width: 260px;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+    }
+
+    .sms-bubble.received {
+      background: #2c2c2e;
+      color: white;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 6px;
+      margin-left: 8px;
+      margin-right: auto;
+    }
+
+    .sms-time {
+      text-align: right;
+      color: #8e8e93;
+      font-size: 12px;
+      margin-right: 12px;
+      margin-top: 2px;
+    }
+
+    .sms-typing {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 8px;
+      color: #8e8e93;
+      font-size: 14px;
+    }
+
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background: #8e8e93;
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      0%, 60%, 100% { opacity: 0.3; }
+      30% { opacity: 1; }
+    }
+
+    /* ===== HighLevel CRM Dashboard ===== */
+    .artifact-crm {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 460px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .crm-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .crm-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .crm-logo {
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .crm-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .crm-metric {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .crm-metric::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #059669);
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .crm-activity {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .activity-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .activity-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .activity-content {
+      flex: 1;
+    }
+
+    .activity-text {
+      font-size: 14px;
+      color: #1f2937;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .activity-time {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* ===== Business Team Notification ===== */
+    .artifact-notification {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 18px;
+      max-width: 420px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .notification-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .notification-meta {
+      flex: 1;
+    }
+
+    .notification-app {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 2px;
+    }
+
+    .notification-time {
+      font-size: 12px;
+      color: #86868b;
+    }
+
+    .notification-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .notification-body {
+      font-size: 14px;
+      color: #424245;
+      line-height: 1.5;
+    }
+
+    .notification-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .notification-button {
+      background: #007aff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .notification-button.secondary {
+      background: #f2f2f7;
+      color: #007aff;
+    }
+
+    /* ===== Analytics Report ===== */
+    .artifact-analytics {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 450px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .analytics-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .analytics-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .analytics-period {
+      font-size: 14px;
+      color: #6b7280;
+      background: #f3f4f6;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .analytics-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .stat-change {
+      font-size: 11px;
+      color: #10b981;
+      margin-top: 4px;
+    }
+
+    .analytics-breakdown {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .breakdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-label {
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .breakdown-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .breakdown-bar {
+      width: 60px;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      margin-left: 12px;
+      position: relative;
+    }
+
+    .breakdown-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #059669);
+      border-radius: 3px;
+    }
+
+    .platform-badge {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 16px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .artifacts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .artifact-section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 Birthday SMS Outreach System</h1>
+    <p class="hero-text">Automated Parent Reminder System for Your Venue Business</p>
+    <p class="subtitle">Turn your 4,000+ customers into recurring revenue without manual work</p>
+
+    <!-- STEP 1: DATA COLLECTION -->
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <h2 class="step-title">Import Your Customer Data</h2>
+        <p class="step-description">Upload your CSV with parent and child information into HighLevel CRM. System automatically normalizes names and validates data.</p>
+      </div>
+      
+      <div class="artifacts-grid">
+        <div class="artifact-section">
+          <h3 class="section-title">📊 Your Customer Database</h3>
+          <div class="artifact-data">
+            <div class="data-header">
+              <div class="data-title">Customer Database</div>
+              <div class="data-count">4,127 records</div>
+            </div>
+            <div class="data-table">
+              <div class="data-row">
+                <div class="data-cell">
+                  <div class="parent-info">Jennifer Smith</div>
+                  <div class="child-info">Emma Smith (Age 7)</div>
+                </div>
+                <div class="data-cell">
+                  <div class="child-info">(555) 234-5678</div>
+                  <div class="child-info">Last visit: Jan 15, 2024</div>
+                </div>
+                <div class="data-cell birthday-cell">
+                  <div class="birthday-date">Mar 22</div>
+                  <div class="days-until">12 days</div>
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-cell">
+                  <div class="parent-info">Michael Chen</div>
+                  <div class="child-info">Lucas Chen (Age 9)</div>
+                </div>
+                <div class="data-cell">
+                  <div class="child-info">(555) 876-5432</div>
+                  <div class="child-info">Last visit: Nov 8, 2023</div>
+                </div>
+                <div class="data-cell birthday-cell">
+                  <div class="birthday-date">Apr 5</div>
+                  <div class="days-until">26 days</div>
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-cell">
+                  <div class="parent-info">Sarah Johnson</div>
+                  <div class="child-info">Mason Johnson (Age 6)</div>
+                </div>
+                <div class="data-cell">
+                  <div class="child-info">(555) 345-6789</div>
+                  <div class="child-info">Last visit: Dec 12, 2023</div>
+                </div>
+                <div class="data-cell birthday-cell">
+                  <div class="birthday-date">Mar 28</div>
+                  <div class="days-until">18 days</div>
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-cell">
+                  <div class="parent-info">Amanda Rodriguez</div>
+                  <div class="child-info">Sophia Rodriguez (Age 5)</div>
+                </div>
+                <div class="data-cell">
+                  <div class="child-info">(555) 567-8901</div>
+                  <div class="child-info">Last visit: Feb 20, 2024</div>
+                </div>
+                <div class="data-cell birthday-cell">
+                  <div class="birthday-date">Apr 12</div>
+                  <div class="days-until">33 days</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-badge">HighLevel CRM Integration</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: AUTOMATED SMS -->
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <h2 class="step-title">Personalized SMS 15 Days Before Birthday</h2>
+        <p class="step-description">AI creates unique messages for each family using parent names, child names, dates, and last visit information.</p>
+      </div>
+      
+      <div class="artifacts-grid">
+        <div class="artifact-section">
+          <h3 class="section-title">📱 SMS напоминание родителю</h3>
+          <div class="artifact-sms">
+            <div class="sms-header">Messages • Your Venue</div>
+            <div class="sms-conversation">
+              <div class="sms-bubble">
+                Hi Jennifer! 🎂 Emma's 8th birthday is coming up on March 22nd! 
+                
+                You last celebrated with us on Jan 15, and Emma had such a blast on the trampolines! 
+                
+                Want to make her special day unforgettable again? We have new party packages perfect for 8-year-olds! 🎉
+              </div>
+              <div class="sms-time">Delivered • 2:15 PM</div>
+            </div>
+            <div class="sms-typing">
+              <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+              </div>
+              <span>Jennifer is typing...</span>
+            </div>
+          </div>
+          <div class="platform-badge">AI-Powered SMS Automation</div>
+        </div>
+
+        <div class="artifact-section">
+          <h3 class="section-title">💬 AI обрабатывает ответы</h3>
+          <div class="artifact-sms">
+            <div class="sms-header">Messages • Your Venue</div>
+            <div class="sms-conversation">
+              <div class="sms-bubble received">
+                Yes! Emma's been asking about her party. What packages do you have for 8 kids?
+              </div>
+              <div class="sms-bubble">
+                Perfect! For 8 kids we recommend our "Ultimate Birthday Bash" package:
+
+                🎂 2-hour private party area
+                🎮 Arcade tokens for everyone  
+                🍕 Pizza & drinks included
+                🎁 Special birthday surprise for Emma
+                
+                Total: $289 (save $40 vs individual pricing!)
+                
+                Want to schedule a quick call to book Emma's perfect party? 📞
+              </div>
+              <div class="sms-time">Delivered • 2:18 PM</div>
+            </div>
+          </div>
+          <div class="platform-badge">Conversational AI + HighLevel</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: CRM TRACKING -->
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <h2 class="step-title">Автоматическое обновление CRM</h2>
+        <p class="step-description">Каждое взаимодействие записывается в HighLevel. Система отслеживает статусы, планирует follow-up и создает задачи для вашей команды.</p>
+      </div>
+      
+      <div class="artifacts-grid">
+        <div class="artifact-section">
+          <h3 class="section-title">📋 HighLevel CRM Dashboard</h3>
+          <div class="artifact-crm">
+            <div class="crm-header">
+              <div class="crm-title">Birthday Campaigns</div>
+              <div class="crm-logo">GoHighLevel</div>
+            </div>
+            <div class="crm-metrics">
+              <div class="crm-metric">
+                <div class="metric-value">47</div>
+                <div class="metric-label">SMS Sent Today</div>
+              </div>
+              <div class="crm-metric">
+                <div class="metric-value">18</div>
+                <div class="metric-label">Responses</div>
+              </div>
+              <div class="crm-metric">
+                <div class="metric-value">12</div>
+                <div class="metric-label">Interested</div>
+              </div>
+              <div class="crm-metric">
+                <div class="metric-value">5</div>
+                <div class="metric-label">Booked Calls</div>
+              </div>
+            </div>
+            <div class="crm-activity">
+              <div class="activity-item">
+                <div class="activity-icon">📞</div>
+                <div class="activity-content">
+                  <div class="activity-text">Jennifer Smith requested callback</div>
+                  <div class="activity-time">2:18 PM • High Priority</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">✅</div>
+                <div class="activity-content">
+                  <div class="activity-text">Sarah Johnson - SMS delivered</div>
+                  <div class="activity-time">2:15 PM • Awaiting response</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">🎂</div>
+                <div class="activity-content">
+                  <div class="activity-text">Amanda Rodriguez - Follow-up #2</div>
+                  <div class="activity-time">2:12 PM • Day 7 sequence</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-badge">Real-time CRM Updates</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: TEAM NOTIFICATIONS -->
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">4</div>
+        <h2 class="step-title">Мгновенные уведомления команде</h2>
+        <p class="step-description">Когда родитель хочет забронировать звонок, ваша команда получает Email + SMS с контактами и деталями. Никто не потеряется.</p>
+      </div>
+      
+      <div class="artifacts-grid">
+        <div class="artifact-section">
+          <h3 class="section-title">📧 Уведомление менеджеру</h3>
+          <div class="artifact-notification">
+            <div class="notification-header">
+              <div class="notification-icon">🎂</div>
+              <div class="notification-meta">
+                <div class="notification-app">Birthday SMS System</div>
+                <div class="notification-time">just now</div>
+              </div>
+            </div>
+            <div class="notification-title">
+              🔥 Hot Lead: Jennifer Smith wants to book!
+            </div>
+            <div class="notification-body">
+              <strong>Child:</strong> Emma Smith (8th birthday - Mar 22)<br>
+              <strong>Phone:</strong> (555) 234-5678<br>
+              <strong>Last visit:</strong> Jan 15, 2024<br>
+              <strong>Interest:</strong> Ultimate Birthday Bash ($289)<br>
+              <strong>Party size:</strong> 8 kids<br><br>
+              <strong>Her message:</strong> "Yes! Emma's been asking about her party..."
+            </div>
+            <div class="notification-actions">
+              <button class="notification-button">Call Now</button>
+              <button class="notification-button secondary">Schedule Later</button>
+            </div>
+          </div>
+          <div class="platform-badge">Instant Team Alerts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: ANALYTICS -->
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">5</div>
+        <h2 class="step-title">Полная аналитика и ROI tracking</h2>
+        <p class="step-description">Видите точно сколько потратили на SMS, сколько получили откликов, звонков и бронирований. Каждый доллар и результат отслеживается.</p>
+      </div>
+      
+      <div class="artifacts-grid">
+        <div class="artifact-section">
+          <h3 class="section-title">📊 Monthly Campaign Report</h3>
+          <div class="artifact-analytics">
+            <div class="analytics-header">
+              <div class="analytics-title">March 2025 Results</div>
+              <div class="analytics-period">Birthday Campaign</div>
+            </div>
+            
+            <div class="analytics-stats">
+              <div class="stat-card">
+                <div class="stat-number">342</div>
+                <div class="stat-label">SMS Sent</div>
+                <div class="stat-change">+23% vs Feb</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">127</div>
+                <div class="stat-label">Responses</div>
+                <div class="stat-change">37% rate</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">89</div>
+                <div class="stat-label">Interested</div>
+                <div class="stat-change">26% convert</div>
+              </div>
+            </div>
+
+            <div class="analytics-breakdown">
+              <div class="breakdown-item">
+                <div class="breakdown-label">SMS Costs</div>
+                <div style="display: flex; align-items: center;">
+                  <div class="breakdown-value">$34.20</div>
+                  <div class="breakdown-bar">
+                    <div class="breakdown-fill" style="width: 20%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-label">Bookings Made</div>
+                <div style="display: flex; align-items: center;">
+                  <div class="breakdown-value">23 parties</div>
+                  <div class="breakdown-bar">
+                    <div class="breakdown-fill" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-label">Revenue Generated</div>
+                <div style="display: flex; align-items: center;">
+                  <div class="breakdown-value">$6,847</div>
+                  <div class="breakdown-bar">
+                    <div class="breakdown-fill" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="breakdown-item" style="border-top: 2px solid #10b981; padding-top: 12px; margin-top: 8px;">
+                <div class="breakdown-label"><strong>ROI</strong></div>
+                <div class="breakdown-value" style="color: #10b981; font-size: 18px;"><strong>20,012%</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-badge">Advanced Analytics Dashboard</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
